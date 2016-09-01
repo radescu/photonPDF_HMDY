@@ -1,0 +1,63 @@
+\documentclass[twocolumn,english,aps]{revtex4-1}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{babel}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % Fix a bug in REVTeX 4.1
+ \def\lovname{List of Videos}
+ \@ifundefined{textcolor}{}
+ {%
+   \definecolor{BLACK}{gray}{0}
+   \definecolor{WHITE}{gray}{1}
+   \definecolor{RED}{rgb}{1,0,0}
+   \definecolor{GREEN}{rgb}{0,1,0}
+   \definecolor{BLUE}{rgb}{0,0,1}
+   \definecolor{CYAN}{cmyk}{1,0,0,0}
+   \definecolor{MAGENTA}{cmyk}{0,1,0,0}
+   \definecolor{YELLOW}{cmyk}{0,0,1,0}
+ }
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Determination of photon PDF from High Mass Drell Yan data at LHC}
+
+
+\author{F. Giulli and The xFitter Collaboration: V. Berone, A. Cooper-Sarkar, A. Glazov, R. Placakyte, V. Radescu,  J. Rojo, A. Sapronov, etc. }
+
+
+\date{\today}
+\begin{abstract}
+abstract goes here: ...
+\end{abstract}
+\maketitle
+\tableofcontents{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{introduction.tex}
+\input{theory.tex}
+\input{settings.tex}
+\input{results.tex}
+\input{conclusions.tex}
+
+
+\bibliographystyle{plainnat}
+\addcontentsline{toc}{section}{\refname}\bibliography{notes}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
