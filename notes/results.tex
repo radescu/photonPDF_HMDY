@@ -15,7 +15,7 @@ conclusion: HMDY data has a large impact on photonPDF
 
 In order to make a full PDF fit the  ATLAS Drell-Yan data data are fitted together with the final combined inclusive 
 cross section data from HERA~\cite{hera}. The HERA data provide information on the quark/antiquark and gluon content of 
-the proton and the Drell-Yan data add information on the photon content of the proton. {\it and maybe refine the quark/antiquark content, refer sensitivity study}.   
+the proton and the Drell-Yan data add information on the photon content of the proton. 
 The NLO and NNLO pQCD predictions are fitted to the data using the xFitter open source pQCD fitting platform~\cite{xFitter}.
 The DGLAP equations~\cite{dglap} are solved using the programme QCDNUM which has been modified to include 
 the photon PDF in the proton~\cite{qcdnum}.
@@ -42,110 +42,101 @@ analysis~\cite{atlasstrange}. The further constraint $A_{\bar{U}} = 0.5 A_{\bar{
 The \textit{D} and \textit{E} parameters are introduced one by one until no significant 
 improvement in $\chi^{2}$ is found. 
 
- For the NLO fit a $\chi^{2}/ndf = 1225.3/1084 = 1.13$, with a partial $\chi^2/ndp = 46.9/48$ for the high-mass Drell-yan data [{\it please separate contribution of log term and correlated term in the partial chisq table to allow this calculation to be accurate- I estimated it}], is achieved for the following parametrisation, which has 15 parameters for the quarks and gluons and 5 parameters for the photon:
+ For the NNLO fit a $\chi^{2}/ndf = 1.18$, with a partial $\chi^2/ndp = 1.15$ for the high-mass Drell-yan data [{\it update with final numbers}], is achieved for the following parametrisation, which has 11 parameters for the quarks and gluons and 5 parameters for the photon:
 \begin{eqnarray}
-xu_v(x) = A_{u_v}x^{B_{u_v}}(1-x)^{C_{u_v}}(1+D_{u_v}x+E_{u_v}x^{2}), \\
+xu_v(x) = A_{u_v}x^{B_{u_v}}(1-x)^{C_{u_v}}(1+E_{u_v}x^{2}), \\
 xd_v(x) = A_{d_v}x^{B_{d_v}}(1-x)^{C_{d_v}}, \\
-x\bar{U}(x) = A_{\bar{U}}x^{B_{\bar{U}}}(1-x)^{C_{\bar{U}}}(1+D_{\bar{U}}x+E_{\bar{U}}x^2), \\
+x\bar{U}(x) = A_{\bar{U}}x^{B_{\bar{U}}}(1-x)^{C_{\bar{U}}}, \\
 x\bar{D}(x) = A_{\bar{D}}x^{B_{\bar{D}}}(1-x)^{C_{\bar{D}}}, \\
 xg(x) = A_{g}x^{B_{g}}(1-x)^{C_{g}}(1+E_{g}x^{2}), \\
 x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}x^{2}) \\
 \end{eqnarray}
-Figures **%Fig.~\ref{PDF_100GeV}
- show the PDF distributions $x_{u_v},xd_{d_v},x\bar{u}, x\bar{d}, xg$ at $Q^{2}$ = 10$^{2}$ GeV$^{2}$, while  Figures **%Fig.~\ref{PDF_1000GeV} 
-show them at $Q^{2}$ = 10$^{4}$ GeV$^{2}$. {\it Redo figures for the just Dubar final parametrisation, conisder adding +Dg and Eubar as parametrisation variations. Also consider model variations  like change of Q2cut, Q20, fs, mc,mb}.
-[{\it When showing PDF distributions for the NLO fit at two scales.
-show ubar and dbar as well, sbar,cbar,bbar are not interesting in the current context.
-Then repeat with this parametrisation at NNLO and quote NNLO partial chisq for DY data. Make plots of NNLo vs NLo only for the photon PDF. 
-Here you will almost 
-certainly find a worse overall chisq, but it will be worse for HERA which really likes the 
-negative gluon term. It will probably not be worse for the DY. We do not need to discuss the HERA NNLO features here}].
-%\begin{figure}
-%\includegraphics[width=5.14cm]{uv_100.ps} 
-%\includegraphics[width=5.14cm]{dv_100.ps} 
-%\includegraphics[width=5.14cm]{g_100.ps} 
-%\caption{PDF distributions at $Q^{2}$ = 10$^{2}$ GeV$^{2}$: (a) \textit{u} - valence; (b) \textit{d} - valence; (c) gluon}
-%\label{PDF_100GeV}
-%\end{figure}
-%\begin{figure}
-%\centering
-%\includegraphics[width=5.14cm]{uv_1000}
-%\includegraphics[width=5.14cm]{dv_1000} 
-%\includegraphics[width=5.14cm]{g_1000} 
-%\caption{PDF distributions at $Q^{2}$ = 10$^{4}$ GeV$^{2}$: (a) \textit{u} - valence; (b) \textit{d} - valence; (c) gluon}
-%\label{PDF_1000GeV}
-%\end{figure}
-In these figures comparisons are made to the NNPDF3.0PDF set [{\it use NNPDF3.0 not the rwg version}] and the HERAPDF2.0 set.
-One can see that the shape of the $xd_{u_v}$ distribution is close to that of HERAPDF2.0 
-because of the dominance of HERA data in the fit. {\it More comments?}
+The parametrisation for HERA data differs from that of the HERAPDF2.0 PDF since the starting scale $Q^2_0$ is higher and the additional negative term in the gluon parametrisation is not necessary.
+Parametrisation and model uncertainties are considered according to the HERAPDF 
+procedure~\cite{hera} 
+by adding extra terms which make little difference to the $\chi^2$ of the fit, but which can change the shape of the PDFs. Additonal parameters considered are: the extra negative term for the gluon; $D_{u_v}$, $D_{\bar{u}}$ and $E_{\bar{d}}$. Model variations considered are the variation of: 
+$m_b$ from 4.25 to 4.75 GeV; $m_c$ from 1.41 to 1.53 GeV;  $Q_0^2$ up to 10 GeV$^2$; 
+$Q_{cut}^2$ up to 10 GeV$^2$; the strangeness fraction down to $f_s=0.4$; the value of $\alpha_s(M_Z)$ from 0.116 to 0.120.
 
-%Fig.~\ref{hmDY_2D} 
-Fig. shows the comparison between the hmDY two-dimensional distribution and the predictions. {\it Just make it for the 15 parameter Dubar fit.}
-%\begin{figure}
-%\centering
-%\subfigure[]{\includegraphics[width=5.14cm]{picture_confirmation/hmDY_1}} 
-%\subfigure[]{\includegraphics[width=5.14cm]{picture_confirmation/hmDY_2}} 
-%\subfigure[]{\includegraphics[width=5.14cm]{picture_confirmation/hmDY_3}} 
-%\subfigure[]{\includegraphics[width=5.14cm]{picture_confirmation/hmDY_4}} 
-%\subfigure[]{\includegraphics[width=5.14cm]{picture_confirmation/hmDY_5}} 
-%\caption{Comparison between $\dfrac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ hmDY data and fit results; the various fit differ just on the number of free parameters.}
-%\label{hmDY_2D}
-%\end{figure}
-The $\chi^{2}$ values for each separate fitted dataset and the output parameters from the various fits can be found in Tables * %Fig.~\ref{chi2_scan} 
-and in Table *%Fig.~\ref{par_scan} 
-respectively. {\it Do this ONLy for the central +Dubar fit}
-%\begin{figure}
-%\centering
-%\subfigure[]{\includegraphics[width=8.44cm]{picture_confirmation/chi2_scan}} 
-%\caption{Comparison between $\chi^{2}$ for the different fits just described above.}
-%\label{chi2_scan}
-%\end{figure}
-%\begin{figure}
-%\centering
-%\subfigure[]{\includegraphics[width=12.14cm]{picture_confirmation/par_scan}} 
-%\caption{Comparison between the output parameters of the different fits just described above.}
-%\label{par_scan}
-%\end{figure}
+Fig.~\ref{PDF_7.5GeV}
+ shows the PDF distributions $x_{u_v},xd_{d_v},x\bar{u}, x\bar{d}, xg$ at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$,
+including model and parametrisation uncertainties, while  Fig.~\ref{PDF_10000GeV} 
+shows them at $Q^{2}$ = 10$^{4}$ GeV$^{2}$. {\it Add model and parametrisation variations, Use NNLO MC central}.
+\begin{figure}
+\includegraphics[width=7cm]{uv_7.5.ps} 
+\includegraphics[width=7cm]{dv_7.5.ps} 
+\includegraphics[width=7cm]{gluon_7.5.ps} 
+\includegraphics[width=7cm]{ubar_7.5.ps} 
+\includegraphics[width=7cm]{dbar_7.5.ps} 
+\caption{NNLO PDF distributions at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$: (a) $u$ - valence; (b) $d$ - valence; (c) gluon; (d) $\bar{u}$; (e) $\bar{d}$ }
+\label{PDF_7.5GeV}
+\end{figure}
+\begin{figure}
+\includegraphics[width=7cm]{uv_10000.ps} 
+\includegraphics[width=7cm]{dv_10000.ps} 
+\includegraphics[width=7cm]{gluon_10000.ps} 
+\includegraphics[width=7cm]{ubar_10000.ps} 
+\includegraphics[width=7cm]{dbar_10000.ps} 
+\caption{NNLO PDF distributions at $Q^{2}$ = 10000$^{2}$ GeV$^{2}$: (a) $u$ - valence; (b) $d$ - valence; (c) gluon; (d) $\bar{u}$; (e) $\bar{d}$}
+\label{PDF_10000GeV}
+\end{figure}
+In these figures comparisons are made to the NNPDF3.0PDF set and the HERAPDF2.0 set.
+The shape of the $xd_{u_v}$ distribution is close to that of HERAPDF2.0 
+because of the dominance of HERA data in the fit. 
 
-Focusing now on the photon PDF distribution, there is some impact on the photon PDF from adding parameters to the quark and gluon PDFS, particularly from adding a $D_g$ and an $E_{\bar{U}}$ parameter.
-This impact has been included in the parametrisation variations and is shown 
+
+Fig.~\ref{hmDY_2D} 
+shows the comparison between the high-mass Drell-Yan double differential distribution and 
+the predictions.
+\begin{figure}
+\centering
+\includegraphics[width=7cm]{data_1.ps} 
+\includegraphics[width=7cm]{data_2.ps} 
+\includegraphics[width=7cm]{data_3.ps} 
+\includegraphics[width=7cm]{data_4.ps} 
+\includegraphics[width=7cm]{data_5.ps} 
+\caption{Comparison between $\frac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ for the high-mass Drell Yan data and the NNLo fit predictions.}
+\label{hmDY_2D}
+\end{figure}
+The $\chi^{2}$ values for the high-mass Drell Yan data and the output parameters from NNLO fit can be found in Table.~\ref{chi2_scan} 
+and Table.~\ref{par_scan} 
+respectively. 
+\begin{figure}
+\includegraphics[width=14cm]{chi2_hmDY.ps} 
+\caption{$\chi^{2}$ for high-mass Drell Yan data, for the NNLO fit}
+\label{chi2_scan}
+\end{figure}
+\begin{figure}
+\includegraphics[width=14cm]{parameters.ps} 
+\caption{PDF parameters for the NNLO fit.}
+\label{par_scan}
+\end{figure}
+
+The NNLO photon PDF distribution is shown 
 both at the starting scale (7.5 GeV$^{2}$) and at 10$^{4}$ GeV$^{2}$ 
- in Fig *
-%Fig.~\ref{photon_scan}. 
-%\begin{figure}
-%\centering
-%\subfigure[]{\includegraphics[width=6.96cm]{picture_confirmation/photon_7_5}} 
-%\subfigure[]{\includegraphics[width=6.96cm]{picture_confirmation/photon_10000}} 
-%\caption{Comparison between the photon PDF distributions for the different fits just described above: (a) at the starting scale; (b) at the evolved scale.}
-%\label{photon_scan}
-%\end{figure}
+ in Fig.~\ref{photon}, where it is also compared to an NLO extraction of the photon distribution.
+The $x$-range of the figure is restricted to the range of sensitivity of the high-mass drell-Yan data;
+$0.045 < x < 0.35$. The NLO and NNLO photon PDFs are compatible over this range.
+\begin{figure}
+\includegraphics[width=7cm]{photon_7.5.ps} 
+\includegraphics[width=7cm]{photon_10000.ps} 
+\caption{Comparison between the photon PDF distributions at NNLO and NLO: (a) at the starting scale; (b) at the evolved scale.}
+\label{photon}
+\end{figure}
 
-Fig %Fig.~\ref{photon_zoom} 
-shows the photon distribution in the range $0.045 < x < 0.35$, region where high mass DY data are most 
-sensitive to this quantity. The new fit results 
-have an uncertainty between 20{\%} and 30{\%}, which is 
-considerably reduced compared to the  NNPDF30qed NLO photon PDF which is also 
-shown for comparison. {\it Not the rwg version}.
-The predictions for the LUXqed~\cite{luxqed} photon PDF and the 
-HKR photon PDF~\cite{hkr}  are shown compared to the NNLO PDF from the present analysis in Fig.** {\it Compare our NNLO PDF when you have it}.
-In this kinematic region, the fit
- predictions agree with LUXqed and with the HKR photon PDF at the 1-$\sigma$ level. 
+Fig.~\ref{photon_zoom} 
+shows the photon distribution in the restricted range compared to the NNPDF3.0qed NNLO photon PDF.
+The uncertainties are considerably reduced. The comparison is shown at scale 100 GeV$^{2}$ and 
+at 10$^{4}$ GeV$^{2}$, where the value of 100 GeV$^{2}$ is chosen such that comparisons can also be 
+made to the LUXqed~\cite{luxqed} photon PDF, which is only defined above this scale.  The 
+HKR photon PDF~\cite{hkr} is also shown in this figure. The fit predictions from the present analysis
+agree  with the LUXqed and the HKR photon PDFs at the 1-$\sigma$ level. 
 
 
-%\begin{figure}
-%\centering
-%\subfigure[]{\includegraphics[width=6.96cm]{picture_confirmation/photon_7_5_zoom}} 
-%\subfigure[]{\includegraphics[width=6.96cm]{picture_confirmation/photon_10000_zoom}} 
-%\caption{Comparison between the photon PDF distributions for the different fits just described above: (a) at the starting scale; (b) at the evolved scale.}
-%\label{photon_zoom}
-%\end{figure}
-
-
-
-%\begin{figure*}[th]
-%\begin{centering}
-%\includegraphics[width=0.75\textwidth]{figs/}
-%\par\end{centering}
-%\caption{alphas across bottom transition }
-%\end{figure*}
+\begin{figure}
+\includegraphics[width=7cm]{photon_comp_100.ps} 
+\includegraphics[width=7cm]{photon_comp_10000.ps} 
+\caption{Comparison between the NNLO photon PDF distributions for the present analysis, NNPDF3.0QED, LUXqed, HKR: (a) at scale 100 GeV$^{2}$; (b) at the evolved scale 10000 GeV$^{2}$.}
+\label{photon_zoom}
+\end{figure}
 
