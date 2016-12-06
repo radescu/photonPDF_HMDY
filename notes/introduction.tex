@@ -1,1 +1,98 @@
 \section{Introduction}
+
+Precision phenomenology at the LHC requires theoretical calculations which
+include not only QCD corrections (where NNLO is rapidly becoming
+the standard) but also electroweak (EWK) corrections, which become
+specially relevant for observables directly sensitive to the TeV region.
+%
+An important ingredient of these electroweak corrections is
+the photon parton distribution function (PDFs), which must
+be introduced
+to regularise the collinear divergences in initial-state QED emissions.
+
+The first PDF fit to include both QED corrections and a photon PDF
+was MRST2004QED, where the photon PDF was taken from a model
+and tested on HERA data for direct photon production.
+%
+More recently, the NNPDF2.3QED set provided a model-independent
+determination of the photon PDF based on Drell-Yan data
+from ATLAS and LHCb.
+%
+The resulting photon PDF is however affected by large uncertainties
+due to the limited sensitivity of the data used as input to that
+fit.
+%
+The CT group have also released a QED fit using a similar strategy
+as the MRST2004QED one.
+
+A recent breakthrough concerning the determination of the
+photon PDF has been the realization that it can be expressed
+in terms of inclusive lepton-proton deep-inelastic scattering
+structure functions.
+%
+The residual uncertainties in the photon PDF resulting from
+this strategy, dubbed LUXqed, are now at the few percent level,
+not unlike the quark and gluon PDFs.
+%
+A related approach by the HMR group also leads to a similar
+photon PDF.
+
+The aim of this work is to perform a direct determination
+of the photon PDF from the recent high-mass Drell-Yan measurements
+from the ATLAS experiment at $\sqrt{s}=8$ TeV, and compare
+with the various existing calculations.
+%
+As compared to previous measurements of the Drell-Yan processes
+at high dilepton invariant masses $m_{ll}$, ATLAS now provides
+both single differential distributions in $m_{ll}$ as well
+as double-differential cross-sections in both $m_{ll}$
+and $|y_{ll}|$, the rapidity of the lepton pair,
+and in  $m_{ll}$ and $\Delta\eta_{ll}$, the difference in pseudo-rapidity
+between the two leptons.
+
+These more differential distributions provide an additional handle
+on the photon PDF, and indeed it was demonstrated in by means
+of the Bayesian reweighting method that a significant reduction of
+the photon PDF uncertainties of NNPDF2.3QED could be achieved
+following the inclusion of the ATLAS data.
+%
+The goal of this study is to investigate further these constraints
+from the ATLAS high-mass measurements on the photon PDF,
+this time by means of a direct PDF fit performed within the
+open-source {\tt xFitter} framework.
+%
+State-of-the-art theoretical calculations will be employed,
+in particular
+we include NNLO QCD and NLO QED corrections, the latter implemented
+via the {\tt APFEL} program and presented from the first time
+here.
+%
+Our results turn out to be in good agreement with the LUXqed and HMR
+calculations, providing further evidence that our understanding
+of the photon PDF has been significantly improved in the last
+few months, both from the point of theory and from
+the point of data.
+
+The outline of this paper is as follows.
+%
+First of all in Sect.~\ref{sec:theory} we present the theoretical
+calculation of DIS structure functions and of Drell-Yan cross-sections
+used in this work.
+%
+Then in Sect~\ref{sec:fitsettings} we discuss the settings of
+the PDF fit, including the parametrization of the photon PDF
+that will be adopted.
+%
+Here we also show a sensitivity study which motivates the
+usefulness of the ATLAS measurements for the photon PDF.
+%
+The results of this work are presented in Sect.~\ref{sec:results},
+where we also compare with existing calculations and other
+fits of the photon PDF.
+%
+Finally in Sect.~\ref{sec:conclusions} we conclude
+and outline possible future lines of investigation.
+%
+In addition, appendix~\ref{sec:appendixAPFEL} contains a detailed description of
+the implementation and validation of NLO QED corrections
+in {\tt APFEL}.
