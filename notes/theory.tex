@@ -9,10 +9,51 @@ at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}.
 %
 The HERA structure functions are the backbone of all
 recent PDF fits, providing information on the quark/antiquark and gluon content of 
-the proton and the Drell-Yan data add information on the photon content of the proton.
+the proton, while the high-mass Drell-Yan data provide
+direct sensitivity to the photon PDF.
+%
+Indeed, dilepton production at the Born level can arise  from either quark-antiquark $s$-channel
+scattering or from photon-photon $t$-channel scattering mediated by a lepton,
+as shown in Fig.~\ref{fig:photoninduced}.
 
-Two processes contribute to opposite sign, same family, dilepton production at the LHC: 
-the Drell-Yan quark-antiquark process and the photon-induced process. Both the contributions can be 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=8cm]{plots/photoninduced.pdf}
+    \end{center}
+  \caption{Two of the processes that contribute to lepton-pair
+  production at hadron colliders at the Born level.}
+\label{fig:photoninduced}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Deep-inelastic structure functions and PDF evolution will be performed
+with the program {\tt APFEL}~\cite{Bertone:2013vaa}, which in its latest
+version is accurate up to NNLO for the QCD corrections and up to
+NLO for the QED corrections, as described in appendix~\ref{sec:appendixAPFEL}.
+%
+To be precise, this means that the DGLAP evolution equations are solved including
+the splitting functions $P(\alpha_s,\alpha)$ up to $\mathcal{O}\lp \alpha_s^3\rp$ in the QCD
+coupling and up to $\mathcal{O}\lp \alpha_s\alpha\rp$ in the QED coupling,
+and that DIS coefficient functions include corrections up to $\mathcal{O}\lp \alpha_s^2\rp$
+in QCD and up to $\mathcal{O}\lp \alpha^2\rp$ in QED.
+%
+Heavy quark (charm and bottom) mass effects in DIS structure functions are accounted
+for using the FONLL-B(C) general-mass scheme~\cite{Forte:2010ta}
+for the NLO (NNLO) fits.
+%
+As for the numerical values of the heavy quark masses in the pole scheme,
+we take  $m_c=1.47~$GeV and $m_b=4.5~$GeV, consistent with the latest PDG average.
+%
+The strong (QED) coupling constant is chosen to be  $\alpha_s(m_Z)=0.118$~\cite{PDG}
+($\alpha(m_Z)=1/127$).
+%
+Let us recall that heavy quark structure functions with running masses
+are also implemented in {\tt APFEL}~\cite{Bertone:2016ywq},
+though their use should not lead to any difference for the determination of the photon PDF.
+ 
+Concerning the high-mass Drell-Yan cross-sections,
+both the contributions can be 
 simulated with {\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca}
 (version 2.4.3) and interfaced to {\tt APPLgrid}~\cite{Carli:2010rw}
 v01-04-70) and {\tt aMCfast}~\cite{Carli:2010rw} (version 01-03-00).
@@ -23,22 +64,6 @@ Both contributions are generated in the 5-flavour scheme, where all the quarks, 
  parton showers.
 
 
- PDF
- 
-The NLO and NNLO pQCD predictions are fitted to the data using the xFitter open source pQCD fitting platform
-The DGLAP equations~\cite{dglap} are solved using the programme APFEL which has been modified to include 
-the photon PDF in the proton~\cite{Bertone:2013vaa}.
-%
-The DGLAP equations yield the PDFs at all scales if they are input as finctions of $x$ at a starting scale $Q^2_0$, which 
-should be large enough that perturbative QCD can be assumed to be valid. For the present analysis this value is chosen
-to be $Q^2_0 = 7.5~$GeV$^2$.
-%
-This is also the value chosen for the minimum value of $Q^2$ for data entering the fit.
-The charm and beauty masses are chosen to be $m_c=1.47~$GeV and $m_b=4.5~$GeV following the HERA analysis. 
-The value of $\alpha_s(M_Z)$ is chosen to be $\alpha_s(M_Z)=0.118$~\cite{PDG}. 
-The value of $Q^2_0$ is above the charm mass squared, however a version of the programme 
-is used which displaces the charm threshold from the charm mass~\cite{charmthresh} such that the threshold is at $Q^2_0$.
- 
 
 Theoretical predictions for both the one-dimensional $\frac{d\sigma}{dm_{ll}}$ distribution 
 (where $m_{ll}$ is the invariant mass of the dilepton pair in the final state) and the double-differential 
