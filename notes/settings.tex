@@ -4,3 +4,56 @@
 In this section we discuss the settings of
 the PDF fit, including the parametrization of the photon PDF
 that will be adopted.
+
+In order to make a full PDF fit the  ATLAS Drell-Yan data data are fitted together with the final combined inclusive 
+cross section data from HERA~\cite{Abramowicz:2015mha}.
+%
+The HERA data provide information on the quark/antiquark and gluon content of 
+the proton and the Drell-Yan data add information on the photon content of the proton.
+%
+The NLO and NNLO pQCD predictions are fitted to the data using the xFitter open source pQCD fitting platform~\cite{xFitter}.
+The DGLAP equations~\cite{dglap} are solved using the programme APFEL which has been modified to include 
+the photon PDF in the proton~\cite{Bertone:2013vaa}.
+%
+The DGLAP equations yield the PDFs at all scales if they are input as finctions of $x$ at a starting scale $Q^2_0$, which 
+should be large enough that perturbative QCD can be assumed to be valid. For the present analysis this value is chosen
+to be $Q^2_0 = 7.5~$GeV$^2$.
+%
+This is also the value chosen for the minimum value of $Q^2$ for data entering the fit.
+The charm and beauty masses are chosen to be $m_c=1.47~$GeV and $m_b=4.5~$GeV following the HERA analysis. 
+The value of $\alpha_s(M_Z)$ is chosen to be $\alpha_s(M_Z)=0.118$~\cite{PDG}. 
+The value of $Q^2_0$ is above the charm mass squared, however a version of the programme 
+is used which displaces the charm threshold from the charm mass~\cite{charmthresh} such that the threshold is at $Q^2_0$.
+%
+The form of the $\chi^2$ used for the fit is that defined in the H1 paper~\cite{h1chisqdef}. 
+Alternative forms have also been tried with no significant difference to our results.
+ 
+The PDF parametrisation input at $Q^2_0$ is determined by the technique of saturation of the $\chi^{2}$~\cite{h1chisqsat}.
+%
+The parametrised PDFs are the valence distributions $xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the \textit{u}-type and \textit{d}-type sea, $x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and $x\bar{D} = x\bar{d} + x\bar{s}$, and finally the photon distribution $x\gamma$. The following standard functional form is used to parametrise them:
+\begin{equation}
+xf(x) = Ax^{B}(1-x)^{C}(1+Dx+Ex^{2})
+\end{equation}
+where the normalisation parameters $A_{u_{v}}$, $A_{d_{v}}$ and $A_{g}$ are constrained by the number sum-rules and the 
+momentum sum-rule, respectively. The \textit{B} parameters $B_{\bar{U}}$ and $B_{\bar{D}}$ are set equal, such that there 
+is a single \textit{B} parameter for the sea distribution. The data are not sensitive to the 
+strangeness content of the proton which is thus set such that $x\bar{s} = 0.5\bar{D}$, following the ATLAS 
+analysis~\cite{Aad:2012sb}. The further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed such that $\bar{u}=x\bar{d}$ as $x \to 0$.
+The \textit{D} and \textit{E} parameters are introduced one by one until no significant 
+improvement in $\chi^{2}$ is found. 
+
+ For the NNLO fit a $\chi^{2}/ndf = 1.18$, with a partial $\chi^2/ndp = 1.15$ for the high-mass Drell-yan data [{\it update with final numbers}], is achieved for the following parametrisation, which has 11 parameters for the quarks and gluons and 5 parameters for the photon:
+\begin{eqnarray}
+xu_v(x) = A_{u_v}x^{B_{u_v}}(1-x)^{C_{u_v}}(1+E_{u_v}x^{2}), \\
+xd_v(x) = A_{d_v}x^{B_{d_v}}(1-x)^{C_{d_v}}, \\
+x\bar{U}(x) = A_{\bar{U}}x^{B_{\bar{U}}}(1-x)^{C_{\bar{U}}}, \\
+x\bar{D}(x) = A_{\bar{D}}x^{B_{\bar{D}}}(1-x)^{C_{\bar{D}}}, \\
+xg(x) = A_{g}x^{B_{g}}(1-x)^{C_{g}}(1+E_{g}x^{2}), \\
+x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}x^{2}) \\
+\end{eqnarray}
+The parametrisation for HERA data differs from that of the HERAPDF2.0 PDF since the starting scale $Q^2_0$ is higher and the additional negative term in the gluon parametrisation is not necessary.
+Parametrisation and model uncertainties are considered according to the HERAPDF 
+procedure~\cite{hera} 
+by adding extra terms which make little difference to the $\chi^2$ of the fit, but which can change the shape of the PDFs. Additonal parameters considered are: the extra negative term for the gluon; $D_{u_v}$, $D_{\bar{u}}$ and $E_{\bar{d}}$. Model variations considered are the variation of: 
+$m_b$ from 4.25 to 4.75 GeV; $m_c$ from 1.41 to 1.53 GeV;  $Q_0^2$ up to 10 GeV$^2$; 
+$Q_{cut}^2$ up to 10 GeV$^2$; the strangeness fraction down to $f_s=0.4$; the value of $\alpha_s(M_Z)$ from 0.116 to 0.120.
