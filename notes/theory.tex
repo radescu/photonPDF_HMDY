@@ -37,57 +37,61 @@ the splitting functions $P(\alpha_s,\alpha)$ up to $\mathcal{O}\lp \alpha_s^3\rp
 coupling and up to $\mathcal{O}\lp \alpha_s\alpha\rp$ in the QED coupling,
 and that DIS coefficient functions include corrections up to $\mathcal{O}\lp \alpha_s^2\rp$
 in QCD and up to $\mathcal{O}\lp \alpha^2\rp$ in QED.
-%
+
 Heavy quark (charm and bottom) mass effects in DIS structure functions are accounted
 for using the FONLL-B(C) general-mass scheme~\cite{Forte:2010ta}
 for the NLO (NNLO) fits.
 %
 As for the numerical values of the heavy quark masses in the pole scheme,
-we take  $m_c=1.47~$GeV and $m_b=4.5~$GeV, consistent with the latest PDG average.
+we take  $m_c=1.47~$GeV and $m_b=4.5~$GeV, consistent with the latest
+PDG averages~\cite{Agashe:2014kda}.
 %
-The strong (QED) coupling constant is chosen to be  $\alpha_s(m_Z)=0.118$~\cite{PDG}
+With the same motivation, the strong (QED) coupling constant is chosen to be  $\alpha_s(m_Z)=0.118$
 ($\alpha(m_Z)=1/127$).
 %
 Let us recall that heavy quark structure functions with running masses
 are also implemented in {\tt APFEL}~\cite{Bertone:2016ywq},
 though their use should not lead to any difference for the determination of the photon PDF.
- 
-Concerning the high-mass Drell-Yan cross-sections,
-both the contributions can be 
-simulated with {\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca}
-(version 2.4.3) and interfaced to {\tt APPLgrid}~\cite{Carli:2010rw}
-v01-04-70) and {\tt aMCfast}~\cite{Carli:2010rw} (version 01-03-00).
 %
-A special release of {\tt APPLgrid} is used to account for the photon PDF within the proton {\it need references for the programs}.
-Both contributions are generated in the 5-flavour scheme, where all the quarks, except for the \textit{top}
- quark, are treated as massless quarks; all the calculations are performed at fixed-order (FO) without 
- parton showers.
+The charm PDF is generated perturbatively from light quarks and gluons using
+the DGLAP equations.
 
+For the calculation of high-mass Drell-Yan cross-sections,
+we use the {\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program  v2.4.3,
+which includes the contribution from photon initiated corrections,
+and interfaced to {\tt APPLgrid}~\cite{Carli:2010rw} v1.4.70
+and {\tt aMCfast}~\cite{Carli:2010rw} v1.3.00).
+%
+A tailored version of  {\tt APPLgrid} was used, allowing to account for
+the contribution of photon-initiated processes.
+%
+The calculation is performed in the $n_f=5$ scheme neglecting the masses of the charm
+and bottom quarks in the matrix elements, as appropriate for a high-scale processes
+with $Q \gg m_Z$.
 
+The ATLAS high-mass Drell-Yan 8 TeV measurements include both the one-dimensional
+invariant mass distribution, $d\sigma/dm_{ll}$, as well as double-differential
+distributions in $m_{ll}$ and $y_{ll}$, the rapidity of the dilepton pair,
+$d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
+  the difference in 
+  pseudorapidity between the lepton pair, $d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
+  %
+  The {\tt MadGraph5{\_}aMC@NLO} theoretical predictions for these measurements
+  follow the analysis cuts, including $m_{ll}\ge 116$ GeV,
+  $\eta_l\le 2.5$, $p_T^l \ge 40(30)$ for the leading (sub-leading) lepton.
 
-Theoretical predictions for both the one-dimensional $\frac{d\sigma}{dm_{ll}}$ distribution 
-(where $m_{ll}$ is the invariant mass of the dilepton pair in the final state) and the double-differential 
-distributions $\frac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ (where $|y_{ll}|$ is the rapidity of the dilepton pair) 
-and $\frac{d^{2}\sigma}{dm_{ll}\Delta\eta_{ll}}$ (where $\Delta\eta_{ll}$ represents the difference in 
-pseudorapidity between the two leptons) are generated for both the electron and the muon channels.
- 
-These predictions are generated using the same selections as in reference~\cite{jhep08-2016-009}
-as follows:
-\begin{itemize}
-\item the invariant mass of the lepton pair is required to be greater than 116 GeV;
-\item the absolute value of the pseudorapidity of each lepton is required to be less than 2.5;
-\item the transverse momentum ($p_{T}$) of the leading lepton has to be greater than 40 GeV;
-\item the $p_{T}$ of the sub-leading lepton has to be greater than 30 GeV.
-\end{itemize} 
-The binning used is the same as used in reference~\cite{jhep08-2016-009}. For the invariant mass 
-distribution, there are 12 bins between 116 GeV and 1.5 TeV with variable bin widths; and for both of the 
+  
+  For the invariant mass 
+  distribution, there are 12 bins between 116 GeV and 1.5 TeV; and for both of the 
  the two-dimensional distributions, there are five different histograms, each one for a different invariant
  mass range: (a) 116 GeV < $m_{ll}$ < 150 GeV; (b) 150 GeV < $m_{ll}$ < 200 GeV; (c) 200 GeV < $m_{ll}$ < 300 GeV; (d) 300 GeV < $m_{ll}$ < 500 GeV; (e) 500 GeV < $m_{ll}$ < 1500 GeV.
- The APPLgrids for the first three $m_{ll}$ intervals are divided into 12 bins with fixed bin 
+ The {\tt APPLgrids} for the first three $m_{ll}$ intervals are divided into 12 bins with fixed bin 
 width between $|y_{ll}^{mim}|$ ($|\Delta\eta_{ll}|$)  = 0.0 (0.0) and $|y_{ll}^{max}|$ ($|\Delta\eta_{ll}|$) = 2.4 (3.0), while the final two $m_{ll}$ intervals are divided into 6 bins with fixed bin width scanning the same $|y_{ll}|$ and $|\Delta\eta_{ll}|$ ranges.
 
 Dynamical renormalization ($\mu_{R}$) and factorization ($\mu_{R}$) scales are used in the calculations 
-and both are set to $m_{ll}$. The theoretical calculations were validated by comparing both the NLO QCD + LO EW predictions and the 
+and both are set to $m_{ll}$.
+%
+The theoretical calculations were validated by comparing both the NLO QCD + LO EW predictions and the 
 LO PI predictions to those computed using the FEWZ 3.1 framework. These calculations are evaluated in the $G_{F}$ electroweak scheme, with the following values for the couplings:
  $\alpha_{S}$ = 0.118; $1/\alpha_{EW}$ = 1/127. The difference between the two predictions is at most 1${\%}$, for both the 1-dimensional and the 2-dimensional distributions.
 
@@ -95,10 +99,14 @@ In order to make a next-to-next-to-leading order (NNLO) fit k-factors ($k_{F}$) 
  the NLO QCD + LO EW cross sections to higher order (HO) calculations. These are computed using 
 FEWZ, with the same input parameters as for the NLO computations. The $k_{F}$ are defined as:
 \begin{equation}
-k_{F}=\frac{NNLO\  QCD  + NLO\  EW \sigma}{NLO\  QCD + LO\  EW \sigma}
+  \label{eq:kfactor}
+K \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW}
 \end{equation}
-The MMHT2014NNLO PDF set is used to compute both numerator and denominator.
- The $k_{F}$ are close to the unity and their variation is $\sim 2\%$. {\it provide Table of Final k-factors?}
-
-
-Discuss theory improvements: addition of the NLO QED+QCD piece 
+In the calculation of the $K$-factor Eq.~(\ref{eq:kfactor}) the
+MMHT2014 NNLO PDF set~\cite{Harland-Lang:2014zoa}
+is used to compute both numerator and denominator, though
+  results would change little if a different input PDF set was used.
+  %
+  These $K$-factors turn out to be close to 1, varying by at most 2\% in
+  all the data bins.
+  

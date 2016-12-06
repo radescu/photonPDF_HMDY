@@ -5,4 +5,4 @@ default:
 	pdflatex main
 
 clean:
-	rm -rf *~ *.log *.toc *.bbl *.blg *.pdf *.aux
+	rm -rf *~ *.log *.toc *.bbl *.blg *.pdf *.aux mainNotes.bib
