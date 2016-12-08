@@ -1,19 +1,55 @@
 \section{Results}
 \label{sec:results}
 
-\subsection{Sensitivity}
- show impact of HM DY on PDFs using sensitivity studies based on
-pseudo-data, for which we only use the data uncertainties, while central 
-value are fixed:
- HERA I+II vs HERA I+II + HMDY --> see the sensitivity plots from the previous email
+In this section we present the main results of this work, namely the determination
+of the photon PDF $\gamma(x,Q^2)$ from a fit to the HERA structure functions
+and ATLAS high-mass Drell-Yan cross-sections.
 
-conclusion: HMDY data has a large impact on photonPDF 
-
-\subsection{The photon PDF}
-
-For the NNLO fit a $\chi^{2}/ndf = 1.18$, with a partial $\chi^2/ndp = 1.15$ for the high-mass Drell-yan data [{\it update with final numbers}], is achieved for the
-parametrization described in the previous section.
+Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings}, we find
+a $\chi^{2}/N_{\rm dof} = 1.18$,
+with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-yan data.
 %
+First of all we present our results for the photon PDF, and then the impact
+of the DY measurements on the quark and gluon PDF.
+%
+In Fig.~\ref{photon_zoom} we show our results
+for $\gamma(x,Q^2)$ for $Q^2=10^4$ GeV$^2$,
+compared with LUXqed~\cite{Manohar:2016nzj}, HKR~\cite{Harland-Lang:2016apc}
+and NNPDF3.0QED.
+%
+The comparison is restricted to the range $0.05 \le x \le 0.3$ corresponding
+to the region where the fitted Drell-Yan measurements have direct kinematic sensitivity
+to the photon PDF.
+%
+For NNPDF3.0QED, we show the 68\% CL uncertainty, while for LUXqed the uncertainty band
+is obtained by adding in quadrature all the model variations.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\includegraphics[width=7cm]{plots/photon_comp_10000.pdf} 
+\caption{Comparison between $\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+  analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR.}
+\label{photon_zoom}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+From the results of Fig.~\ref{photon_zoom} we find that in the region where the HMDY data is
+sensitive to the photon PDF, there is good agreement between the four determinations.
+%
+As compared to NNPDF3.0QED, the PDF uncertainties in the current analysis are reduced, though
+they are still not competitive with those of LUXqed.
+%
+We also note the excellent agreement between the LUXqed and the HKN determinations.
+
+We now turn the comparison to the quark and gluon PDFs.
+%
+Here we will compare a reference fit with the same settings as in Sect.~\ref{sec:fitsettings}
+but with only the HERA inclusive structure function data with the results of this work,
+which also include the ATLAS high-mass DY measurements.
+%
+We do not attempt to compare as well with the global fits, since our motivation here is only to
+gauge the impact on quarks and gluons of the high-mass Drell-Yan data.
+
 Fig.~\ref{PDF_7.5GeV}
  shows the PDF distributions $x_{u_v},xd_{d_v},x\bar{u}, x\bar{d}, xg$ at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$,
 including model and parametrisation uncertainties, while  Fig.~\ref{PDF_10000GeV} 
@@ -51,7 +87,7 @@ the predictions.
 \includegraphics[width=7cm]{plots/data_3.pdf} 
 \includegraphics[width=7cm]{plots/data_4.pdf} 
 \includegraphics[width=7cm]{plots/data_5.pdf} 
-\caption{Comparison between $\frac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ for the high-mass Drell Yan data and the NNLo fit predictions.}
+\caption{Comparison between $\frac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ for the high-mass Drell Yan data and the NNLO fit predictions.}
 \label{hmDY_2D}
 \end{figure}
 The $\chi^{2}$ values for the high-mass Drell Yan data and the output parameters from NNLO fit can be found in Table.~\ref{chi2_scan} 
@@ -71,7 +107,7 @@ respectively.
 The NNLO photon PDF distribution is shown 
 both at the starting scale (7.5 GeV$^{2}$) and at 10$^{4}$ GeV$^{2}$ 
  in Fig.~\ref{photon}, where it is also compared to an NLO extraction of the photon distribution.
-The $x$-range of the figure is restricted to the range of sensitivity of the high-mass drell-Yan data;
+The $x$-range of the figure is restricted to the range of sensitivity of the high-mass Drell-Yan data;
 $0.045 < x < 0.35$. The NLO and NNLO photon PDFs are compatible over this range.
 \begin{figure}
 \includegraphics[width=7cm]{plots/photon_7_5.pdf} 
@@ -80,25 +116,4 @@ $0.045 < x < 0.35$. The NLO and NNLO photon PDFs are compatible over this range.
 \label{photon}
 \end{figure}
 
-Fig.~\ref{photon_zoom} 
-shows the photon distribution in the restricted range compared to the NNPDF3.0qed NNLO photon PDF.
-The uncertainties are considerably reduced.
-%
-The comparison is shown at scale 100 GeV$^{2}$ and 
-at 10$^{4}$ GeV$^{2}$, where the value of 100 GeV$^{2}$ is chosen such that comparisons can also be 
-made to the LUXqed~\cite{Manohar:2016nzj}
-photon PDF, which is only defined above this scale.
-%
-The 
-HKR photon PDF~\cite{Harland-Lang:2016apc} is also shown in this figure.
-%
-The fit predictions from the present analysis
-agree  with the LUXqed and the HKR photon PDFs at the 1-$\sigma$ level. 
-
-\begin{figure}
-\includegraphics[width=7cm]{plots/photon_comp_100.pdf} 
-\includegraphics[width=7cm]{plots/photon_comp_10000.pdf} 
-\caption{Comparison between the NNLO photon PDF distributions for the present analysis, NNPDF3.0QED, LUXqed, HKR: (a) at scale 100 GeV$^{2}$; (b) at the evolved scale 10000 GeV$^{2}$.}
-\label{photon_zoom}
-\end{figure}
 
