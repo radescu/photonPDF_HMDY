@@ -69,44 +69,56 @@ The calculation is performed in the $n_f=5$ scheme neglecting the masses of the 
 and bottom quarks in the matrix elements, as appropriate for a high-scale processes
 with $Q \gg m_Z$.
 
-The ATLAS high-mass Drell-Yan 8 TeV measurements include both the one-dimensional
-invariant mass distribution, $d\sigma/dm_{ll}$, as well as double-differential
+The ATLAS high-mass Drell-Yan 8 TeV measurements include both the one-dimensional (1D)
+invariant mass distribution, $d\sigma/dm_{ll}$, as well as double-differential (2D)
 distributions in $m_{ll}$ and $y_{ll}$, the rapidity of the dilepton pair,
 $d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
   the difference in 
   pseudorapidity between the lepton pair, $d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
   %
-  The {\tt MadGraph5{\_}aMC@NLO} theoretical predictions for these measurements
-  follow the analysis cuts, including $m_{ll}\ge 116$ GeV,
-  $\eta_l\le 2.5$, $p_T^l \ge 40(30)$ for the leading (sub-leading) lepton.
-
-  
   For the invariant mass 
   distribution, there are 12 bins between 116 GeV and 1.5 TeV; and for both of the 
  the two-dimensional distributions, there are five different histograms, each one for a different invariant
- mass range: (a) 116 GeV < $m_{ll}$ < 150 GeV; (b) 150 GeV < $m_{ll}$ < 200 GeV; (c) 200 GeV < $m_{ll}$ < 300 GeV; (d) 300 GeV < $m_{ll}$ < 500 GeV; (e) 500 GeV < $m_{ll}$ < 1500 GeV.
- The {\tt APPLgrids} for the first three $m_{ll}$ intervals are divided into 12 bins with fixed bin 
-width between $|y_{ll}^{mim}|$ ($|\Delta\eta_{ll}|$)  = 0.0 (0.0) and $|y_{ll}^{max}|$ ($|\Delta\eta_{ll}|$) = 2.4 (3.0), while the final two $m_{ll}$ intervals are divided into 6 bins with fixed bin width scanning the same $|y_{ll}|$ and $|\Delta\eta_{ll}|$ ranges.
+ mass range, from the lowest bin
+ with 116 GeV < $m_{ll}$ < 150 GeV to the highest bin with 500 GeV < $m_{ll}$ < 1500 GeV.
+ %
+ The first three (last two) $m_{ll}$ bins are divided into 12 (6) bins with fixed
+ width, extending up to 2.4 and 3.0 for the  $|y_{ll}^{mim}|$ and $|\Delta\eta_{ll}|$ distributions
+ respectively.
+ %
+ In Sect.~\ref{sec:results} we will compare the impact on the photon PDF of fitting either
+ the 1D distributions or one of the two 2D distributions.
 
-Dynamical renormalization ($\mu_{R}$) and factorization ($\mu_{R}$) scales are used in the calculations 
-and both are set to $m_{ll}$.
-%
-The theoretical calculations were validated by comparing both the NLO QCD + LO EW predictions and the 
-LO PI predictions to those computed using the FEWZ 3.1 framework. These calculations are evaluated in the $G_{F}$ electroweak scheme, with the following values for the couplings:
- $\alpha_{S}$ = 0.118; $1/\alpha_{EW}$ = 1/127. The difference between the two predictions is at most 1${\%}$, for both the 1-dimensional and the 2-dimensional distributions.
-
-In order to make a next-to-next-to-leading order (NNLO) fit k-factors ($k_{F}$) are computed matching
- the NLO QCD + LO EW cross sections to higher order (HO) calculations. These are computed using 
-FEWZ, with the same input parameters as for the NLO computations. The $k_{F}$ are defined as:
-\begin{equation}
+ In the theoretical calculations of the Drell-Yan cross-section we use
+ dynamical  renormalization $\mu_{R}$ and factorization $\mu_{R}$ scales,
+ both set equal to the invariant mass  $m_{ll}$ of each bin.
+ %
+  The {\tt MadGraph5{\_}aMC@NLO} theoretical predictions for these measurements
+  follow the analysis cuts, including $m_{ll}\ge 116$ GeV,
+  $\eta_l\le 2.5$, $p_T^l \ge 40~(30)$ for the leading (sub-leading) lepton.
+ %
+ The {\tt MadGraph5{\_}aMC@NLO} calculation used in this work were benchmarked with
+ the corresponding  predictions (NLO QCD and LO QED, including photon-induced processes)
+ obtained with the {\tt FEWZ} code~\cite{Gavin:2012sy} v3.1, finding agreement at the 1\% level or better
+ for both the 1D and the 2D distributions.
+ %
+ In order to achieve NNLO QCD and NLO EW accuracy in our theoretical calculations, the
+ NLO QCD + LO QED {\tt APPLgrids} generated with {\tt MadGraph5{\_}aMC@NLO} as specified
+ above have been supplemented by bin-by-bin $K$-factors, defined
+ as
+ \begin{equation}
   \label{eq:kfactor}
-K \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW}
-\end{equation}
-In the calculation of the $K$-factor Eq.~(\ref{eq:kfactor}) the
-MMHT2014 NNLO PDF set~\cite{Harland-Lang:2014zoa}
-is used to compute both numerator and denominator, though
-  results would change little if a different input PDF set was used.
-  %
-  These $K$-factors turn out to be close to 1, varying by at most 2\% in
-  all the data bins.
+K \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW} \, ,
+ \end{equation}
+ using a fixed PDF set, MMHT2014 NNLO~\cite{Harland-Lang:2014zoa}, both in the numerator
+ and in the denominator (though NNLO $K$-factors depend very mildly on the
+ input PDF set).
+ %
+ The $K$-factor Eq.~({\ref{eq:kfactor}) has also  been 
+computed using
+{\tt FEWZ}, with the same settings as
+the corresponding NLO computations.
+%
+These $K$-factors turn out to be close to 1, varying by at most 2\% among
+all the data bins.
   
