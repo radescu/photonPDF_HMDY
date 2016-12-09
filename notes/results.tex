@@ -51,70 +51,81 @@ We do not attempt to compare as well with the global fits, since our motivation 
 gauge the impact on quarks and gluons of the high-mass Drell-Yan data.
 
 Fig.~\ref{PDF_7.5GeV}
- shows the PDF distributions $x_{u_v},xd_{d_v},x\bar{u}, x\bar{d}, xg$ at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$,
-including model and parametrisation uncertainties, while  Fig.~\ref{PDF_10000GeV} 
-shows them at $Q^{2}$ = 10$^{4}$ GeV$^{2}$. {\it Add model and parametrisation variations, Use NNLO MC central}.
-\begin{figure}
-\includegraphics[width=7cm]{plots/uv_7_5.pdf} 
-\includegraphics[width=7cm]{plots/dv_7_5.pdf} 
-\includegraphics[width=7cm]{plots/gluon_7_5.pdf} 
-\includegraphics[width=7cm]{plots/ubar_7_5.pdf} 
-\includegraphics[width=7cm]{plots/dbar_7_5.pdf} 
-\caption{NNLO PDF distributions at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$: (a) $u$ - valence; (b) $d$ - valence; (c) gluon; (d) $\bar{u}$; (e) $\bar{d}$ }
-\label{PDF_7.5GeV}
-\end{figure}
-\begin{figure}
-\includegraphics[width=7cm]{plots/uv_10000.pdf} 
-\includegraphics[width=7cm]{plots/dv_10000.pdf} 
-\includegraphics[width=7cm]{plots/gluon_10000.pdf} 
-\includegraphics[width=7cm]{plots/ubar_10000.pdf} 
-\includegraphics[width=7cm]{plots/dbar_10000.pdf} 
-\caption{NNLO PDF distributions at $Q^{2}$ = 10000$^{2}$ GeV$^{2}$: (a) $u$ - valence; (b) $d$ - valence; (c) gluon; (d) $\bar{u}$; (e) $\bar{d}$}
-\label{PDF_10000GeV}
-\end{figure}
-In these figures comparisons are made to the NNPDF3.0PDF set and the HERAPDF2.0 set.
-The shape of the $xd_{u_v}$ distribution is close to that of HERAPDF2.0 
-because of the dominance of HERA data in the fit. 
+shows the PDF distributions $x_{u_v},xd_{d_v},x\bar{u}, x\bar{d}, xg$ at $Q^{2}$ = 7.5$^{2}$ GeV$^{2}$,
+with the MC experimental uncertainties
 
+After this comparison at the level of PDFs, we move to a comparison between the theoretical
+predictions and the high-mass Drell-Yan measurements.
+%
+In Fig.~\ref{hmDY_2D} we show the
+comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
+for the first bin of the $(y_{ll},m_{ll})$ distribution.
+%
+In the lower panel we shows the ratio of theory over data, where the yellow band
+  corresponds to the correlated systematic uncertainties.
 
-Fig.~\ref{hmDY_2D} 
-shows the comparison between the high-mass Drell-Yan double differential distribution and 
-the predictions.
-\begin{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
 \centering
 \includegraphics[width=7cm]{plots/data_1.pdf} 
-\includegraphics[width=7cm]{plots/data_2.pdf} 
-\includegraphics[width=7cm]{plots/data_3.pdf} 
-\includegraphics[width=7cm]{plots/data_4.pdf} 
-\includegraphics[width=7cm]{plots/data_5.pdf} 
-\caption{Comparison between $\frac{d^{2}\sigma}{dm_{ll}d|y_{ll}|}$ for the high-mass Drell Yan data and the NNLO fit predictions.}
+\caption{Comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
+  for the first bin of the $(y_{ll},m_{ll})$ distribution.
+  %
+  The lower panel shows the ratio of theory over data, where the yellow band
+  corresponds to the correlated systematic uncertainties.
+  %
+  The band around the theory prediction corresponds to the total
+  theory uncertainty from the PDF fit.
+}
 \label{hmDY_2D}
 \end{figure}
-The $\chi^{2}$ values for the high-mass Drell Yan data and the output parameters from NNLO fit can be found in Table.~\ref{chi2_scan} 
-and Table.~\ref{par_scan} 
-respectively. 
-\begin{figure}
-\includegraphics[width=14cm]{plots/chi2_hmDY.pdf} 
-\caption{$\chi^{2}$ for high-mass Drell Yan data, for the NNLO fit}
-\label{chi2_scan}
-\end{figure}
-\begin{figure}
-\includegraphics[width=14cm]{plots/parameters.pdf} 
-\caption{PDF parameters for the NNLO fit.}
-\label{par_scan}
-\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The NNLO photon PDF distribution is shown 
-both at the starting scale (7.5 GeV$^{2}$) and at 10$^{4}$ GeV$^{2}$ 
- in Fig.~\ref{photon}, where it is also compared to an NLO extraction of the photon distribution.
-The $x$-range of the figure is restricted to the range of sensitivity of the high-mass Drell-Yan data;
-$0.045 < x < 0.35$. The NLO and NNLO photon PDFs are compatible over this range.
-\begin{figure}
-\includegraphics[width=7cm]{plots/photon_7_5.pdf} 
-\includegraphics[width=7cm]{plots/photon_10000.pdf} 
-\caption{Comparison between the photon PDF distributions at NNLO and NLO: (a) at the starting scale; (b) at the evolved scale.}
-\label{photon}
-\end{figure}
+The values of the $\chi^2$ for the HERA data and for
+the high-mass DY data for the NNLO fit
+are summarized in Table~\ref{tab:chi2fit}.
+%
+As can be seen, the agreement between data and the NNLO theory
+is very good for all the $m_{ll}$ of the 8 TeV Drell-Yan data.
+%
+For the sum of all the five rapidity bins, we find a $\chi^2=55$
+for 48 data points.
+%
+The quality of the agreement with the HERA inclusive structure functions
+is similarly good.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    Dataset  &   $\chi^2$ \\
+    \hline
+    \hline
+    hmDY  116 GeV $\ge y\ge $ 150 GeV  &  9.3/12 \\
+    hmDY  150 GeV $\ge y\ge $ 200 GeV  &  17/12 \\
+    hmDY  200 GeV $\ge y\ge $ 300 GeV  &  17/12 \\
+    hmDY  300 GeV $\ge y\ge $ 500 GeV  &  3.8/6 \\
+    hmDY  500 GeV $\ge y\ge $ 1500 GeV  &  4.2/6 \\
+    \hline
+    Correlated $\chi^2$ & 4.98 \\
+    Log penalty $\chi^2$  & -0.0004 \\
+    \hline
+    \hline
+    Total  & 55/48 \\
+    \hline
+    \end{tabular}
+  \caption{$\chi^{2}$ for high-mass Drell Yan data for the NNLO fit.
+    %
+    We show the results for the individual $m_{ll}$ bins
+    are well as for the total dataset.
+\label{tab:chi2fit}
+  }
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Comparison with the data
+Add comparison between Hessian and MC
+
+Check the effect of the various variations on the photon PDF, but separately variation per variation,
+showing the most important ones, and not stacking the error into a common error band
