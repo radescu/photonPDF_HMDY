@@ -26,7 +26,7 @@ is obtained by adding in quadrature all the model variations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
-\includegraphics[width=7cm]{plots/photon_comp_10000.pdf} 
+\includegraphics[width=7cm]{figs/photon_comp_10000.pdf} 
 \caption{Comparison between $\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
   analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR.}
 \label{photon_zoom}
@@ -67,7 +67,7 @@ In the lower panel we shows the ratio of theory over data, where the yellow band
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{plots/data_1.pdf} 
+\includegraphics[width=7cm]{figs/data_1.pdf} 
 \caption{Comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
   for the first bin of the $(y_{ll},m_{ll})$ distribution.
   %
@@ -125,7 +125,37 @@ is similarly good.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Add comparison between Hessian and MC
-
 Check the effect of the various variations on the photon PDF, but separately variation per variation,
 showing the most important ones, and not stacking the error into a common error band
+
+
+An important cross-check of the robustness of the estimated uncertainty for the photon
+PDF in this analysis is provided by the comparison of the Monte Carlo method
+with the Hessian method.
+%
+In Fig.~\ref{fig:photon_mc_vs_hessian} we show this comparison,
+which indicates a reasonable agreement between the two methods.
+%
+In particular, the central values of the photon obtained with the two fitting
+techniques are quite similar to each other.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/photon_mc_vs_hessian} 
+\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
+  Monte Carlo method with that from the Hessian method,
+  at $Q^2=10^4$ GeV$^2$.
+  %
+  In both cases the PDF error band corresponds to the 68\% confidence level
+  uncertainties. {\bf remove all other bands, update labels.}
+}
+\label{fig:photon_mc_vs_hessian}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Another interesting question that our analysis allows addressing is what is
+the impact of the high-mass Drell-Yan 8 TeV measurements on the quark and gluon
+PDFs.
+%
+For this purpose, 
