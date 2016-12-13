@@ -4,7 +4,13 @@
 In this section we present the main results of this work, namely the determination
 of the photon PDF $\gamma(x,Q^2)$ from a fit to the HERA structure functions
 and ATLAS high-mass Drell-Yan cross-sections.
-
+%
+In the following we will present results obtained using the
+double-differential $\lp m_{ll},y_{ll}\rp$ distributions, though
+we have verified that compatible results
+are obtained if the $\lp m_{ll},\Delta\eta_{ll}\rp$ ones are fitted
+instead.
+%
 Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings}, we find
 a $\chi^{2}/N_{\rm dof} = 1.18$,
 with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-yan data.
@@ -12,6 +18,8 @@ with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-yan data.
 First of all we present our results for the photon PDF, and then the impact
 of the DY measurements on the quark and gluon PDF.
 %
+We will denote as {\tt xFitter\_epHMDY} the results of this work.
+
 In Fig.~\ref{photon_zoom} we show our results
 for $\gamma(x,Q^2)$ for $Q^2=10^4$ GeV$^2$,
 compared with LUXqed~\cite{Manohar:2016nzj}, HKR~\cite{Harland-Lang:2016apc}
@@ -39,16 +47,28 @@ sensitive to the photon PDF, there is good agreement between the four determinat
 As compared to NNPDF3.0QED, the PDF uncertainties in the current analysis are reduced, though
 they are still not competitive with those of LUXqed.
 %
-We also note the excellent agreement between the LUXqed and the HKN determinations.
+We also note the excellent agreement between the LUXqed and the HKN calculations,
+illustrating the commonalities between the two approaches.
 
-We now turn the comparison to the quark and gluon PDFs.
+Next in Fig.~\ref{photon_zoom_ratio} we show the same comparison of different
+results for the photon PDF $x\gamma(x,Q^2)$ now normalized to the central value of {\tt xFitter\_hmDY}.
 %
-Here we will compare a reference fit with the same settings as in Sect.~\ref{sec:fitsettings}
-but with only the HERA inclusive structure function data with the results of this work,
-which also include the ATLAS high-mass DY measurements.
+This format allows better to compare the relative compatibility between the various results,
+as well as the relative size of the PDF uncertainties in each case.
 %
-We do not attempt to compare as well with the global fits, since our motivation here is only to
-gauge the impact on quarks and gluons of the high-mass Drell-Yan data.
+We observe that the experimental uncertainty on {\tt xFitter\_hmDY} is at the $\sim 30\%$ level,
+depending on the specific value of $x$, improving over NNPDF3.0QED but still far from the
+percent accuracy of the LUXqed calculation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
+\caption{Same as Fig.\ref{photon_zoom_ratio}, now where results
+  are shown normalized to the central value of {\tt xFitter\_hmDY}.
+  }
+\label{photon_zoom_ratio}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 After this comparison at the level of PDFs, we move to a comparison between the theoretical
 predictions and the high-mass Drell-Yan measurements.
@@ -144,8 +164,7 @@ techniques are quite similar to each other.
   at $Q^2=10^4$ GeV$^2$.
   %
   In both cases the PDF error band corresponds to the 68\% confidence level
-  uncertainties. {\bf remove all other bands, update labels.}
-}
+  uncertainties.}
 \label{fig:photon_mc_vs_hessian}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
