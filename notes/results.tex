@@ -65,109 +65,11 @@ percent accuracy of the LUXqed calculation.
 \includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
 \caption{Same as Fig.\ref{photon_zoom_ratio}, now where results
   are shown normalized to the central value of {\tt xFitter\_hmDY}.
+  {\bf update with final result, missing xFitter band.}
   }
 \label{photon_zoom_ratio}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-After this comparison at the level of PDFs, we move to a comparison between the theoretical
-predictions and the high-mass Drell-Yan measurements.
-%
-In Fig.~\ref{hmDY_2D} we show the
-comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
-for the first bin of the $(y_{ll},m_{ll})$ distribution.
-%
-In the lower panel we shows the ratio of theory over data, where the yellow band
-  corresponds to the correlated systematic uncertainties.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-\centering
-\includegraphics[width=7cm]{figs/data_1.pdf} 
-\caption{Comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
-  for the first bin of the $(y_{ll},m_{ll})$ distribution.
-  %
-  The lower panel shows the ratio of theory over data, where the yellow band
-  corresponds to the correlated systematic uncertainties.
-  %
-  The band around the theory prediction corresponds to the total
-  theory uncertainty from the PDF fit.
-}
-\label{hmDY_2D}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The values of the $\chi^2$ for the HERA data and for
-the high-mass DY data for the NNLO fit
-are summarized in Table~\ref{tab:chi2fit}.
-%
-As can be seen, the agreement between data and the NNLO theory
-is very good for all the $m_{ll}$ of the 8 TeV Drell-Yan data.
-%
-For the sum of all the five rapidity bins, we find a $\chi^2=55$
-for 48 data points.
-%
-The quality of the agreement with the HERA inclusive structure functions
-is similarly good.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[h]
-  \centering
-  \begin{tabular}{|c|c|}
-    \hline
-    Dataset  &   $\chi^2$ \\
-    \hline
-    \hline
-    hmDY  116 GeV $\ge y\ge $ 150 GeV  &  9.3/12 \\
-    hmDY  150 GeV $\ge y\ge $ 200 GeV  &  17/12 \\
-    hmDY  200 GeV $\ge y\ge $ 300 GeV  &  17/12 \\
-    hmDY  300 GeV $\ge y\ge $ 500 GeV  &  3.8/6 \\
-    hmDY  500 GeV $\ge y\ge $ 1500 GeV  &  4.2/6 \\
-    \hline
-    Correlated $\chi^2$ & 4.98 \\
-    Log penalty $\chi^2$  & -0.0004 \\
-    \hline
-    \hline
-    Total  & 55/48 \\
-    \hline
-    \end{tabular}
-  \caption{$\chi^{2}$ for high-mass Drell Yan data for the NNLO fit.
-    %
-    We show the results for the individual $m_{ll}$ bins
-    are well as for the total dataset.
-\label{tab:chi2fit}
-  }
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-Check the effect of the various variations on the photon PDF, but separately variation per variation,
-showing the most important ones, and not stacking the error into a common error band
-
-
-An important cross-check of the robustness of the estimated uncertainty for the photon
-PDF in this analysis is provided by the comparison of the Monte Carlo method
-with the Hessian method.
-%
-In Fig.~\ref{fig:photon_mc_vs_hessian} we show this comparison,
-which indicates a reasonable agreement between the two methods.
-%
-In particular, the central values of the photon obtained with the two fitting
-techniques are quite similar to each other.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-\centering
-\includegraphics[width=7cm]{figs/photon_mc_vs_hessian} 
-\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
-  Monte Carlo method with that from the Hessian method,
-  at $Q^2=10^4$ GeV$^2$.
-  %
-  In both cases the PDF error band corresponds to the 68\% confidence level
-  uncertainties.}
-\label{fig:photon_mc_vs_hessian}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Another interesting question that our analysis allows addressing is what is
 the impact of the high-mass Drell-Yan 8 TeV measurements on the quark and gluon
@@ -206,4 +108,132 @@ is also marked.
 \label{fig:QCDfit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+After this comparison at the level of PDFs, we move to a comparison between the theoretical
+predictions and the high-mass Drell-Yan measurements.
+%
+First of all, the values of the $\chi^2$ for the HERA structure functions
+and for the high-mass DY data for the NNLO fit
+are summarized in Table~\ref{tab:chi2fit}.
+%
+As can be seen, the agreement between data and the NNLO theory
+is very good for all the $m_{ll}$ of the 8 TeV Drell-Yan data.
+%
+For the sum of all the five rapidity bins, we find a $\chi^2=55$
+for 48 data points.
+%
+The quality of the agreement with the HERA inclusive structure functions
+is similarly good.
+%
+In the calculation of the total $\chi^2$, the correlations between the different
+$m_{ll}$ bins have been taken into account.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    Dataset  &   $\chi^2$ \\
+    \hline
+    \hline
+    hmDY  116 GeV $\ge m_{ll} \ge $ 150 GeV  &  9.3/12 \\
+    hmDY  150 GeV $\ge m_{ll} \ge $ 200 GeV  &  17/12 \\
+    hmDY  200 GeV $\ge m_{ll} \ge $ 300 GeV  &  17/12 \\
+    hmDY  300 GeV $\ge m_{ll} \ge $ 500 GeV  &  3.8/6 \\
+    hmDY  500 GeV $\ge m_{ll} \ge $ 1500 GeV  &  4.2/6 \\
+    \hline
+    Correlated $\chi^2$ & 4.98 \\
+    Log penalty $\chi^2$  & -0.0004 \\
+    \hline
+    \hline
+    Total  & 55/48 \\
+    \hline
+    \end{tabular}
+  \caption{$\chi^{2}$ for high-mass Drell Yan data for the NNLO fit.
+    %
+    We show the results for the individual $m_{ll}$ bins
+    are well as for the total dataset. {\bf updated
+    with HERA numbers}
+\label{tab:chi2fit}
+  }
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Next, in Fig.~\ref{hmDY_2D} we show the
+comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
+for the  two representative bins of of the $(y_{ll},m_{ll})$ distribution,
+  in particular the first and fourth bins.
+%
+In the lower panel we shows the ratio of theory over data, where the yellow band
+corresponds to the correlated systematic uncertainties.
+%
+The band around the theory prediction corresponds to the total
+theory uncertainty from the PDF fit.
+%
+The shifts due to systematic uncertainties are indicated by a dashed line.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/data_1.pdf}
+\includegraphics[width=7cm]{figs/data_404-1.pdf} 
+\caption{Comparison between the ATLAS high-mass Drell Yan data and the NNLO fit predictions
+  for two representative bins of of the $(y_{ll},m_{ll})$ distribution,
+  in particular the first and fourth bins.
+  %
+  The lower panel shows the ratio of theory over data, where the yellow band
+  corresponds to the correlated systematic uncertainties.
+  %
+  The band around the theory prediction corresponds to the total
+  theory uncertainty from the PDF fit. {\bf missing shifts? Remove
+  luminosity info}
+}
+\label{hmDY_2D}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As we can see from Fig.~\ref{hmDY_2D}, once the shifts due to experimental systematic
+uncertainties have been accounted for, there is a reasonable agreement
+between the ATLAS data and the NNLO theory predictions.
+%
+This agreement is consistent the values of the $\chi^2$ reported in
+Table~\ref{tab:chi2fit}, and extends for other $m_{ll}$ bins.
+%
+We emphasize the high precision of this measurement, with experimental
+errors at the few percent level in most of the kinematical range available.
+
+Following this presentation of the main features of this
+{\tt xFitter\_hmDY} analysis, now we turn to discuss its stability
+and study the impact of a number of model, parametrization,
+and procedural uncertainties.
+
+\subsection{Model, parametrization, and procedural uncertainties}
+
+Check the effect of the various variations on the photon PDF, but separately variation per variation,
+showing the most important ones, and not stacking the error into a common error band
+
+An important cross-check of the robustness of the estimated uncertainty for the photon
+PDF in this analysis is provided by the comparison of the Monte Carlo method
+with the Hessian method.
+%
+In Fig.~\ref{fig:photon_mc_vs_hessian} we show this comparison,
+which indicates a reasonable agreement between the two methods.
+%
+In particular, the central values of the photon obtained with the two fitting
+techniques are quite similar to each other.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/photon_mc_vs_hessian} 
+\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
+  Monte Carlo method with that from the Hessian method,
+  at $Q^2=10^4$ GeV$^2$.
+  %
+  In both cases the PDF error band corresponds to the 68\% confidence level
+  uncertainties.}
+\label{fig:photon_mc_vs_hessian}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
