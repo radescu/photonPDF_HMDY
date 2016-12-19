@@ -15,8 +15,8 @@ computation of the DIS structure functions. In the following we will
 first discuss how to generalize the coupling evolution equations
 (finding that the presence of the mixed QCD+QED terms leads to a
 negligible difference in the running), we will then turn to the DGLAP,
-and finally we will consider both Neutral-Current (NC) and
-Charged-Current (CC) DIS structure functions.
+and finally we will consider both neutral-current and charged-current
+DIS structure functions.
 
 \subsection{Evolution of the couplings}
 
@@ -29,7 +29,7 @@ equations read:
 \begin{equation}\label{CoupledEq}
 \begin{array}{rcl}
 \displaystyle \mu^2\frac{\partial \alpha_s}{\partial \mu^2} &=& \displaystyle
-                                                \beta^{\rm QCD}(\alpha_s,\alpha)\,.\\
+                                                \beta^{\rm QCD}(\alpha_s,\alpha)\,,\\
 \\
 \displaystyle \mu^2\frac{\partial \alpha}{\partial \mu^2} &=& \displaystyle \beta^{\rm QED}(\alpha_s,\alpha)\,.
 \end{array}
@@ -61,7 +61,7 @@ quark and leptons flavours, respectively.
 
 Eq.~(\ref{CoupledEq}) can be written in the vectorial form:
 \begin{equation}\label{CoupledEqVect}
-\mu^2\frac{\partial {\bm \alpha}}{\partial \mu^2} = {\bm \beta}\left({\bm \alpha}(t)\right)\,,
+\mu^2\frac{\partial {\bm \alpha}}{\partial \mu^2} = {\bm \beta}\left({\bm \alpha}(\mu)\right)\,,
 \end{equation}
 with:
 \begin{equation}
@@ -70,7 +70,7 @@ with:
 Eq.~(\ref{CoupledEqVect}) is an Ordinary Differential Equation that
 can be numerically solved using the Runge-Kutta method.
 
-The first two terms in eq.~(\ref{eq:NewBetaTerms}) are repsonsible for
+The first two terms in eq.~(\ref{eq:NewBetaTerms}) are responsible for
 the coupling of the evolution of $\alpha_s$ and $\alpha$ and thus they
 introduce a complication that affects both the implementation and the
 performance of the relative code. One can then ask what is the effect
@@ -82,7 +82,7 @@ $\beta$-functions. The evolution is performed between the $Z$ mass
 scale $M_Z$ and 10 TeV with 5 active quark flavours and 3 active
 lepton flavours and uses as boundary conditions
 $\alpha_s(M_Z) = 0.118$ and $\alpha(M_Z) = 1/128$. The two curves in
-Fig.~\ref{fig:CouplingEvol} are normalized to the respective curve
+Fig.~\ref{fig:CouplingEvol} are normalised to the respective curve
 without mixing terms. It is clear that the mixed terms lead to tiny
 relative differences that are at most of $\mathcal{O}(10^{-4})$ at 10
 TeV for $\alpha_s$ and $\mathcal{O}(10^{-3})$ at the same scale for
@@ -96,7 +96,7 @@ introducing any significant inaccuracy.
 \includegraphics[width=6cm,angle=270]{figs/couplings.eps} 
 \caption{Comparison between the evolution of the QCD and QED couplings
   $\alpha_s$ and $\alpha$ including and excluding the mixed terms in
-  the respective $\beta$-functions. The curves are normalized to the
+  the respective $\beta$-functions. The curves are normalised to the
   evolution without mixing terms.}
 \label{fig:CouplingEvol}
 \end{figure}
@@ -107,8 +107,8 @@ introducing any significant inaccuracy.
 In this section we address the question of implementing the full NLO
 QCD+QED corrections to the DGLAP evolution equations. Here we limit
 ourselves to consider only the photon PDF without including the
-leptons. The generalization to the full set of PDFs can be achieved
-realtively easily following the same steps discussed below.
+leptons. The generalisation to the full set of PDFs can be achieved
+relatively easily following the same steps discussed below.
 
 The first step towards an efficient implementation of the solution of
 the DGLAP equations in the presence of QED corrections is the adoption
@@ -170,7 +170,7 @@ The structure of the pure QCD splitting function matrix
 $\widetilde{P}$ as well as the first term in $\bar{P}$, which
 represents the LO QED correction, in the basis given in
 eq.~(\ref{eq:EvolBasis}) was discussed in
-Ref.~\cite{Bertone:2015lqa}. It is now necessary to analyze the
+Ref.~\cite{Bertone:2015lqa}. It is now necessary to analyse the
 structure of the two additional terms $\mathcal{P}^{(1,1)}$ and
 $\mathcal{P}^{(0,2)}$. Let us start we the
 $\mathcal{O}(\alpha_s\alpha)$ correction. The resulting evolution
@@ -265,10 +265,9 @@ at the most, here they appear up to the fourth power. As a consequence
 we need to introduce the new couplings:
 \begin{equation}
 \begin{array}{l}
-e_{\Sigma}^4 = N_c(e_u^4 n_{u} + e_d^4
-  n_{d})\,,\\
-\\\delta_e^4 = N_c(e_u^4 n_{u} - e_d^4
-  n_{d})\,.
++e_{\Sigma}^4 = N_c(n_{u} e_u^4 + n_{d} e_d^4)\,,\\
++\\
++\delta_e^4 = N_c(n_{u} e_u^4 - n_{d} e_d^4)\,.
 \end{array}
 \end{equation}
 
@@ -368,7 +367,7 @@ as a function of the final state invariant mass $M_X$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \includegraphics[width=8cm]{figs/lumi_13tev.pdf} 
-\caption{$\gamma\gamma$ lunimosity at $\sqrt{s} = 13$ TeV as a
+\caption{$\gamma\gamma$ luminosity at $\sqrt{s} = 13$ TeV as a
   function of the final state invariant mass $M_X$.}
 \label{fig:GammaGammaLumi}
 \end{figure}
@@ -390,7 +389,7 @@ $\Phi_{\gamma\gamma}$ by almost 5\% at relatively small values of
 $M_X$, while the suppression gradually shrinks to 1-2\% as $M_X$
 increases. As expected, most of the effect is ascribable to the
 $\mathcal{O}(\alpha_s\alpha)$ corrections, while the
-$\mathcal{O}(\alpha^2)$ ones have a substatially smaller impact.
+$\mathcal{O}(\alpha^2)$ ones have a substantially smaller impact.
 
 \subsection{DIS structure functions}
 
@@ -408,6 +407,134 @@ or not.
 The main complication arises from the flavour structure. In fact, due
 to the fact that the coupling of the photon is proportional to the
 squared charge of the parton to which it couples (a quark or a
-lepton), in the case of quarks the isospin symmetry is broken.
+lepton), in the case of quarks the isospin symmetry is broken. In the
+following we will address the case of Neutral-Current (NC), where
+lepton and proton exchange a neutral boson $\gamma^*/Z$, and
+Charged-Current (CC) structure functions separately, where instead
+lepton and proton exchange a charged $W$ boson.
 
+\subsubsection{NC structure functions}
+
+In this section we concentrate on the $\mathcal{O}(\alpha)$
+contributions to the generic NC structure function $F$. Due to the
+fact that to this order there is no mixing between QCD and QED
+couplings, such corrections can easily be derived from the structure
+of the $\mathcal{O}(\alpha_s)$ corrections. The procedure is very
+simple and it amounts of adjusting the colour factors by setting
+$C_F=T_R=1$ and $C_A=0$ in the $\mathcal{O}(\alpha_s)$
+expressions. Referring $e.g.$ to the expressions reported in
+Ref.~\cite{Ellis:1991qj}, one simply has:
+\begin{equation}\label{eq:alphaCFs}
+\begin{array}{rcl}
+\displaystyle C_{i;q}^{(\alpha)} &=& \displaystyle \frac{C_{i;q}^{(\alpha_s)}}{C_F}\\
+\\
+\displaystyle C_{i;\gamma}^{(\alpha)} &=& \displaystyle \frac{C_{i;g}^{(\alpha_s)}}{T_R}
+\end{array}\quad i = 2,L,3\,.
+\end{equation}
+In addition, for constructing the corresponding structure functions,
+considering that the coupling between a photon and a quark of flavour
+$q$ is proportional to $e_q^2$, one also needs to adjust the couplings
+by using:
+ \begin{equation}
+\begin{array}{rcl}
+\widetilde{B}_q(Q) &=& B_q(Q)e_q^2\quad\mbox{for}\quad F_2,F_L\,, \\
+\\
+\widetilde{D}_q(Q) &=& D_q(Q)e_q^2\quad\mbox{for}\quad F_3\,, \\
+\end{array}
+\end{equation}
+where $B_q(Q)$ and $D_q(Q)$ are the NC couplings (see $e.g.$
+Ref.~\cite{Adloff:2003uh}). With these simple rules at hand, one can
+write the $\mathcal{O}(\alpha)$ contributions to the NC structure
+functions as:
+\begin{equation}
+\begin{array}{rcl}
+F_{2,L}^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{B}_q\left[C_{2,L;q}^{(\alpha)}\otimes
+(q+\overline{q}) + C_{2,L;\gamma}^{(\alpha)} \otimes \gamma
+                         \right]\,,\\
+\\
+F_3^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{D}_q\left[C_{3;q}^{(\alpha)}\otimes
+(q-\overline{q}) + C_{3;\gamma}^{(\alpha)} \otimes \gamma
+                         \right]\,.
+\end{array}
+\end{equation}
+
+It is important to notice that the same structure holds for both
+massless and massive structure functions. This is relevant for the
+construction of the FONLL structure functions.
+
+\subsubsection{CC structure functions}
+
+The CC case the procedure to obtain the expressions of the
+$\mathcal{O}(\alpha)$ is exactly the same of the NC case, that is
+eq.~(\ref{eq:alphaCFs}). However, this case is more complicated
+because the flavour structure of the respective structure functions is
+more complex. Taking into account the presence of a factor $e_q^2$
+every time that a quark of flavour $q$ couples to the photon, the CC
+structure functions $F_2$ and $F_L$ for the productions of a neutrino
+or an antineutrino take the form:
+\begin{equation}\label{compactNu}
+\begin{array}{rcl}
+F_{2,L}^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
+                              \sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2D +e_U^2\overline{U}\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
+\\
+F_{2,L}^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
+\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2\overline{D}
+    +e_U^2U\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
+\end{array}
+\end{equation}
+where $V_{UD}$ are the elements of the CKM matrix. The flavour
+structure for $F_3$ instead look slightly different:
+\begin{equation}\label{compactNuF3}
+\begin{array}{rcl}
+F_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
+                              \sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(e_D^2D -e_U^2\overline{U}\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
+\\
+F_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
+\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(-e_D^2\overline{D}
+    +e_U^2U\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
+\end{array}
+\end{equation}
+
+As mentioned above, the flavour structure of the CC structure
+functions is more complex. This is the consequence of the introduction
+of the QED isospin symmetry breaking associated to the mixing produced
+by the CKM matrix. In order to simplify the implementation, it is of
+great advantage to approximate the CKM matrix as a 3 by 3 unitary
+matrix. The inaccuracy introduced in doing so is of the order of
+$\alpha$ times the value of off-diagonal elements of the CKM matrix
+and thus it is expected to be very small.
+
+As an illustration of the impact of the $\mathcal{O}(\alpha)$
+correction on the DIS structure functions, Fig.~\ref{fig:StructFuncs}
+shows the effect of introducing these contributions on the pure QCD
+computation at NLO. The plots are produced by evolving the {\tt
+  NNPDF30\_nlo\_as\_0118\_qed} PDF set~\cite{Bertone:2016ume} from 1
+GeV to 100 GeV including the NLO CD+QED corrections discussed in the
+previous section and using the resulting evolved PDFs to compute the
+NC (left panel) and the CC (right panel) DIS structure functions in
+the FONLL-B scheme (NLO) including the $\mathcal{O}(\alpha)$
+corrections to the coefficient functions discussed above. The
+predictions are shown normalised to the pure QCD computation where the
+QED corrections are absent both in the evolution and in the
+computation of the structure functions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_NC.eps}
+\includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_CC.eps}
+\caption{}
+\label{fig:StructFuncs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It is clear that the impact of the full NLO QCD+QED corrections is
+pretty small especially in the low-$x$ region where QCD dominates and
+the impact of the QED contributions is well below 1\%. In the
+large-$x$ region, instead, the presence of a contribution proportional
+to the photon PDF is more significant because of the relative
+suppression of the QCD distributions (quarks and gluon) and the impact
+of the QED corrections reaches the 2\% level.  It should be stressed
+that the behaviour around $x=10^{-2}$ of the CC $F_3$ (green curve in
+the right panel) is driven by a change of sign of the predictions so
+that the ratio diverges.
 
