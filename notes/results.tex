@@ -1,11 +1,26 @@
 \section{Results}
 \label{sec:results}
 
-In this section we present the main results of this work, namely the determination
+In this section we present the main results of this work,
+namely the determination
 of the photon PDF $\gamma(x,Q^2)$ from a fit to the HERA structure functions
 and ATLAS high-mass Drell-Yan cross-sections.
 %
-In the following we will present results obtained using the
+First of all, we show the resulting photon PDF and compare with
+with other recent extractions.
+%
+We also quantify the impact of the hmDY data on the quark and
+gluon PDFs.
+%
+Then we assess the model, parametrization
+and procedural uncertainties that affect our fit of $\gamma(x,Q^2)$.
+%
+Finally, we discuss the perturbative stability by comparing
+NLO and NNLO results.
+
+\subsection{The photon PDF from high-mass DY data}
+
+In the following, we will present results obtained using the
 double-differential $\lp m_{ll},y_{ll}\rp$ distributions, though
 we have verified that compatible results
 are obtained if the $\lp m_{ll},\Delta\eta_{ll}\rp$ ones are fitted
@@ -34,7 +49,7 @@ is obtained by adding in quadrature all the model variations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
-\includegraphics[width=7cm]{figs/photon_comp_10000.pdf} 
+\includegraphics[width=8cm]{figs/photon_comp_10000.pdf} 
 \caption{Comparison between $\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
   analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR.}
 \label{photon_zoom}
@@ -62,7 +77,7 @@ percent accuracy of the LUXqed calculation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
-\includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
+\includegraphics[width=8cm]{figs/photon_comp_10000_ratio.pdf} 
 \caption{Same as Fig.\ref{photon_zoom_ratio}, now where results
   are shown normalized to the central value of {\tt xFitter\_hmDY}.
 %  {\bf update with final result, missing xFitter band.}
@@ -98,8 +113,8 @@ is also marked.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ubar_ratio}
-\includegraphics[width=7cm]{figs/q2_10000_pdf_dbar_ratio} 
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ubar_ratio}
+\includegraphics[width=8cm]{figs/q2_10000_pdf_dbar_ratio} 
 \caption{The impact of the ATLAS high-mass 8 TeV Drell-Yan measurements
   on the $x\bar{u}$ and $x\bar{d}$ sea quark PDFs at $Q^2=10^4$ GeV$^2$.
   %
@@ -175,8 +190,8 @@ The shifts due to systematic uncertainties are indicated by a dashed line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{figs/data_rap1.pdf}
-\includegraphics[width=7cm]{figs/data_rap3.pdf} 
+\includegraphics[width=8cm]{figs/data_rap1.pdf}
+\includegraphics[width=8cm]{figs/data_rap3.pdf} 
 \caption{The ratio between the central value of the NNLO fit results
   and the ATLAS high-mass Drell Yan data
   for two representative bins of of the $(y_{ll},m_{ll})$ distribution,
@@ -229,8 +244,8 @@ techniques are quite similar to each other.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_1}
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_2}
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_1}
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_2}
 \caption{ Comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
   analysis with the fits for which each input parameter has been varied.
  The following variations have been considered: $r_s$, $Q^2_{cut}$, $\alpha_S$ (left) and
@@ -242,51 +257,70 @@ $m_c$, $m_b$, $Q_0^2$ (right).
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_param_var.pdf}
-\caption{ Comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
-  analysis with the fits for which each input parameter has been varied.
- The following variants of parametric form has been considered: more flexibility to the gluon distribution
-(labeled by $+neg$), adding on top $D_{u_v}$ and then $D_{\bar{u}}+D_{\bar{d}}$ 
-  %                   
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_param_var.pdf}
+\includegraphics[width=8cm]{figs/photon_mc_vs_hessian} 
+\caption{Left: the impact on $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
+  in fits where a number of additional free parameters are allowed
+  in the PDF parametrization as compared to Eq.~(\ref{eq:param}).
+  %
+  In particular, the parametrization variations that have been explored
+  are: more flexibility to the gluon distribution, allowing
+  it to become negative,
+ (labeled by ${\rm neg}$), adding on top $D_{u_v}$, and then $D_{\bar{u}}+D_{\bar{d}}$.
+ %
+ Right: comparison between the fits of $x\gamma(x,Q^2)$ obtained with the
+  Monte Carlo and the Hessian methods at $Q^2=10^4$ GeV$^2$.
+  %
+  In both cases, the PDF error band corresponds to the 68\% confidence level
+  uncertainties.
 }
 \label{fig:param}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%         
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-\centering
-\includegraphics[width=7cm]{figs/photon_mc_vs_hessian} 
-\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
-  Monte Carlo method with that from the Hessian method,
-  at $Q^2=10^4$ GeV$^2$.
-  %
-  In both cases the PDF error band corresponds to the 68\% confidence level
-  uncertainties.}
 \label{fig:photon_mc_vs_hessian}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                 
-\subsection{Check for perturbative stability}
+\subsection{Perturbative stability of $x\gamma(x,Q^2)$}
 
-An interesting check of the perturbative stability is the 
-comparison between fits using the NLO and NNLO QCD evolutions,
-although in both cases the NLO QED is used. The results of
-these checks show that fit is stable aunder these checks
-and they are ilustrated in \ref{fig:nlo_vs_nnlo}. 
+An interesting exercise
+is to quantify the perturbative stability
+of our fit of the photon PDF $x\gamma(x,Q^2)$ with respect
+to the inclusion or not of NNLO QCD corrections in the analysis.
+%
+To study this point, in Fig.~\ref{fig:nlo_vs_nnlo} we show
+a comparison between our baseline
+fit of $x\gamma(x,Q^2)$, based on NNLO QCD + NLO QED theory,
+with the central value resulting from a fit based instead on
+NLO QCD theory (with the QED part identical in both cases).
+%
+For the NNLO fit, only the experimental PDF
+  uncertainties, estimated using the Monte Carlo method, are shown.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
+  From the comparison of Fig.~\ref{fig:nlo_vs_nnlo}, we find that
+  the our fit of $x\gamma(x,Q^2)$ exhibits a reasonable
+  perturbative stability, since the central value of the
+  NLO fit is always contained in the one-sigma PDF
+  uncertainty bad of our baseline determination based
+  on NNLO QCD + NLO QED.
+  %
+  The agreement between the two fits is particularly good
+  for $x\gsim 0.1$, where the two central values are
+  very close to each other.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
-\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_ratio_NLOvsNNLO.pdf}
-\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
-NNLO QCD evolution (band) vs NLO QCD evolution (line), both coupled to 
-QED NLO effects. Distributions are shown on the left and the relative 
-uncertainties on the right.
-  % 
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_ratio_NLOvsNNLO.pdf}
+\caption{Left: comparison between our baseline
+  fit of $x\gamma(x,Q^2)$ (NNLO QCD + NLO QED) with the central value
+  resulting from a NLO QCD+QED fit, at $Q^2=10^4$ GeV$^2$.
+  %
+  In the former case, only the experimental (Monte Carlo) PDF
+  uncertainties are shown.
+  %
+  Right: same comparison now normalized to the central value
+  of the NNLO baseline fit.
 }
 \label{fig:nlo_vs_nnlo}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
