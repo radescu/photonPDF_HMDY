@@ -65,7 +65,7 @@ percent accuracy of the LUXqed calculation.
 \includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
 \caption{Same as Fig.\ref{photon_zoom_ratio}, now where results
   are shown normalized to the central value of {\tt xFitter\_hmDY}.
-  {\bf update with final result, missing xFitter band.}
+%  {\bf update with final result, missing xFitter band.}
   }
 \label{photon_zoom_ratio}
 \end{figure}
@@ -211,7 +211,9 @@ and procedural uncertainties.
 \subsection{Model, parametrization, and procedural uncertainties}
 
 Check the effect of the various variations on the photon PDF, but separately variation per variation,
-showing the most important ones, and not stacking the error into a common error band
+showing the most important ones, and not stacking the error into a common error band. Figures \ref{fig:model}
+and \ref{fig:param} show that these variations are within the experimental uncertainty.
+
 
 An important cross-check of the robustness of the estimated uncertainty for the photon
 PDF in this analysis is provided by the comparison of the Monte Carlo method
@@ -223,6 +225,34 @@ which indicates a reasonable agreement between the two methods.
 In particular, the central values of the photon obtained with the two fitting
 techniques are quite similar to each other.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_1}
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_2}
+\caption{ Comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+  analysis with the fits for which each input parameter has been varied.
+ The following variations have been considered: $r_s$, $Q^2_{cut}$, $\alpha_S$ (left) and
+$m_c$, $m_b$, $Q_0^2$ (right).
+  %                   
+}
+\label{fig:model}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_param_var.pdf}
+\caption{ Comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+  analysis with the fits for which each input parameter has been varied.
+ The following variants of parametric form has been considered: more flexibility to the gluon distribution
+(labeled by $+neg$), adding on top $D_{u_v}$ and then $D_{\bar{u}}+D_{\bar{d}}$ 
+  %                   
+}
+\label{fig:param}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
@@ -238,3 +268,25 @@ techniques are quite similar to each other.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                 
+\subsection{Check for perturbative stability}
+
+An interesting check of the perturbative stability is the 
+comparison between fits using the NLO and NNLO QCD evolutions,
+although in both cases the NLO QED is used. The results of
+these checks show that fit is stable aunder these checks
+and they are ilustrated in \ref{fig:nlo_vs_nnlo}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_ratio_NLOvsNNLO.pdf}
+\caption{Comparison between $x\gamma(x,Q^2)$ obtained with the
+NNLO QCD evolution (band) vs NLO QCD evolution (line), both coupled to 
+QED NLO effects. Distributions are shown on the left and the relative 
+uncertainties on the right.
+  % 
+}
+\label{fig:nlo_vs_nnlo}
+\end{figure}
