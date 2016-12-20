@@ -1,56 +1,47 @@
 \appendix
 
-\section{Implementation of
-NLO QED corrections in APFEL}
+\section{Implementation of NLO QED corrections in APFEL}
 \label{sec:appendixAPFEL}
 
 In this appendix we present the details of the implementation of the
-joint NLO QCD+QED corrections in the {\tt APFEL}
-program.
+combined NLO QCD+QED corrections in the {\tt APFEL} program.
 %
-As discussed in~\cite{Bertone:2013vaa}, the implementation of LO
-QED effects in the DGLAP evolution
-equations that govern PDF evolution
-presents many simplifications, in particular the fact that
-QED and QCD corrections do not mix and therefore the DGLAP
-equations as well as the running of $\alpha_s$ and $\alpha$ are
-decoupled.
+As discussed in Ref.~\cite{Bertone:2013vaa}, the implementation of the
+LO QED corrections to the DGLAP evolution equations presents many
+simplifications, in particular the fact that QED and QCD corrections
+do not mix and therefore the DGLAP equations as well as the evolution
+equations for $\alpha_s$ and $\alpha$ are decoupled.
 %
-On the other hand, when going to NLO in the
-QED coupling $\alpha$ this property does not hold
-anymore, and then the QED and QCD contributions mix both in the DGLAP and in
-the running coupling  equations.
+When going to NLO this property does not hold anymore and QED and QCD
+contributions mix both in the DGLAP and in the coupling evolution
+equations.
 %
-On top of this complication, these mixed corrections induce the
-presence of diagrams in which a real photon is present either in the
-initial or in the final state, requiring modifications in the
-DIS coefficient functions as compared to the LO QED case.
+On top of this complication, QED corrections induce the presence of
+diagrams in which a real photon is present either in the initial or in
+the final state and that have to be included in the computation of the
+DIS structure functions.
 
-In the following, we first of all discuss how to generalize the 
- equations  for the running
-of the QCD and QCD couplings, finding that the mixed QCD+QED
-terms have a negligible impact.
+In the following, we first discuss how to generalize the equations for
+the running of the QCD and QED couplings, finding that the mixed
+QCD+QED terms have a negligible impact.
 %
-Then we explain how the DGLAP evolution equations can be generalized
-to account for NLO QED effects, in particular requiring the
-introduction of a new PDF basis.
+Then we explain how the DGLAP evolution equations can be generalised
+to account for the full NLO QCD+QED effects.
 %
-Finally, we discuss the modifications induced by NLO QED
-corrections in both neutral-current
-and charged-current DIS structure functions, in particular
-through the appearance of photon-initiated contributions
-to the coefficient functions.
+Finally, we discuss the modifications induced by the NLO QED
+corrections in both the neutral-current and the charged-current DIS
+structure functions and that lead the appearance of photon-initiated
+contributions.
 
 \subsection{Evolution of the couplings}
 
 As mentioned above, the NLO QCD+QED corrections induce the presence of
-mixed terms at the level of the running of the corresponding
-couplings.
+mixed terms in the evolution equations of $\alpha_s$ and $\alpha$.
 %
-That is, the QCD $\beta$-function receives corrections proportional to
-$\alpha$ and, vice-versa, the QED $\beta$-function receives
-corrections proportional to $\alpha_s$, in such a way that the
-coupling evolution equations read:
+In practice, the QCD $\beta$-function receives corrections
+proportional to $\alpha$ and, vice-versa, the QED $\beta$-function
+receives corrections proportional to $\alpha_s$, in such a way that
+the coupling evolution equations read:
 \begin{equation}\label{CoupledEq}
 \begin{array}{rcl}
 \displaystyle \mu^2\frac{\partial \alpha_s}{\partial \mu^2} &=& \displaystyle
@@ -67,21 +58,20 @@ $\beta$-functions can be expanded as:
 \end{equation}
 and:
 \begin{equation}
-\beta^{\rm QED}(\alpha_s,\alpha) = -\alpha\left[\beta_0^{(\alpha)}\left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha\alpha_s)}\left(\frac{\alpha}{4\pi}\right) \left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha^2)}\left(\frac{\alpha}{4\pi}\right)^2+\dots\right]\,,
+\beta^{\rm QED}(\alpha_s,\alpha) = -\alpha\left[\beta_0^{(\alpha)}\left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha\alpha_s)}\left(\frac{\alpha}{4\pi}\right) \left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha^2)}\left(\frac{\alpha}{4\pi}\right)^2+\dots\right]\,.
 \end{equation}
-where the ``new'' terms are the mixing terms
-$\beta_1^{(\alpha_s\alpha)}$ and $\beta_1^{(\alpha\alpha_s)}$, and the
-pure NLO QED term $\beta_1^{(\alpha^2)}$ have been computed in
+where the mixing terms, $\beta_1^{(\alpha_s\alpha)}$ and
+$\beta_1^{(\alpha\alpha_s)}$, and the pure NLO QED term,
+$\beta_1^{(\alpha^2)}$, can be found in
 Ref.~\cite{Surguladze:1996hx}. Taking into account a factor four due
-the different definitions of the expansion parameter and writing
-explicitly the color factors one finds:
+the different definitions of the expansion parameters one finds:
 \begin{equation}\label{eq:NewBetaTerms}
 \beta_1^{(\alpha_s\alpha)} = -2\sum_{i=1}^{n_f}
 e_q^2\,\qquad\beta_1^{(\alpha\alpha_s)} = -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2\,,\qquad \beta_1^{(\alpha^2)} = -4\left(n_l+N_c\sum_{i=1}^{n_f} e_q^2\right)\,.
 \end{equation}
-where $N_c=3$ is the number of colors, $e_q$ is the electric charge of
-the quark flavour $q$, and $n_f$ and $n_l$ are the numbers of active
-quark and leptons flavours, respectively.
+where $N_c=3$ is the number of colours, $e_q$ is the electric charge
+of the quark flavour $q$, and $n_f$ and $n_l$ are the number of active
+quark and lepton flavours, respectively.
 
 Eq.~(\ref{CoupledEq}) can be written in the vectorial form:
 \begin{equation}\label{CoupledEqVect}
@@ -92,7 +82,7 @@ with:
   {\bm \alpha} = {\alpha_s \choose \alpha}\qquad\mbox{and}\qquad  {\bm \beta} = {\beta^{\rm QCD} \choose \beta^{\rm QED}}\,.
 \end{equation}
 Eq.~(\ref{CoupledEqVect}) is an ordinary differential equation that
-can be numerically solved using the Runge-Kutta method.
+can be numerically solved using, for example, Runge-Kutta methods.
 
 The first two terms in eq.~(\ref{eq:NewBetaTerms}) are responsible for
 the coupling of the evolution of $\alpha_s$ and $\alpha$ and thus they
@@ -111,9 +101,9 @@ without mixing terms. It is clear that the mixed terms lead to tiny
 relative differences that are at most of $\mathcal{O}(10^{-4})$ at 10
 TeV for $\alpha_s$ and $\mathcal{O}(10^{-3})$ at the same scale for
 $\alpha$. We conclude that the mixed terms in the $\beta$-functions
-have a negligible effect on the coupling evolution and thus we exclude
-them to make the code simpler and improve the performance without
-introducing any significant inaccuracy.
+have a negligible effect on the evolution of the couplings and thus we
+exclude them to make the code simpler and improve the performance
+without introducing any significant inaccuracy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -131,23 +121,19 @@ $Q$ of the QCD and QED couplings,
 
 \subsection{PDF evolution with NLO QED corrections}
 
-Next we show how to implement NLO QED corrections
-into the DGLAP evolution equations, limiting ourselves
-to the case where the lepton PDFs are set to zero for
-simplicity.
+Next we show how to implement the full NLO QCD+QED corrections to the
+DGLAP evolution equations. Here we limit ourselves to consider only
+the photon PDF without including the leptons.
 %
-The first step towards an efficient implementation (and solution)
-of the joint QCD+QED DGLAP equations in the presence
-of QED corrections is the adoption
-of a suitable PDF basis that diagonalises the
-splitting function matrix, decoupling as many equations as
-possible.
+The first step towards an efficient implementation of the solution of
+the DGLAP equations in the presence of QED corrections is the adoption
+of a suitable PDF basis that diagonalises the splitting function
+matrix, decoupling as many equations as possible.
 %
-Such basis was  introduced
-in the Appendix A of Ref.~\cite{Bertone:2015lqa} and will be used also
-here.
+Such basis was introduced in the Appendix A of
+Ref.~\cite{Bertone:2015lqa} and will be used also here.
 %
-This basis contains 14 independent PDF combinations, and reads:
+This basis contains 14 independent PDF combinations and reads:
 \begin{equation}\label{eq:EvolBasis}
 \begin{array}{ll}
 \mbox{\texttt{ 1} : }g & \\
@@ -165,7 +151,7 @@ This basis contains 14 independent PDF combinations, and reads:
 \end{array}
 \end{equation}
 where we have defined $q^\pm = q\pm\overline{q}$ with
-$q = u,d,s,c,b,t$ and moreover we have that
+$q = u,d,s,c,b,t$. In addition, we have that:
 \begin{equation}
 \begin{array}{ll}
 \Sigma_u = u^++c^++t^+, &\quad V_u = u^-+c^-+t^-,\\
@@ -174,49 +160,43 @@ $q = u,d,s,c,b,t$ and moreover we have that
 \end{array}
 \end{equation}
 
-The second step involves constructing the
-splitting function matrices that determine the evolution
-of each of the combinations listed in Eq.~(\ref{eq:EvolBasis}).
+The second step is the construction the splitting function matrix that
+determines the evolution of each of the combinations listed in
+Eq.~(\ref{eq:EvolBasis}).
 %
-To achieve this, we split each splitting function $P$ into a pure QCD term
-$\widetilde{P}$, which only depends on $\alpha_s$, and a
-mixed QCD+QED
-correction term $\overline{P}$, which instead contains contributions proportional to at least one power of the QED coupling $\alpha$.
+To this end, we split each splitting function $P$ into a pure QCD term
+$\widetilde{P}$, which only depends on $\alpha_s$, and a mixed QCD+QED
+correction term $\overline{P}$, which instead contains contributions
+proportional to at least one power of the QED coupling $\alpha$.
 %
 In practice, this means that
 \begin{equation}
 P = \widetilde{P} + \overline{P}\,,
 \end{equation}
-where the pure QCD splitting function reads
+where the pure QCD term reads:
 \begin{equation}\label{eq:PureQCDSplittings}
 \widetilde{P} = \alpha_s \mathcal{P}^{(1,0)} + \alpha_s^2 \mathcal{P}^{(2,0)}+\dots\, ,
 \end{equation}
-while the terms containing the QED coupling are given by
+while the term containing the QED coupling is given by:
 \begin{equation}\label{eq:QCD+QEDSplittings}
 \overline{P} = \alpha \mathcal{P}^{(0,1)} + \alpha_s\alpha \mathcal{P}^{(1,1)}+\alpha^2 \mathcal{P}^{(0,2)} + \dots \, .
 \end{equation}
-Note that in the r.h.s. of Eqns.~(\ref{eq:PureQCDSplittings})
-and~(\ref{eq:QCD+QEDSplittings}) we are following
-the convention of Refs.~\cite{deFlorian:2015ujt,deFlorian:2016gvk} to
-label the powers
-of $\alpha_s$ and $\alpha$ that each  splitting function
-is proportional to.
+Note that in the r.h.s. of Eqs.~(\ref{eq:PureQCDSplittings})
+and~(\ref{eq:QCD+QEDSplittings}) we are following the convention of
+Refs.~\cite{deFlorian:2015ujt,deFlorian:2016gvk} to indicate the power
+of $\alpha_s$ and $\alpha$ that each splitting function multiplies.
 
 The structure of the pure QCD splitting function matrix
 $\widetilde{P}$ as well as the first term in $\overline{P}$, which
-represents the pure LO QED correction, in the basis given in
-Eq.~(\ref{eq:EvolBasis}) was already discussed in
+represents the pure LO QED correction, were already discussed in
 Ref.~\cite{Bertone:2015lqa}.
 %
-It is now necessary instead to analyze the
-structure of the two additional terms, namely $\mathcal{P}^{(1,1)}$ and
-$\mathcal{P}^{(0,2)}$.
+It is now necessary to analyse the structure of the two additional
+terms, namely $\mathcal{P}^{(1,1)}$ and $\mathcal{P}^{(0,2)}$.
 %
-Let us start with the
-$\mathcal{O}(\alpha_s\alpha)$ term.
+Let us start with the $\mathcal{O}(\alpha_s\alpha)$ term.
 %
-At this perturbative order, the resulting evolution
-equations adopt the following structure:
+At this perturbative order, the resulting evolution equations read:
 \begin{equation}
 \begin{array}{rcl}
 \displaystyle\left.\mu^2\frac{\partial}{\partial \mu^2}
@@ -296,26 +276,24 @@ with $e_u$ and $e_d$ the electric charges of the up- and down-type
 quarks, and $n_u$ and $n_d$ the number of up- and down-type active
 quark flavours (such that $n_u+n_d=n_f$).
 %
-Once expressed this basis, it is possible to include
-the $\mathcal{O}(\alpha_s\alpha)$ corrections
-in the solution of the DGLAP QCD+QED equations
-in APFEL as done in Ref.~\cite{Bertone:2015lqa}.
+%Once expressed this basis, it is possible to include the
+%$\mathcal{O}(\alpha_s\alpha)$ corrections in the solution of the DGLAP
+%QCD+QED equations in APFEL as done in Ref.~\cite{Bertone:2015lqa}.
 
 Now we turn to consider the $\mathcal{O}(\alpha^2)$ corrections.
 %
-The expressions of the splitting functions at this order
-have been presented in~\cite{deFlorian:2016gvk}.
+The expressions of the splitting functions at this order have been
+presented in Ref.~\cite{deFlorian:2016gvk}.
 %
-There are two particularly relevant new
-features that distinguish these corrections from the
-$\mathcal{O}(\alpha)$ and $\mathcal{O}(\alpha_s\alpha)$ ones.
+There are two particularly relevant new features that distinguish
+these corrections from the $\mathcal{O}(\alpha)$ and the
+$\mathcal{O}(\alpha_s\alpha)$ ones.
 %
-The first one is that, contrary to the
-other cases in which the electric charges appeared to the second power
-at most, here they appear up to the fourth power.
+The first one is that, contrary to the other cases in which the
+electric charges appears to the second power at most, here they appear
+up to the fourth power.
 %
-As a consequence
-we need to introduce  new effective couplings as follows
+As a consequence, we need to introduce the new couplings:
 \begin{equation}
 \begin{array}{l}
 e_{\Sigma}^4 = N_c(n_{u} e_u^4 + n_{d} e_d^4)\,,\\
@@ -325,14 +303,13 @@ e_{\Sigma}^4 = N_c(n_{u} e_u^4 + n_{d} e_d^4)\,,\\
 \end{equation}
 The second feature is that the dependence on the electric charges of
 some of the $\mathcal{O}(\alpha^2)$ splitting functions is not
-factorisable as was the case for all the $\mathcal{O}(\alpha)$ and
-$\mathcal{O}(\alpha_s\alpha)$ ones,
-and therefore we need to
-distinguish between up-type and down-type splitting functions.
+factorisable as it was the case for all the $\mathcal{O}(\alpha)$ and
+$\mathcal{O}(\alpha_s\alpha)$ ones, and therefore we need to
+distinguish between up- and down-type splitting functions.
 %
-Taking into account these peculiarities,
-it is possible to show that  the $\mathcal{O}(\alpha^2)$ contributions to
-the QCD+QED DGLAP equations take the following form:
+Taking into account these features, it is possible to show that the
+$\mathcal{O}(\alpha^2)$ contributions to the DGLAP equations take the
+following form:
 \begin{equation}
 %\begin{array}{rcl}
 \begin{array}{c}
@@ -403,23 +380,19 @@ V\\
 \end{array}\,.
 \end{array}
 \end{equation}
-It should be noted that, as compared to the expressions presented in
-Ref.~\cite{deFlorian:2016gvk}, we have factored out the electric
-charges in such a way that the expressions of the splitting
-functions are either independent or the electric charges or depend
-on them
-only through the ratio $e_\Sigma^2/e_q^2$.
+It should be noted that, as compared to the expressions for
+$\mathcal{P}^{(0,2)}$ presented in Ref.~\cite{deFlorian:2016gvk}, we
+have factored out the electric charges in such a way that the
+expressions of the splitting functions are either independent from the
+electric charges or depend on them only through the ratio
+$e_\Sigma^2/e_q^2$.
 %
-As before, once the $\mathcal{O}(\alpha^2)$ corrections
-to the QCD+QED combined evolution equations are
-expressed in this form, it is possible to include
-them in {\tt APFEL} and to solve them using the
-same numerical techniques as for the other
-cases.
+%As before, once the $\mathcal{O}(\alpha^2)$ corrections to the QCD+QED
+%combined evolution equations are expressed in this form, it is
+%possible to include them in {\tt APFEL} and to solve them using the
+%same numerical techniques as for the other cases.
 
-As an illustration of the numerical impact of these higher
-order terms in the QCD+QED evolution of the photon PDF,
-we have quantified the effects of the
+As an illustration, we have quantified the effects of the
 $\mathcal{O}(\alpha_s\alpha)$ and $\mathcal{O}(\alpha^2)$ corrections
 to the DGLAP evolution equations on the $\gamma\gamma$ luminosity at
 $\sqrt{s} = 13$ TeV, defined as:
@@ -430,36 +403,28 @@ $\sqrt{s} = 13$ TeV, defined as:
 as a function of the final state invariant mass $M_X$.
 %
 Fig.~\ref{fig:GammaGammaLumi} illustrates the behaviour of
-$\mathcal{L}_{\gamma\gamma}$ computed using the photon PDF
-from NNPDF30QED NLO as input and then 
- evolved upwards from $Q_0 = 1$ GeV to
-$Q=M_X$ including, on top of the pure QCD NLO evolution, three
-possible combinations of QED corrections, namely
+$\mathcal{L}_{\gamma\gamma}$ computed using the photon PDF from the
+NNPDF30QED NLO set as an input at $Q_0 = 1$ GeV and evolved to $Q=M_X$
+including, on top of the pure QCD NLO evolution, the following
+corrections:
 \begin{itemize}
-\item only the LO QED
-corrections $\mathcal{O}(\alpha)$, 
+\item the LO QED corrections $\mathcal{O}(\alpha)$ only,
 \item same as above, adding also the mixed
-corrections $\mathcal{O}(\alpha_s\alpha)$, and
-\item the complete NLO
-QCD+QED corrections, that is, accounting for the
-$\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$
-effects.
+  $\mathcal{O}(\alpha_s\alpha)$ corrections, and
+\item the complete NLO QCD+QED corrections accounting for the
+  $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects.
 \end{itemize}
-In Fig.~\ref{fig:GammaGammaLumi}, the results are shown
-normalized to the photon PDF including only LO QED effects.
+In Fig.~\ref{fig:GammaGammaLumi}, the results are shown normalised to
+the predictions obtained with LO QED corrections only.
 %
-As we can see, the
-$\mathcal{O}(\alpha_s\alpha)$ and $\mathcal{O}(\alpha^2)$ corrections
-have a small but non-negligible impact on the
-$\gamma\gamma$-luminosity. In particular, these corrections suppress
-$\mathcal{L}_{\gamma\gamma}$ by almost 5\% at relatively small values of
-$M_X$, while the suppression gradually shrinks to 1-2\% as $M_X$
-increases. As expected, most of this effect arises from the
-$\mathcal{O}(\alpha_s\alpha)$ corrections, while the impact
-of the 
-$\mathcal{O}(\alpha^2)$ ones is substantially smaller, as could
-be expected due to the
-hierarchy of coupling constants, $\alpha \ll \alpha_s$.
+It is clear that the $\mathcal{O}(\alpha_s\alpha)$ and
+$\mathcal{O}(\alpha^2)$ corrections have a small but non-negligible
+impact on the $\gamma\gamma$-luminosity. In particular, these
+corrections suppress $\mathcal{L}_{\gamma\gamma}$ by almost 5\% at
+relatively small values of $M_X$, while the suppression gradually
+shrinks to 1-2\% as $M_X$ increases. As expected, most of this effect
+comes from the $\mathcal{O}(\alpha_s\alpha)$ corrections, while the
+impact of the $\mathcal{O}(\alpha^2)$ ones is substantially smaller.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -469,120 +434,102 @@ hierarchy of coupling constants, $\alpha \ll \alpha_s$.
   %
   We compare the results of the photon evolved
   with only $\mathcal{O}(\alpha)$ corrections
-  with the corresponding results taking into account with either
+  with the corresponding results taking into account either
   $\mathcal{O}(\alpha+\alpha_s\alpha)$
   or the complete
   $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects,
-  normalized to the $\mathcal{O}(\alpha)$ result.
+  normalised to the $\mathcal{O}(\alpha)$ result.
   %
   The calculation has been performed using NNPDF3.0QED NLO.  }
 \label{fig:GammaGammaLumi}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \subsection{DIS structure functions}
 
 When considering NLO QCD+QED corrections to the DIS structure
-functions, it becomes necessary to
-include into the hard scattering cross sections (the coefficient
-functions) the contributions from the
-$\mathcal{O}(\alpha)$ diagrams where one photon is either in the
-initial state or is being emitted from an incoming quark (or possibly an
-incoming lepton).
+functions, it becomes necessary to include into the hard cross
+sections all the $\mathcal{O}(\alpha)$ diagrams where one photon is
+either in the initial state or emitted from an incoming quark (or
+possibly an incoming lepton).
 %
-Such diagrams, being of purely QED origin, have
-associated coefficient functions that can be
-easily derived from the QCD expressions
-by properly adjusting the corresponding colour factors.
+Such diagrams, being of purely QED origin, have associated coefficient
+functions that can be easily derived from the QCD expressions by
+properly adjusting the colour factors.
 %
-This
-correspondence holds irrespective
-of whether mass effects are included.
+This correspondence holds irrespective of whether mass effects are
+included.
 
-The main complication to implement these
-corrections to the DIS
-coefficient functions
-arises from their flavour structure.
-%
-Due to the fact that the coupling of the photon is proportional to the
+The main complication of the inclusion of these corrections to the DIS
+structure functions arises from their flavour structure. In fact, due
+to the fact that the coupling of the photon is proportional to the
 squared charge of the parton to which it couples (a quark or a
 lepton), in the case of quarks the isospin symmetry is broken.
 %
-In the
-following, we will address  separately
-the cases of neutral current (NC), where
-lepton and proton exchange a neutral boson $\gamma^*/Z$, and of
-charged current (CC) structure functions, where instead
-lepton and proton exchange a charged $W$ boson.
+In the following, we will address separately the neutral-current (NC)
+case, where lepton and proton exchange a neutral boson $\gamma^*/Z$,
+and the charged-current (CC) case, where instead lepton and proton
+exchange a charged $W$ boson.
 
 First of all, let us concentrate on the $\mathcal{O}(\alpha)$
 contributions to a generic NC structure function $F$.
 %
-Due to the
-fact that to this order there is no mixing between QCD and QED
-couplings, such corrections can easily be derived from the
-of the $\mathcal{O}(\alpha_s)$ coefficient functions,
-by means adjusting the colour factors by setting
-$C_F=T_R=1$ and $C_A=0$ in the $\mathcal{O}(\alpha_s)$
-expressions.
+Due to the fact that to this order there is no mixing between QCD and
+QED, such corrections can easily be derived from the
+$\mathcal{O}(\alpha_s)$ coefficient functions just by adjusting the
+colour factors by setting $C_F=T_R=1$ and $C_A=0$.
 %
-From the expressions reported in Ref.~\cite{Ellis:1991qj}, one 
-has that:
+Referring $e.g.$ to expressions reported in Ref.~\cite{Ellis:1991qj},
+one has that:
 \begin{equation}\label{eq:alphaCFs}
 \begin{array}{rcl}
 \displaystyle C_{i;q}^{(\alpha)} &=& \displaystyle \frac{C_{i;q}^{(\alpha_s)}}{C_F}\\
 \\
 \displaystyle C_{i;\gamma}^{(\alpha)} &=& \displaystyle \frac{C_{i;g}^{(\alpha_s)}}{T_R}
-\end{array}\quad i = 2,L,3\,.
+\end{array}\qquad i = 2,L,3\,.
 \end{equation}
-In addition, for constructing the corresponding structure functions,
-considering that the coupling between a photon and a quark of flavour
-$q$ is proportional to $e_q^2$, one also needs to adjust the
-pre-factors proportional to the QED and electroweak couplings
-as follows:
+In addition, in order to construct the corresponding structure
+functions, considering that the coupling between a photon and a quark
+of flavour $q$ is proportional to $e_q^2$, one also needs to adjust
+the electroweak couplings as follows:
  \begin{equation}
 \begin{array}{rcl}
-\widetilde{B}_q(Q) &=& B_q(Q)e_q^2\quad\mbox{for}\quad F_2,F_L\,, \\
+\widetilde{B}_q &=& B_qe_q^2\quad\mbox{for}\quad F_2,F_L\,, \\
 \\
-\widetilde{D}_q(Q) &=& D_q(Q)e_q^2\quad\mbox{for}\quad F_3\,, \\
+\widetilde{D}_q &=& D_qe_q^2\quad\mbox{for}\quad F_3\,, \\
 \end{array}
 \end{equation}
-where $B_q(Q)$ and $D_q(Q)$ are defined $e.g.$
-in Ref.~\cite{Adloff:2003uh}).
+where $B_q$ and $D_q$ are defined, $e.g.$, in
+Ref.~\cite{Adloff:2003uh}.
 %
-Following this prescription, it is possible to
-express the $\mathcal{O}(\alpha)$ contributions to the NC structure
-functions as:
+Following this prescription, it is possible to write the
+$\mathcal{O}(\alpha)$ contributions to the NC structure functions as:
 \begin{equation}
 \begin{array}{rcl}
-F_{2,L}^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{B}_q(Q)\left[C_{2,L;q}^{(\alpha)}\otimes
+F_{2,L}^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{B}_q\left[C_{2,L;q}^{(\alpha)}\otimes
 (q+\overline{q}) + C_{2,L;\gamma}^{(\alpha)} \otimes \gamma
                          \right]\,,\\
 \\
-F_3^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{D}_q(Q)\left[C_{3;q}^{(\alpha)}\otimes
+F_3^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{D}_q\left[C_{3;q}^{(\alpha)}\otimes
 (q-\overline{q}) + C_{3;\gamma}^{(\alpha)} \otimes \gamma
                          \right]\,.
 \end{array}
 \end{equation}
-We emphasize that this structure holds for both
-massless and massive structure functions,
-simplifying the subsequent
-construction of the FONLL general-mass structure functions.
+We emphasise that this structure holds for both massless and massive
+structure functions. This aspect is relevant to the construction of
+the FONLL general-mass structure functions.
 
-Now we can move to the charged current case, where
-the procedure to obtain the expressions of the
-$\mathcal{O}(\alpha)$ is similar as that of the NC case,
-see Eq.~(\ref{eq:alphaCFs}). However, here there are further
-complications since the flavour structure of
-CC structure functions is rather
-more complex.
+We now move to the CC case, where the procedure to obtain the
+expressions of the $\mathcal{O}(\alpha)$ coefficient functions is
+exactly the same as in the NC case (see
+Eq.~(\ref{eq:alphaCFs})). However, this case is more complicated
+because the flavour structure of CC structure functions is more
+complex.
 %
-Taking into account the presence of a factor $e_q^2$
-every time that a quark of flavour $q$ couples to the photon, the CC
-structure functions $F_2$ and $F_L$ for the productions of a neutrino
-or an anti-neutrino take the form:
+Taking into account the presence of a factor $e_q^2$ every time that a
+quark of flavour $q$ couples to a photon, the $\mathcal{O}(\alpha)$
+corrections to the CC structure functions $F_2$ and $F_L$ for the
+productions of a neutrino or an anti-neutrino take the form:
 \begin{equation}\label{compactNu}
 \begin{array}{rcl}
 F_{2,L}^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
@@ -593,12 +540,9 @@ F_{2,L}^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
     +e_U^2U\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
 \end{array}
 \end{equation}
-where $V_{UD}$ are elements of the CKM matrix, with $U$ indicating
-an up-type quark
-and $D$ a down-type quark.
+where $V_{UD}$ are the elements of the CKM matrix.
 %
-The flavour
-structure for $F_3$ instead appears slightly different:
+The flavour structure of $F_3$ is instead slightly different:
 \begin{equation}\label{compactNuF3}
 \begin{array}{rcl}
 F_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
@@ -606,38 +550,31 @@ F_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
 \\
 F_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
 \sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(-e_D^2\overline{D}
-    +e_U^2U\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
+    +e_U^2U\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,.
 \end{array}
 \end{equation}
-In order to simplify the implementation of the NLO QED
-corrections to CC structure functions in {\tt APFEL},
-it is advantageous to assume that, in what the QED corrections
-respect, the CKM matrix is  3 times 3 unitary
-matrix, and neglect off-diagonal elements.
+In order to simplify the implementation, it is advantageous to assume
+that, in these particular corrections, the CKM matrix is a 3 times 3
+unitary matrix. Note however that the exact CKM matrix is still used
+in the QCD part of the structure functions.
 %
-Note however that the exact CKM matrix
-is still used for the QCD part of the structure functions.
-%
-This approximation introduces an inaccuracy
-of the order of the QED coupling $\alpha$ times
-the value of the  off-diagonal elements of the CKM matrix, and
-therefore is numerically negligible.
+This approximation introduces an inaccuracy of the order of the QED
+coupling $\alpha$ times the value of the off-diagonal elements of the
+CKM matrix, and therefore it is numerically negligible.
 
 As an illustration of the impact of the $\mathcal{O}(\alpha)$
 correction on the DIS structure functions, Fig.~\ref{fig:StructFuncs}
 shows the effect of introducing these contributions on the pure QCD
-computation at NLO. The plots are produced by evolving the
-NNPDF3.0QED NLO set
-from $Q=1$
-GeV to $Q=100$ GeV including the NLO CD+QED corrections discussed in the
-previous section and using the resulting evolved PDFs to compute the
-NC (left panel) and the CC (right panel) DIS structure functions in
-the FONLL-B scheme (NLO) including the $\mathcal{O}(\alpha)$
-corrections to the coefficient functions discussed above.
+computation at NLO. The plots are produced by evolving the NNPDF3.0QED
+NLO set from $Q_0=1$ GeV to $Q=100$ GeV including the NLO QCD+QED
+corrections discussed in the previous section and using the resulting
+evolved PDFs to compute the NC (left panel) and the CC (right panel)
+DIS structure functions in the FONLL-B scheme (NLO) including the
+$\mathcal{O}(\alpha)$ corrections to the coefficient functions
+discussed above.
 %
-The
-predictions are shown normalised to the pure QCD computation where the
-QED corrections are absent both in the evolution and in the
+The predictions are shown normalised to the pure QCD computation where
+the QED corrections are absent both in the evolution and in the
 computation of the structure functions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -646,7 +583,7 @@ computation of the structure functions.
 \includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_CC.eps}
 \caption{The effects of the NLO QED corrections on the neutral-current
 (left) and charged-current (right) DIS structure functions
-$F_2, F_3$ and $F_L$, normalized to the pure QCD result.
+$F_2, F_3$ and $F_L$, normalised to the pure QCD result.
 %
 The calculation has been performed with the NNPDF3.0QED NLO
 set in the FONLL-B general-mass scheme.
@@ -667,4 +604,3 @@ of the QED corrections reaches the 2\% level.  It should be stressed
 that the behaviour around $x=10^{-2}$ of the CC $F_3$ (green curve in
 the right panel) is driven by a change of sign of the predictions so
 that the ratio diverges.
-
