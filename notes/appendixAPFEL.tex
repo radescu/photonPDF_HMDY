@@ -5,44 +5,37 @@
 In this appendix we present the details of the implementation of the
 joint NLO QCD+QED corrections in {\tt APFEL}.
 %
-As discussed in~\cite{Bertone:2013vaa},
-the implementation of LO
-QED effects presents many simplifications,
-in particular the fact that QED and QCD
-corrections do not mix, and therefore the DGLAP evolution
-equations as well as the
-$\alpha_s$ and $\alpha$ running are decoupled.
+As discussed in~\cite{Bertone:2013vaa}, the implementation of the LO
+QED effects presents many simplifications, in particular the fact that
+QED and QCD corrections do not mix and therefore the DGLAP evolution
+equations as well as the running of $\alpha_s$ and $\alpha$ are
+decoupled.
 %
-On the other hand,
-when going
-to NLO this property does not
-hold anymore,
-and there QED and QCD contributions mix both in the DGLAP and in the
-coupling evolution equations.
+On the other hand, when going to NLO this property does not hold
+anymore and the QED and QCD contributions mix both in the DGLAP and in
+the coupling evolution equations.
 %
-On top of this complication, these mixed corrections induce
-the presence of diagrams in which a real photon is present either in
-the initial or in the final state and that have to be included in the
+On top of this complication, these mixed corrections induce the
+presence of diagrams in which a real photon is present either in the
+initial or in the final state and that have to be included in the
 computation of the DIS structure functions.
 
-In the following we will
-first discuss how to generalize the coupling evolution equations
-(finding that the presence of the mixed QCD+QED terms leads to a
-negligible difference in the running), we will then turn to the DGLAP,
-and finally we will consider both neutral-current and charged-current
-DIS structure functions.
+In the following we will first discuss how to generalize the coupling
+evolution equations (finding that the presence of the mixed QCD+QED
+terms leads to a negligible difference in the running), we will then
+turn to the DGLAP, and finally we will consider both neutral-current
+and charged-current DIS structure functions.
 
 \subsection{Evolution of the couplings}
 
-As  mentioned above, NLO QCD+QED corrections induce the presence of
-mixed terms at the level of the running of the
-corresponding coupling constants.
+As mentioned above, the NLO QCD+QED corrections induce the presence of
+mixed terms at the level of the running of the corresponding
+couplings.
 %
-That is,
-the QCD $\beta$-function receives corrections proportional to $\alpha$
-and, vice-versa, the QED $\beta$-function receives corrections
-proportional to $\alpha_s$, in such a way that the coupling evolution
-equations read:
+That is, the QCD $\beta$-function receives corrections proportional to
+$\alpha$ and, vice-versa, the QED $\beta$-function receives
+corrections proportional to $\alpha_s$, in such a way that the
+coupling evolution equations read:
 \begin{equation}\label{CoupledEq}
 \begin{array}{rcl}
 \displaystyle \mu^2\frac{\partial \alpha_s}{\partial \mu^2} &=& \displaystyle
@@ -74,7 +67,6 @@ e_q^2\,\qquad\beta_1^{(\alpha\alpha_s)} = -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2
 where $N_c=3$ is the number of colors, $e_q$ is the electric charge of
 the quark flavour $q$, and $n_f$ and $n_l$ are the numbers of active
 quark and leptons flavours, respectively.
-
 
 Eq.~(\ref{CoupledEq}) can be written in the vectorial form:
 \begin{equation}\label{CoupledEqVect}
@@ -116,7 +108,7 @@ $Q$ of the QCD and QED couplings,
   $\alpha_s$ and $\alpha$, including or not the mixed terms in
   the corresponding $\beta$-functions.
 %
-The curves are normalised to the result of the respective coupling
+  The curves are normalised to the result of the respective coupling
   running without the mixing terms.}
 \label{fig:CouplingEvol}
 \end{figure}
@@ -285,9 +277,9 @@ at the most, here they appear up to the fourth power. As a consequence
 we need to introduce the new couplings:
 \begin{equation}
 \begin{array}{l}
-+e_{\Sigma}^4 = N_c(n_{u} e_u^4 + n_{d} e_d^4)\,,\\
-+\\
-+\delta_e^4 = N_c(n_{u} e_u^4 - n_{d} e_d^4)\,.
+e_{\Sigma}^4 = N_c(n_{u} e_u^4 + n_{d} e_d^4)\,,\\
+\\
+\delta_e^4 = N_c(n_{u} e_u^4 - n_{d} e_d^4)\,.
 \end{array}
 \end{equation}
 
@@ -380,7 +372,7 @@ $\mathcal{O}(\alpha_s\alpha)$ and $\mathcal{O}(\alpha^2)$ corrections
 to the DGLAP evolution equations on the $\gamma\gamma$ luminosity at
 $\sqrt{s} = 13$ TeV, defined as:
 \begin{equation}\label{eq:GammaGammaLumi}
-\Phi_{\gamma\gamma}(M_X) = \frac1{s}\int_{M_X^2/s}^1
+\mathcal{L}_{\gamma\gamma}(M_X) = \frac1{s}\int_{M_X^2/s}^1
 \frac{dx}{x} \gamma(x,M_X) \gamma\left(\frac{M_X^2}{xs},M_X\right)\,,
 \end{equation}
 as a function of the final state invariant mass $M_X$.
@@ -388,8 +380,7 @@ as a function of the final state invariant mass $M_X$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \includegraphics[width=8cm]{figs/lumi_13tev.pdf} 
-\caption{The photon-photon
-PDF luminosity $\mathcal{L}_{\gamma\gamma}$ at $\sqrt{s} = 13$ TeV as a
+\caption{The photon-photon PDF luminosity $\mathcal{L}_{\gamma\gamma}$ at $\sqrt{s} = 13$ TeV as a
   function of the final state invariant mass $M_X$.
   %
   We compare the results of the photon evolved
@@ -399,15 +390,13 @@ PDF luminosity $\mathcal{L}_{\gamma\gamma}$ at $\sqrt{s} = 13$ TeV as a
   or $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects,
   normalized to the $\mathcal{O}(\alpha)$ result.
   %
-  The calculation has been performed with
-  NNPDF3.0QED as input.
-}
+  The calculation has been performed with NNPDF3.0QED NLO as input.  }
 \label{fig:GammaGammaLumi}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Fig.~\ref{fig:GammaGammaLumi} shows the behaviour of
-$\Phi_{\gamma\gamma}$ computed using the photon PDF $\gamma$ of the
+$\mathcal{L}_{\gamma\gamma}$ computed using the photon PDF $\gamma$ of the
 {\tt NNPDF30\_nlo\_as\_0118} PDF set evolved from $Q_0 = 1$ GeV to
 $M_X$ including, on top of the pure QCD NLO evolution: only the LO QED
 corrections $\mathcal{O}(\alpha)$ (yellow curve), also the mixed
@@ -418,7 +407,7 @@ predictions are normalized to the yellow curve. The
 $\mathcal{O}(\alpha_s\alpha)$ and $\mathcal{O}(\alpha^2)$ corrections
 have a small but non-negligible impact on the
 $\gamma\gamma$-luminosity. In particular, these corrections suppress
-$\Phi_{\gamma\gamma}$ by almost 5\% at relatively small values of
+$\mathcal{L}_{\gamma\gamma}$ by almost 5\% at relatively small values of
 $M_X$, while the suppression gradually shrinks to 1-2\% as $M_X$
 increases. As expected, most of the effect is ascribable to the
 $\mathcal{O}(\alpha_s\alpha)$ corrections, while the
@@ -555,17 +544,15 @@ computation of the structure functions.
 \begin{figure}[t]
 \includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_NC.eps}
 \includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_CC.eps}
-\caption{The effects of NLO QED corrections on the neutral-current
+\caption{The effects of the NLO QED corrections on the neutral-current
 (left) and charged-current (right) DIS structure functions
 $F_2, F_3$ and $F_L$, normalized to the pure QCD result.
 %
 The calculation has been performed with the NNPDF3.0QED NLO
 set in the FONLL-B general-mass scheme.
 %
-Note that QED effects enter both via modified DGLAP
-evolution and the photon-induced DIS coefficient
-functions.
-}
+Note that QED effects enter both via modified DGLAP evolution and the
+photon-induced DIS coefficient functions.}
 \label{fig:StructFuncs}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
