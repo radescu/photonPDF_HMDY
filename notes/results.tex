@@ -48,11 +48,20 @@ For NNPDF3.0QED, we show the 68\% CL uncertainty, while for LUXqed the uncertain
 is obtained by adding in quadrature all the model variations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-\includegraphics[width=8cm]{figs/photon_comp_10000.pdf} 
-\caption{Comparison between $\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
-  analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR.}
-\label{photon_zoom}
+\begin{figure}[t]
+  \includegraphics[width=8cm]{figs/photon_comp_10000.pdf}
+  \includegraphics[width=8cm]{figs/photon_comp_10000_ratio.pdf} 
+\caption{Left: comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+  NNLO analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR16.
+  %
+  Right: the same comparison now with the results normalized to the central value
+  of {\tt xFitter\_hmDY}.
+  %
+  For  HKR16, only the central value is shown, while LUXqed includes
+  the associated uncertainty band obtained following the prescription
+  of~\cite{Manohar:2016nzj}
+}
+\label{photon_zoom} \label{photon_zoom_ratio}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -75,16 +84,6 @@ We observe that the experimental uncertainty on {\tt xFitter\_hmDY} is at the $\
 depending on the specific value of $x$, improving over NNPDF3.0QED but still far from the
 percent accuracy of the LUXqed calculation.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-\includegraphics[width=8cm]{figs/photon_comp_10000_ratio.pdf} 
-\caption{Same as Fig.\ref{photon_zoom_ratio}, now where results
-  are shown normalized to the central value of {\tt xFitter\_hmDY}.
-%  {\bf update with final result, missing xFitter band.}
-  }
-\label{photon_zoom_ratio}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Another interesting question that our analysis allows addressing is what is
 the impact of the high-mass Drell-Yan 8 TeV measurements on the quark and gluon
@@ -111,7 +110,7 @@ Specially for the case of $x\bar{d}$, the improvement in PDF uncertainties
 is also marked.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ubar_ratio}
 \includegraphics[width=8cm]{figs/q2_10000_pdf_dbar_ratio} 
@@ -144,7 +143,7 @@ In the calculation of the total $\chi^2$, the correlations between the different
 $m_{ll}$ bins have been taken into account.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[h]
+\begin{table}[t]
   \centering
   \begin{tabular}{|c|c|}
     \hline
@@ -188,7 +187,7 @@ theory uncertainty from the PDF fit.
 The shifts due to systematic uncertainties are indicated by a dashed line.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includegraphics[width=8cm]{figs/data_rap1.pdf}
 \includegraphics[width=8cm]{figs/data_rap3.pdf} 
@@ -225,9 +224,75 @@ and procedural uncertainties.
 
 \subsection{Model, parametrization, and procedural uncertainties}
 
-Check the effect of the various variations on the photon PDF, but separately variation per variation,
-showing the most important ones, and not stacking the error into a common error band. Figures \ref{fig:model}
-and \ref{fig:param} show that these variations are within the experimental uncertainty.
+In this section we explore the robustness of our determination of
+the photon PDF $x\gamma(x,Q^2)$ upon a number of variations
+in the values of physical parameters like $\alpha_s$ or the charm mass,
+the choices made for the PDFs parametrization and the uncertainties
+associated to the fitting procedure adopted.
+%
+In each case, we will perform one variation at a time and compare the effect on
+the central value of the photon PDF with the size of its experimental uncertainty
+computed, as explained above, using the Monte Carlo method.
+
+First of all we consider the impact  of uncertainties associated to either the choice
+of some physical parameters or of some specific settings adopted in the fit.
+%
+In Fig.~\ref{fig:model} we show the comparison between the baseline determination of
+  $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+analysis (including the experimental uncertainties)
+with the central value of those  fits for which a number of variations has been performed.
+%
+In particular, we have considered the following variations:
+\begin{itemize}
+\item The strong coupling constant is varied by $\delta \alpha_s=\pm 0.002$ around the PDG value.
+\item The ratio of strangeness to non-strange PDFs is decreased to $r_s=0.75$ instead of $r_s=1$.
+\item The value of the charm pole mass is varied between $m_c=1.41$ GeV to $m_c=1.53$ GeV,
+  and that of the bottom pole mass from $m_b=4.25$ GeV to $m_b=4.75$ GeV.
+\item The minimum value $Q^2_{\rm cut}$ of the fitted data is decreased down to 5 GeV$^2$.
+\item The input parametrization scale $Q_0^2$ is raised to 10 GeV$^2$ as compared
+  to the baseline value of $Q_0^2=7.5~$GeV$^2$.
+\end{itemize}
+The results of Fig.~\ref{fig:model} show that in all cases the effect of this variations
+is contained (and is typically much smaller) within the experimental PDF
+uncertainty bands of the reference fit.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
+\begin{figure}[t]
+\centering
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_1}
+\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_2}
+\caption{Comparison between the baseline determination of
+  $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
+  analysis with the central value of those  fits for which one input parameter has been varied.
+  %
+ The following variations have been considered: $r_s$, $Q^2_{\rm cut}$, $\alpha_s$ (left plot) and
+$m_c$, $m_b$, $Q_0^2$ (right plot), see text for more details.
+  %                   
+}
+\label{fig:model}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Another important check of the robustness of our determination of $x\gamma$ can be
+obtained by comparing the baseline with the results of further
+  fits where a number of new free parameters are allowed
+  in the PDF parametrization, in addition to those listed in Eq.~(\ref{eq:param}).
+  %
+  In Fig.~\ref{fig:param} we show the impact of three representative variations
+  (others have been explored, leading to smaller differences):
+  more flexibility to the gluon distribution, allowing
+  it to become negative (labeled by ${\rm neg}$), adding on top $D_{u_v}$, and then $D_{\bar{u}}+D_{\bar{d}}$.
+  %
+  As above, all variations are contained within the MC PDF uncertainty bands, though the
+  impact of the parametrization variations is larger than that of the model ones:
+  in the case of the ${\rm nefg}+D_{\bar{u}}+D_{\bar{d}}$ variations, the central value
+  is at the edge of the lower uncertainty band.
+  %
+  Importantly, once these additional uncertainty coming from parametrization
+  variations is accounted for, the agreement of our fit with LUXqed and HKR16 improves
+  in the region around $x\simeq 0.02$.
 
 
 An important cross-check of the robustness of the estimated uncertainty for the photon
@@ -240,22 +305,8 @@ which indicates a reasonable agreement between the two methods.
 In particular, the central values of the photon obtained with the two fitting
 techniques are quite similar to each other.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
-\begin{figure}[h]
-\centering
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_1}
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_2}
-\caption{ Comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
-  analysis with the fits for which each input parameter has been varied.
- The following variations have been considered: $r_s$, $Q^2_{cut}$, $\alpha_S$ (left) and
-$m_c$, $m_b$, $Q_0^2$ (right).
-  %                   
-}
-\label{fig:model}
-\end{figure}
-
-\begin{figure}[h]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
 \centering
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ph_param_var.pdf}
 \includegraphics[width=8cm]{figs/photon_mc_vs_hessian} 
@@ -265,7 +316,7 @@ $m_c$, $m_b$, $Q_0^2$ (right).
   %
   In particular, the parametrization variations that have been explored
   are: more flexibility to the gluon distribution, allowing
-  it to become negative,
+  it to become negative
  (labeled by ${\rm neg}$), adding on top $D_{u_v}$, and then $D_{\bar{u}}+D_{\bar{d}}$.
  %
  Right: comparison between the fits of $x\gamma(x,Q^2)$ obtained with the
@@ -277,6 +328,7 @@ $m_c$, $m_b$, $Q_0^2$ (right).
 \label{fig:param}
 \label{fig:photon_mc_vs_hessian}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Perturbative stability of $x\gamma(x,Q^2)$}
@@ -307,7 +359,7 @@ For the NNLO fit, only the experimental PDF
   very close to each other.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ph_ratio_NLOvsNNLO.pdf}
