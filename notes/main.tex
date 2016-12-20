@@ -48,22 +48,39 @@
 \begin{document}
 \linenumbers
 
-\title{A determination of the photon PDF from LHC high-mass Drell Yan data}
+\title{The photon PDF from high-mass Drell Yan data at the LHC}
 
 \author{The xFitter Collaboration: F. Giuli, V. Bertone, A. Cooper-Sarkar, A. Glazov, R. Placakyte, V. Radescu,  J. Rojo, A. Sapronov, A. Zenaiev, .... }
 
 \date{\today}
 \begin{abstract}
-  The calculation of electroweak corrections to LHC processes requires by consistency introducing
-  a photon parton distributuon in the proton.
-  %
-  In this work we present a determination of the photon PDF from recent ATLAS measurements
+  Realizing the precision physics paradigm at the LHC requires the calculation
+   of  hard-scattering
+   cross-sections which include perturbative QCD corrections up to (N)NNLO
+   and electroweak corrections up to NLO.
+   %
+   For consistency, parton distribution functions (PDFs) need to be provided
+   with matching accuracy, which in the case of QED effects involves introducing
+   the photon parton distributuon of the proton, $x\gamma(x,Q)$.
+   %
+   Recently, there has been intense activity concerning the determination
+   of the photon PDF, based either on direct fits to HERA
+   and collider data or  on theoretical calculations.
+   %
+   With this motivation, in
+   this work we present a novel determination of the photon PDF from the recent ATLAS measurements
   of high-mass Drell-Yan production at $\sqrt{s}=8$ TeV.
   %
-  The analysis is performed in the {\tt xFitter} framework.
+  The analysis has been performed in the {\tt xFitter} framework, and has required
+  improvements both in the {\tt APFEL} program, to account for NLO QED effects,
+  and in the {\tt aMCfast} interface to deal with photon-initiated contributions
+  in the EW calculations within {\tt MadGraph5\_aMC@NLO}.
   %
-  We compare our results with recent calculations of the photon PDF as well as with previous fits,
-  finding good agreement within uncertainties.
+  We compare our results with other recent QED fits
+  and determinations, finding in particular
+  good agreement with the LUXqed and the HKR calculations within PDF uncertainties,
+  in the kinematical range where the ATLAS DY measurement has sensitivity to
+  $x\gamma(x,Q)$.
 \end{abstract}
 \maketitle
 \tableofcontents{}
