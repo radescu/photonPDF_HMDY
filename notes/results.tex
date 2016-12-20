@@ -3,7 +3,7 @@
 
 In this section we present the main results of this work,
 namely the determination
-of the photon PDF $\gamma(x,Q^2)$ from a fit to the HERA structure functions
+of the photon PDF $x\gamma(x,Q^2)$ from a fit to the HERA structure functions
 and ATLAS high-mass Drell-Yan cross-sections.
 %
 First of all, we show the resulting photon PDF and compare with
@@ -20,7 +20,7 @@ NLO and NNLO results.
 
 \subsection{The photon PDF from high-mass DY data}
 
-In the following, we will present results obtained using the
+In the following, we  present results obtained using the
 double-differential $\lp m_{ll},y_{ll}\rp$ distributions, though
 we have verified that compatible results
 are obtained if the $\lp m_{ll},\Delta\eta_{ll}\rp$ ones are fitted
@@ -33,14 +33,14 @@ with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-yan data.
 First of all we present our results for the photon PDF, and then the impact
 of the DY measurements on the quark and gluon PDF.
 %
-We will denote as {\tt xFitter\_epHMDY} the results of this work.
+We denote as {\tt xFitter\_epHMDY} the results of this work.
 
 In Fig.~\ref{photon_zoom} we show our results
 for $\gamma(x,Q^2)$ for $Q^2=10^4$ GeV$^2$,
 compared with LUXqed~\cite{Manohar:2016nzj}, HKR~\cite{Harland-Lang:2016apc}
 and NNPDF3.0QED.
 %
-The comparison is restricted to the range $0.05 \le x \le 0.3$ corresponding
+The comparison is restricted to the range $0.03 \le x \le 0.9$ corresponding
 to the region where the fitted Drell-Yan measurements have direct kinematic sensitivity
 to the photon PDF.
 %
@@ -55,7 +55,7 @@ is obtained by adding in quadrature all the model variations.
   NNLO analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR16.
   %
   Right: the same comparison now with the results normalized to the central value
-  of {\tt xFitter\_hmDY}.
+  of {\tt xFitter\_epHMDY}.
   %
   For  HKR16, only the central value is shown, while LUXqed includes
   the associated uncertainty band obtained following the prescription
@@ -75,12 +75,12 @@ We also note the excellent agreement between the LUXqed and the HKN calculations
 illustrating the commonalities between the two approaches.
 
 Next in Fig.~\ref{photon_zoom_ratio} we show the same comparison of different
-results for the photon PDF $x\gamma(x,Q^2)$ now normalized to the central value of {\tt xFitter\_hmDY}.
+results for the photon PDF $x\gamma(x,Q^2)$ now normalized to the central value of {\tt xFitter\_epHMDY}.
 %
 This format allows better to compare the relative compatibility between the various results,
 as well as the relative size of the PDF uncertainties in each case.
 %
-We observe that the experimental uncertainty on {\tt xFitter\_hmDY} is at the $\sim 30\%$ level,
+We observe that the experimental uncertainty on {\tt xFitter\_epHMDY} is at the $\sim 30\%$ level,
 depending on the specific value of $x$, improving over NNPDF3.0QED but still far from the
 percent accuracy of the LUXqed calculation.
 
@@ -218,7 +218,7 @@ We emphasize the high precision of this measurement, with experimental
 errors at the few percent level in most of the kinematical range available.
 
 Following this presentation of the main features of this
-{\tt xFitter\_hmDY} analysis, now we turn to discuss its stability
+{\tt xFitter\_epHMDY} analysis, now we turn to discuss its stability
 and study the impact of a number of model, parametrization,
 and procedural uncertainties.
 
@@ -230,7 +230,7 @@ in the values of physical parameters like $\alpha_s$ or the charm mass,
 the choices made for the PDFs parametrization and the uncertainties
 associated to the fitting procedure adopted.
 %
-In each case, we will perform one variation at a time and compare the effect on
+In each case, we perform one variation at a time and compare the effect on
 the central value of the photon PDF with the size of its experimental uncertainty
 computed, as explained above, using the Monte Carlo method.
 
