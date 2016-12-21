@@ -22,7 +22,7 @@ the final state and that have to be included in the computation of the
 DIS structure functions.
 
 In the following, we first discuss how to generalize the equations for
-the running of the QCD and QED couplings, finding that the mixed
+the running of the QCD and QED couplings, finding that the mixing
 QCD+QED terms have a negligible impact.
 %
 Then we explain how the DGLAP evolution equations can be generalised
@@ -36,7 +36,7 @@ contributions.
 \subsection{Evolution of the couplings}
 
 As mentioned above, the NLO QCD+QED corrections induce the presence of
-mixed terms in the evolution equations of $\alpha_s$ and $\alpha$.
+mixing terms in the evolution equations of $\alpha_s$ and $\alpha$.
 %
 In practice, the QCD $\beta$-function receives corrections
 proportional to $\alpha$ and, vice-versa, the QED $\beta$-function
@@ -64,10 +64,10 @@ where the mixing terms, $\beta_1^{(\alpha_s\alpha)}$ and
 $\beta_1^{(\alpha\alpha_s)}$, and the pure NLO QED term,
 $\beta_1^{(\alpha^2)}$, can be found in
 Ref.~\cite{Surguladze:1996hx}. Taking into account a factor four due
-the different definitions of the expansion parameters one finds:
+to the different definitions of the expansion parameters, one finds:
 \begin{equation}\label{eq:NewBetaTerms}
 \beta_1^{(\alpha_s\alpha)} = -2\sum_{i=1}^{n_f}
-e_q^2\,\qquad\beta_1^{(\alpha\alpha_s)} = -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2\,,\qquad \beta_1^{(\alpha^2)} = -4\left(n_l+N_c\sum_{i=1}^{n_f} e_q^2\right)\,.
+e_q^2\,\qquad\beta_1^{(\alpha\alpha_s)} = -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2\,,\qquad \beta_1^{(\alpha^2)} = -4\left(n_l+N_c\sum_{i=1}^{n_f} e_q^2\right)\,,
 \end{equation}
 where $N_c=3$ is the number of colours, $e_q$ is the electric charge
 of the quark flavour $q$, and $n_f$ and $n_l$ are the number of active
@@ -87,20 +87,20 @@ can be numerically solved using, for example, Runge-Kutta methods.
 The first two terms in eq.~(\ref{eq:NewBetaTerms}) are responsible for
 the coupling of the evolution of $\alpha_s$ and $\alpha$ and thus they
 introduce a complication that affects both the implementation and the
-performance of the relative code. One can then ask what is the effect
-of their presence and whether their removal makes a substantial
-difference. In Fig.~\ref{fig:CouplingEvol} we show the comparison
-between the evolution at NLO of both couplings $\alpha_s$ and $\alpha$
-including and excluding the mixing terms in the respective
+performance of the code. One can then ask what is the effect of their
+presence and whether their removal makes a substantial difference. In
+Fig.~\ref{fig:CouplingEvol} we show the comparison between the
+evolution at NLO of both couplings $\alpha_s$ and $\alpha$ including
+and excluding the mixing terms in the respective
 $\beta$-functions. The evolution is performed between the $Z$ mass
 scale $M_Z$ and 10 TeV with 5 active quark flavours and 3 active
 lepton flavours and uses as boundary conditions
 $\alpha_s(M_Z) = 0.118$ and $\alpha(M_Z) = 1/128$. The two curves in
 Fig.~\ref{fig:CouplingEvol} are normalised to the respective curve
-without mixing terms. It is clear that the mixed terms lead to tiny
+without mixing terms. It is clear that the mixing terms lead to tiny
 relative differences that are at most of $\mathcal{O}(10^{-4})$ at 10
 TeV for $\alpha_s$ and $\mathcal{O}(10^{-3})$ at the same scale for
-$\alpha$. We conclude that the mixed terms in the $\beta$-functions
+$\alpha$. We conclude that the mixing terms in the $\beta$-functions
 have a negligible effect on the evolution of the couplings and thus we
 exclude them to make the code simpler and improve the performance
 without introducing any significant inaccuracy.
@@ -110,7 +110,7 @@ without introducing any significant inaccuracy.
 \includegraphics[width=6cm,angle=270]{figs/couplings.eps} 
 \caption{Comparison between the running with the scale
 $Q$ of the QCD and QED couplings,
-  $\alpha_s$ and $\alpha$, including or not the mixed terms in
+  $\alpha_s$ and $\alpha$, including or not the mixing terms in
   the corresponding $\beta$-functions.
 %
   The curves are normalised to the result of the respective coupling
@@ -123,7 +123,7 @@ $Q$ of the QCD and QED couplings,
 
 Next we show how to implement the full NLO QCD+QED corrections to the
 DGLAP evolution equations. Here we limit ourselves to consider only
-the photon PDF without including the leptons.
+the photon PDF without including leptons.
 %
 The first step towards an efficient implementation of the solution of
 the DGLAP equations in the presence of QED corrections is the adoption
@@ -133,7 +133,8 @@ matrix, decoupling as many equations as possible.
 Such basis was introduced in the Appendix A of
 Ref.~\cite{Bertone:2015lqa} and will be used also here.
 %
-This basis contains 14 independent PDF combinations and reads:
+Excluding the lepton PDFs, this basis contains 14 independent PDF
+combinations and reads:
 \begin{equation}\label{eq:EvolBasis}
 \begin{array}{ll}
 \mbox{\texttt{ 1} : }g & \\
@@ -151,7 +152,7 @@ This basis contains 14 independent PDF combinations and reads:
 \end{array}
 \end{equation}
 where we have defined $q^\pm = q\pm\overline{q}$ with
-$q = u,d,s,c,b,t$. In addition, we have that:
+$q = u,d,s,c,b,t$. In addition, we have defined:
 \begin{equation}
 \begin{array}{ll}
 \Sigma_u = u^++c^++t^+, &\quad V_u = u^-+c^-+t^-,\\
@@ -164,10 +165,11 @@ The second step is the construction the splitting function matrix that
 determines the evolution of each of the combinations listed in
 Eq.~(\ref{eq:EvolBasis}).
 %
-To this end, we split each splitting function $P$ into a pure QCD term
-$\widetilde{P}$, which only depends on $\alpha_s$, and a mixed QCD+QED
-correction term $\overline{P}$, which instead contains contributions
-proportional to at least one power of the QED coupling $\alpha$.
+To this end, we split the splitting function matrix $P$ into a pure
+QCD term $\widetilde{P}$, which only depends on $\alpha_s$, and a
+mixed QCD+QED correction term $\overline{P}$, which instead contains
+contributions proportional to at least one power of the QED coupling
+$\alpha$.
 %
 In practice, this means that
 \begin{equation}
@@ -285,9 +287,9 @@ Now we turn to consider the $\mathcal{O}(\alpha^2)$ corrections.
 The expressions of the splitting functions at this order have been
 presented in Ref.~\cite{deFlorian:2016gvk}.
 %
-There are two particularly relevant new features that distinguish
-these corrections from the $\mathcal{O}(\alpha)$ and the
-$\mathcal{O}(\alpha_s\alpha)$ ones.
+There are two relevant new features that distinguish these corrections
+from the $\mathcal{O}(\alpha)$ and the $\mathcal{O}(\alpha_s\alpha)$
+ones.
 %
 The first one is that, contrary to the other cases in which the
 electric charges appears to the second power at most, here they appear
@@ -408,14 +410,14 @@ NNPDF30QED NLO set as an input at $Q_0 = 1$ GeV and evolved to $Q=M_X$
 including, on top of the pure QCD NLO evolution, the following
 corrections:
 \begin{itemize}
-\item the LO QED corrections $\mathcal{O}(\alpha)$ only,
-\item same as above, adding also the mixed
+\item the $\mathcal{O}(\alpha)$ corrections only,
+\item same as above, adding also the mixing
   $\mathcal{O}(\alpha_s\alpha)$ corrections, and
 \item the complete NLO QCD+QED corrections accounting for the
   $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects.
 \end{itemize}
-In Fig.~\ref{fig:GammaGammaLumi}, the results are shown normalised to
-the predictions obtained with LO QED corrections only.
+The results are shown normalised to the predictions obtained with LO
+QED corrections only.
 %
 It is clear that the $\mathcal{O}(\alpha_s\alpha)$ and
 $\mathcal{O}(\alpha^2)$ corrections have a small but non-negligible
@@ -433,7 +435,7 @@ impact of the $\mathcal{O}(\alpha^2)$ ones is substantially smaller.
   function of the final state invariant mass $M_X$.
   %
   We compare the results of the photon evolved
-  with only $\mathcal{O}(\alpha)$ corrections
+  with only the $\mathcal{O}(\alpha)$ corrections
   with the corresponding results taking into account either
   $\mathcal{O}(\alpha+\alpha_s\alpha)$
   or the complete
@@ -460,11 +462,11 @@ properly adjusting the colour factors.
 This correspondence holds irrespective of whether mass effects are
 included.
 
-The main complication of the inclusion of these corrections to the DIS
-structure functions arises from their flavour structure. In fact, due
-to the fact that the coupling of the photon is proportional to the
-squared charge of the parton to which it couples (a quark or a
-lepton), in the case of quarks the isospin symmetry is broken.
+The main complication of the inclusion of these corrections arises
+from their flavour structure. In fact, due to the fact that the
+coupling of the photon is proportional to the squared charge of the
+parton to which it couples (a quark or a lepton), in the case of
+quarks the isospin symmetry is broken.
 %
 In the following, we will address separately the neutral-current (NC)
 case, where lepton and proton exchange a neutral boson $\gamma^*/Z$,
@@ -479,8 +481,8 @@ QED, such corrections can easily be derived from the
 $\mathcal{O}(\alpha_s)$ coefficient functions just by adjusting the
 colour factors by setting $C_F=T_R=1$ and $C_A=0$.
 %
-Referring $e.g.$ to expressions reported in Ref.~\cite{Ellis:1991qj},
-one has that:
+Referring, $e.g.$, to the expressions reported in
+Ref.~\cite{Ellis:1991qj}, one has that:
 \begin{equation}\label{eq:alphaCFs}
 \begin{array}{rcl}
 \displaystyle C_{i;q}^{(\alpha)} &=& \displaystyle \frac{C_{i;q}^{(\alpha_s)}}{C_F}\\
@@ -560,17 +562,17 @@ in the QCD part of the structure functions.
 %
 This approximation introduces an inaccuracy of the order of the QED
 coupling $\alpha$ times the value of the off-diagonal elements of the
-CKM matrix, and therefore it is numerically negligible.
+CKM matrix and therefore it is numerically negligible.
 
 As an illustration of the impact of the $\mathcal{O}(\alpha)$
 correction on the DIS structure functions, Fig.~\ref{fig:StructFuncs}
-shows the effect of introducing these contributions on the pure QCD
-computation at NLO. The plots are produced by evolving the NNPDF3.0QED
-NLO set from $Q_0=1$ GeV to $Q=100$ GeV including the NLO QCD+QED
-corrections discussed in the previous section and using the resulting
-evolved PDFs to compute the NC (left panel) and the CC (right panel)
-DIS structure functions in the FONLL-B scheme (NLO) including the
-$\mathcal{O}(\alpha)$ corrections to the coefficient functions
+shows the effect of introducing these contributions on top of the pure
+QCD computation at NLO. The plots are produced by evolving the
+NNPDF3.0QED NLO set from $Q_0=1$ GeV to $Q=100$ GeV including the full
+NLO QCD+QED corrections discussed in the previous section and using
+the resulting evolved PDFs to compute the NC (left panel) and the CC
+(right panel) DIS structure functions in the FONLL-B scheme, including
+the $\mathcal{O}(\alpha)$ corrections to the coefficient functions
 discussed above.
 %
 The predictions are shown normalised to the pure QCD computation where
@@ -595,12 +597,11 @@ photon-induced DIS coefficient functions.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 It is clear that the impact of the full NLO QCD+QED corrections is
-pretty small especially in the low-$x$ region where QCD dominates and
-the impact of the QED contributions is well below 1\%. In the
-large-$x$ region, instead, the presence of a contribution proportional
-to the photon PDF is more significant because of the relative
-suppression of the QCD distributions (quarks and gluon) and the impact
-of the QED corrections reaches the 2\% level.  It should be stressed
-that the behaviour around $x=10^{-2}$ of the CC $F_3$ (green curve in
-the right panel) is driven by a change of sign of the predictions so
-that the ratio diverges.
+pretty small especially in the low-$x$ region where it is well below
+1\%. In the large-$x$ region, instead, the presence of a
+photon-initiated contribution has a more significant effect because of
+the suppression of the QCD distributions (quarks and gluon) relative
+to the photon PDF and the impact of the QED corrections reaches the
+2\% level.  It should be stressed that the behaviour around
+$x=10^{-2}$ of the CC $F_3$ (green curve in the right panel) is driven
+by a change of sign of the predictions so that the ratio diverges.
