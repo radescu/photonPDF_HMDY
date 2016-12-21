@@ -9,7 +9,7 @@ and ATLAS high-mass Drell-Yan cross-sections.
 First of all, we show the resulting photon PDF and compare with
 with other recent extractions.
 %
-We also quantify the impact of the hmDY data on the quark and
+We also quantify the impact of the High Mass Drell-Yan (HMDY) data on the quark and
 gluon PDFs.
 %
 Then we assess the model, parametrization
@@ -28,7 +28,7 @@ instead.
 %
 Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings}, we find
 a $\chi^{2}/N_{\rm dof} = 1.18$,
-with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-yan data.
+with a partial $\chi^2/N_{\rm dof} = 1.15$ for the high-mass Drell-Yan data.
 %
 First of all we present our results for the photon PDF, and then the impact
 of the DY measurements on the quark and gluon PDF.
@@ -86,38 +86,41 @@ percent accuracy of the LUXqed calculation.
 
 
 Another interesting question that our analysis allows addressing is what is
-the impact of the high-mass Drell-Yan 8 TeV measurements on the quark and gluon
+the impact of the high-mass Drell-Yan 8 TeV measurements on the light quark
 PDFs.
 %
 For this purpose, and since HERA data alone (which should be used as benchmark for
 this comparison) does not have sensitivity to the photon PDF,
-we have repeated our fits this time switching off QED effects and thus setting to zero
-the photon PDF.
+we have repeated our fits this time freezing photon PDF to the shape given by HMDY data.
 %
 This way, we can perform a meaningful comparison between the HERA-only baseline and the
-HERA+hmDY fit to gauge the modifications of quark and gluon PDFs.
-
+HERA+HMDY fit to gauge the modifications of quark and gluon PDFs.
+%
 This comparison is shown in Fig.~\ref{fig:QCDfit} for the up and down antiquarks,
 for which the effect of the high-mass
 Drell-Yan data is expected to be more marked, and the PDFs are presented
-as ratio to the central value of the HERA+hmDY fit.
+as ratio to the central value of the HERA+HMDY fit.
 %
 As is apparent from this comparison, the modifications in the medium and large-$x$
-antiquarks from the hmDY data are significant for $x\ge 0.01$, though the two fits
+antiquarks from the HMDY data are significant for $x\ge 0.01$, though the two fits
 agree always at the one-sigma level.
 %
 Specially for the case of $x\bar{d}$, the improvement in PDF uncertainties
 is also marked.
+%
+The results were cross checked with the fits switching off the QED effects for both 
+HERA only fits and the nominal fits, with the same outcome.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ubar_ratio}
-\includegraphics[width=8cm]{figs/q2_10000_pdf_dbar_ratio} 
+\includegraphics[width=8cm]{figs/q2_7_5_pdf_ubar_ratio.pdf}
+\includegraphics[width=8cm]{figs/q2_7_5_pdf_dbar_ratio.pdf} 
 \caption{The impact of the ATLAS high-mass 8 TeV Drell-Yan measurements
-  on the $x\bar{u}$ and $x\bar{d}$ sea quark PDFs at $Q^2=10^4$ GeV$^2$.
+  on the $x\bar{u}$ and $x\bar{d}$ sea quark PDFs at the starting scale $Q^2=7.5$ GeV$^2$.
   %
-  Results are shown normalized to the central value of the HERA+hmDY fit.
+  Results are shown normalized to the central value of the HERA+HMDY fit.
 }
 \label{fig:QCDfit}
 \end{figure}
@@ -131,10 +134,10 @@ and for the high-mass DY data for the NNLO fit
 are summarized in Table~\ref{tab:chi2fit}.
 %
 As can be seen, the agreement between data and the NNLO theory
-is very good for all the $m_{ll}$ of the 8 TeV Drell-Yan data.
+is very good for all the $m_{ll}$ of the $8$ TeV Drell-Yan data.
 %
-For the sum of all the five rapidity bins, we find a $\chi^2=55$
-for 48 data points.
+For the sum of all the five rapidity bins, we find a $\chi^2=48$
+for $48$ data points.
 %
 The quality of the agreement with the HERA inclusive structure functions
 is similarly good.
@@ -150,24 +153,25 @@ $m_{ll}$ bins have been taken into account.
     Dataset  &   $\chi^2$ \\
     \hline
     \hline
-    hmDY  116 GeV $\ge m_{ll} \ge $ 150 GeV  &  9.3/12 \\
-    hmDY  150 GeV $\ge m_{ll} \ge $ 200 GeV  &  17/12 \\
-    hmDY  200 GeV $\ge m_{ll} \ge $ 300 GeV  &  17/12 \\
-    hmDY  300 GeV $\ge m_{ll} \ge $ 500 GeV  &  3.8/6 \\
-    hmDY  500 GeV $\ge m_{ll} \ge $ 1500 GeV  &  4.2/6 \\
+    HERA I+II & 1235.85/1056\\
     \hline
-    Correlated $\chi^2$ & 4.98 \\
-    Log penalty $\chi^2$  & -0.0004 \\
+    HMDY  116 GeV $\ge m_{ll} \ge $ 150 GeV  &  8.96/12 \\
+    HMDY  150 GeV $\ge m_{ll} \ge $ 200 GeV  &  15.36/12 \\
+    HMDY  200 GeV $\ge m_{ll} \ge $ 300 GeV  &  13.81/12 \\
+    HMDY  300 GeV $\ge m_{ll} \ge $ 500 GeV  &  4.82/6 \\
+    HMDY  500 GeV $\ge m_{ll} \ge $ 1500 GeV &  3.96/6 \\
+    \hline
+    Correlated (HMDY) $\chi^2$ & 1.17 \\
+    Log penalty (HMDY) $\chi^2$  & -0.12 \\
     \hline
     \hline
-    Total  & 55/48 \\
+    Total  (HMDY) & 47.96/48 \\
     \hline
     \end{tabular}
   \caption{$\chi^{2}$ for high-mass Drell Yan data for the NNLO fit.
     %
     We show the results for the individual $m_{ll}$ bins
-    are well as for the total dataset. {\bf updated
-    with HERA numbers}
+    are well as for the total dataset.
 \label{tab:chi2fit}
   }
 \end{table}
@@ -361,8 +365,8 @@ For the NNLO fit, only the experimental PDF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
+\includegraphics[width=8cm]{figs/q2_7_5_pdf_ph_NLOvsNNLO.pdf}
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_ratio_NLOvsNNLO.pdf}
 \caption{Left: comparison between our baseline
   fit of $x\gamma(x,Q^2)$ (NNLO QCD + NLO QED) with the central value
   resulting from a NLO QCD+QED fit, at $Q^2=10^4$ GeV$^2$.

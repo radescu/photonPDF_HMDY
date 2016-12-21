@@ -3,9 +3,9 @@
 
 In this section we discuss the settings of
 the PDF fit, including the parametrization of the photon PDF
-that will be adopted in the following.
+that is adopted in the following.
 %
-The analysis will be carried out using the open-source
+The analysis is carried out using the open-source
 {\tt xFitter} framework~\cite{Alekhin:2014irh}.
 %
 The input evolution scale $Q_0$, where the PDFs
@@ -25,30 +25,30 @@ defined in Ref.~\cite{Aaron:2009aa}
 Alternative forms have also been tried,
 with no significant difference to our results.
 % 
-The PDF parametrisation input at $Q^2_0$ is determined by the technique of saturation of the $\chi^{2}$, namely one keeps increasing
+The PDF parametrization input at $Q^2_0$ is determined by the technique of saturation of the $\chi^{2}$, namely one keeps increasing
 the number of parameters until the $\chi^{2}$ does not improve further.
 %
 In this analysis,
-the parametrised PDFs are the valence distributions $xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the \textit{u}-type and \textit{d}-type sea quarks, $x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and $x\bar{D} = x\bar{d} + x\bar{s}$.
+the parametrized PDFs are the valence distributions $xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the \textit{u}-type and \textit{d}-type sea quarks, $x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and $x\bar{D} = x\bar{d} + x\bar{s}$.
 %
 In addition, we also parametrize the photon distribution $x\gamma$.
 %
-The following  functional form will be used:
+The following  functional form is used:
 \begin{equation}
   \label{eq:parametrization}
 xf(x) = Ax^{B}(1-x)^{C}(1+Dx+Ex^{2})
 \end{equation}
-where some of the normalisation parameters, in particular
+where some of the normalization parameters, in particular
 $A_{u_{v}}$, $A_{d_{v}}$ and $A_{g}$, are constrained by the valence and momentum
 sum rules.
 %
 The  parameters $B_{\bar{U}}$ and $B_{\bar{D}}$ are set equal to each other, such
-the two quark sea distributions share a common small-$x$ behaviour.
+the two quark sea distributions share a common small-$x$ behavior.
 %
 Since the measurements used here are not sensitive to the 
-strangeness content of the proton, we fix $x\bar{s} = f_sx\bar{D}$, where $f_s=0.5$ consistent with
+strangeness content of the proton, we fix $x\bar{s} = r_sx\bar{d}$, where $r_s=1.0$ consistent with
 the ATLAS 
-analysis of inclusive $W$ and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}.
+analysis of inclusive $W$ and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}. 
 %
 A further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed such that $x\bar{u} \to x\bar{d}$ as $x \to 0$.
 The \textit{D} and \textit{E} parameters are added one by one
@@ -75,7 +75,7 @@ x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}
 \end{equation}
 Note that now the photon PDF also enters the momentum sum rule.
 
-The parametrisation of the quark and gluon PDFs Eq.~(\ref{eq:param}) differs from the one used
+The parametrization of the quark and gluon PDFs Eq.~(\ref{eq:param}) differs from the one used
 in the HERAPDF2.0 analysis in various aspects.
 %
 First of all, we use a higher value of the input evolution scale $Q^2_0$, which is helpful
@@ -93,19 +93,19 @@ replica method~\cite{DelDebbio:2004xtd,DelDebbio:2007ee}, cross-checked
 with the Hessian method~\cite{Pumplin:2001ct} using $\Delta\chi^2=1$.
 %
 The former is expected to be more robust than the latter, due to the potential
-non-gaussian nature of the photon PDF uncertainties~\cite{Ball:2013hta}.
+non-Gaussian nature of the photon PDF uncertainties~\cite{Ball:2013hta}.
 %
 In addition, we have performed a number of cross-checks to assess the impact
 of various model and parametrization uncertainties.
 %
-For the model uncertainties, we will consider variations of the charm mass
+For the model uncertainties, we consider variations of the charm mass
 between $m_c=1.41$ GeV to 1.53 GeV; of the bottom mass between
 $m_c=4.25$ GeV to 4.75 GeV; of the strong
 coupling constant $\alpha_s(m_Z)$ between 0.116 to 0.120; as well
-as of decreasing the strangeness fraction down to  $f_s=0.4$.
+as of decreasing the strangeness fraction down to  $r_s=0.75$.
 
 
-Concerning the parametrization uncertainties, we will quantify the impact of
+Concerning the parametrization uncertainties, we  quantify the impact of
  increasing the input parametrization scale
- (and minimum $Q^2$ cut) up to $Q_0^2=Q^2_{\rm min}=10$ GeV$^2$, as well as
+ up to $Q_0^2=10$ GeV$^2$, as well as
  of additional parameters in Eq.~(\ref{eq:param}) that make little difference to the $\chi^2$ of the fit, but which can change the shape of the PDFs, in particular the extra negative term for the gluon; $D_{u_v}$, $D_{\bar{u}}$ and $E_{\bar{d}}$.
