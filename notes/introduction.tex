@@ -1,40 +1,36 @@
 \section{Introduction}
 
-Precision phenomenology at the LHC requires theoretical calculations which
-include not only QCD corrections, where NNLO is rapidly becoming
-the standard, but also electroweak (EWK) corrections, which are
-specially relevant for observables directly sensitive to the TeV region.
+Precision phenomenology at the LHC requires theoretical calculations
+which include not only QCD corrections, where NNLO is rapidly becoming
+the standard, but also electroweak (EW) corrections, which are
+particularly significant for observables directly sensitive to the TeV
+region.
 %
-An important ingredient of these electroweak corrections is
-the photon parton distribution function (PDF), which must
-be introduced
-to regularise the collinear divergences in initial-state QED emissions.
+An important ingredient of these electroweak corrections is the photon
+parton distribution function (PDF), which must be introduced to absorb
+the collinear divergences in initial-state QED emissions.
 
-The first PDF fit to include both QED corrections and a photon PDF
-was MRST2004QED~\cite{Martin:2004dh},
-where the photon PDF was taken from a model
-and tested on HERA data for direct photon production.
+The first PDF fit to include both QED corrections and a photon PDF was
+MRST2004QED~\cite{Martin:2004dh}, where the photon PDF was taken from
+a model and tested on HERA data for direct photon production.
 %
-More recently, the NNPDF2.3QED analysis~\cite{Ball:2013hta}
-provided a first model-independent
-determination of the photon PDF based on Drell-Yan data
-from ATLAS and LHCb.
+More recently, the NNPDF2.3QED analysis~\cite{Ball:2013hta} provided a
+first model-independent determination of the photon PDF based on
+Drell-Yan data from ATLAS and LHCb.
 %
 The resulting photon PDF is however affected by large uncertainties
-due to the limited sensitivity of the data used as input to that
-fit.
+due to the limited sensitivity of the data used as input to that fit.
 %
-The CT group have also released a QED fit using a similar strategy
-as the MRST2004QED one \cite{Schmidt:2014aba}.
+The CT group has also recently released a QED fit using a similar
+strategy as the MRST2004QED one \cite{Schmidt:2014aba}.
 
-A recent breakthrough concerning the determination of the
-photon PDF has been the realization that it can be expressed
-in terms of inclusive lepton-proton deep-inelastic scattering
-structure functions.
+A recent breakthrough concerning the determination of the photon PDF
+has been the realisation that it can be expressed in terms of
+inclusive lepton-proton deep-inelastic scattering structure functions.
 %
-The residual uncertainties in the photon PDF resulting from
-this strategy, dubbed LUXqed~\cite{Manohar:2016nzj}, are now at the few percent level,
-not unlike the quark and gluon PDFs.
+The residual uncertainties in the photon PDF resulting from this
+strategy, dubbed LUXqed~\cite{Manohar:2016nzj}, are now at the few
+percent level, not unlike the quark and gluon PDFs.
 %
 A related approach by the HKR~\cite{Harland-Lang:2016apc}
 group also leads to a similar photon PDF.
@@ -43,42 +39,41 @@ Also recently, the NNPDF3.0QED set, with improved
 QED evolution and state-of-the-art quark and gluon
 PDFs, was also made available~\cite{Bertone:2016ume,Ball:2014uwa}.
 
-The aim of this work is to perform a direct determination
-of the photon PDF from the recent high-mass Drell-Yan measurements
-from the ATLAS experiment at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw},
-and to compare
-with the various existing calculations.
+The aim of this work is to perform a direct determination of the
+photon PDF from the recent high-mass Drell-Yan measurements from the
+ATLAS experiment at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}, and to
+compare it with the various existing extractions.
 %
-As compared to previous measurements of the Drell-Yan processes
-at high dilepton invariant masses $m_{ll}$, ATLAS now provides
-both single differential distributions in $m_{ll}$ as well
-as double-differential cross-sections in both $m_{ll}$
-and $|y_{ll}|$, the rapidity of the lepton pair,
-and in  $m_{ll}$ and $\Delta\eta_{ll}$, the difference in pseudo-rapidity
-between the two leptons.
+As compared to previous measurements of the Drell-Yan processes at
+high dilepton invariant masses $m_{ll}$, ATLAS now provides both
+single-differential distributions in $m_{ll}$ and double-differential
+cross sections in both $m_{ll}$ and $|y_{ll}|$, the rapidity of the
+lepton pair, and in $m_{ll}$ and $\Delta\eta_{ll}$, the difference in
+pseudo-rapidity between the two leptons.
 %
 Using the Bayesian reweighting method~\cite{Ball:2011gg,Ball:2010gb}
-applied to NNPDF2.3QED, it was shown~\cite{Aad:2016zzw}
-that these measurements provided significant
-information on $x\gamma(x,Q^2)$, and thus here we would
-like to confirm this first studies by means of a complete PDF fit.
+applied to NNPDF2.3QED, it was shown~\cite{Aad:2016zzw} that these
+measurements provided significant information on $x\gamma(x,Q)$, and
+thus here we would like to confirm this first studies by means of a
+complete PDF fit.
 
-The goal of this study is therefore to investigate further these constraints
-from the ATLAS high-mass measurements on the photon PDF,
+The goal of this study is therefore to investigate further these
+constraints from the ATLAS high-mass measurements on the photon PDF,
 this time by means of a direct PDF fit performed within the
 open-source {\tt xFitter} framework~\cite{Alekhin:2014irh}.
 %
-State-of-the-art theoretical calculations are employed,
-in particular
-we include NNLO QCD and NLO QED corrections, the latter implemented
-via the {\tt APFEL} program and presented from the first time
-here.
+State-of-the-art theoretical calculations are employed, in particular
+we include NNLO QCD and NLO QED corrections in the PDF evolution and
+in the computation of the deep-inelastic-scattering (DIS) structure
+functions as implemented in the {\tt APFEL} program and presented from
+the first time here.
 %
 %%%%%%%% 
-% Do we want to put conclusion in the introduction?
-% I would rather say: 
-This determination of photon PDF represents an important test
- of the recent developmemts in theory and data to understand the effects of photon PDFs.
+% Do we want to put conclusion in the introduction?  I would rather
+% say:
+%This determination of the photon PDF represents an important test of
+%the recent developments in theory and data to understand the effects
+%of photon PDFs.
 
 %Our results turn out to be in good agreement with the LUXqed and HKR
 %calculations, providing further evidence that our understanding
@@ -88,26 +83,28 @@ This determination of photon PDF represents an important test
 
 The outline of this paper is as follows.
 %
-Sect.~\ref{sec:theory} presents the experimental measurements together with the theoretical formalism
-of DIS and Drell-Yan cross-sections used in this analysis.
+Sect.~\ref{sec:theory} presents the experimental measurements together
+with the theoretical formalism of DIS and Drell-Yan cross-sections
+used in this analysis.
 %
-Then in Sect~\ref{sec:fitsettings} we discuss the settings of
-the PDF fit.
-% including the parametrization of the photon PDF
-%that will be adopted.
+Then in Sect~\ref{sec:fitsettings} we discuss the settings of the PDF
+fit.
+% including the parametrization of the photon PDF that will be
+% adopted.
 %
-%Here we also show a sensitivity study which motivates the
-%usefulness of the ATLAS measurements for the photon PDF.
+% Here we also show a sensitivity study which motivates the usefulness
+% of the ATLAS measurements for the photon PDF.
 %
-The fit results are presented in Sect.~\ref{sec:results},
-and they are compared with other existing photon PDF extractions.
+The fit results are presented in Sect.~\ref{sec:results}, and they are
+compared to other existing photon PDF extractions.
 
 %the existing calculations and other
 %fits of the photon PDF.
 %
-Sect.~\ref{sec:conclusions} summarises the results and 
-and discusses future lines of investigation.
+Finally, in Sect.~\ref{sec:conclusions} we summarise the results and
+discuss future lines of investigation.
 %
-In addition, appendix~\ref{sec:appendixAPFEL} contains a detailed description of
-the implementation and validation of NLO QED corrections
-in {\tt APFEL}.
+In addition, appendix~\ref{sec:appendixAPFEL} contains a detailed
+description of the implementation and validation of NLO QED
+corrections to the DGLAP PDF evolution and DIS structure functions as
+implemented in {\tt APFEL}.

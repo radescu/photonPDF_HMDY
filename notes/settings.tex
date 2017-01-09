@@ -1,62 +1,69 @@
 \section{Settings}
 \label{sec:fitsettings}
 
-In this section we discuss the settings of
-the PDF fit, including the parametrization of the photon PDF
-that is adopted in the following.
+In this section we discuss the settings of the PDF fits, including the
+parametrization of the photon PDF that is adopted in the following.
 %
-The analysis is carried out using the open-source
-{\tt xFitter} framework~\cite{Alekhin:2014irh}.
+The analysis is carried out using the open-source {\tt xFitter}
+framework~\cite{Alekhin:2014irh}.
 %
-The input evolution scale $Q_0$, where the PDFs
-are parametrized, is taken to be $Q^2_0 = 7.5~$GeV$^2$.
+The scale $Q_0$ at which PDFs are parametrized is taken to be
+$Q_0 = \sqrt{7.5}~$GeV.
 %
-This is also the value $Q^2_0=Q^2_{\rm min}$ used to set the
-minimum value of $Q^2$ for those data points that enter the fit.
+This is equal to the value $Q_{\rm min}$ used to set the minimum value
+of $Q$ for the data points that enter the fits.
 %
-The charm PDF is generated perturbative from quarks and gluons
-using the DGLAP equations, exploiting recent developments
-in {\tt APFEL} which allow the use of displaced heavy quark
-thresholds, so we use $\mu_c=Q_0 > m_c$.
+The charm PDF is generated perturbative from quarks and gluons by
+means of DGLAP evolution, exploiting recent developments in {\tt
+  APFEL} which allow the use of setting heavy-quark thresholds $\mu_h$
+different from the heavy quark masses $m_h$, so that we can use
+$\mu_c=Q_0 > m_c$ without having to parametrize the charm PDFs.
 
-The  expression for the $\chi^2$ used for the fit is the one
-defined in Ref.~\cite{Aaron:2009aa}
+The expression for the $\chi^2$ used for the fit is the one defined in
+Ref.~\cite{Aaron:2009aa}
 %
-Alternative forms have also been tried,
-with no significant difference to our results.
+Alternative forms have also been tried, with no significant difference
+on our results.
 % 
-The PDF parametrization input at $Q^2_0$ is determined by the technique of saturation of the $\chi^{2}$, namely one keeps increasing
-the number of parameters until the $\chi^{2}$ does not improve further.
+The PDF parametrization at the scale $Q_0$ is determined by the
+technique of saturation of the $\chi^{2}$, namely one keeps increasing
+the number of parameters until the $\chi^{2}$ does not improve
+further.
 %
-In this analysis,
-the parametrized PDFs are the valence distributions $xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the \textit{u}-type and \textit{d}-type sea quarks, $x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and $x\bar{D} = x\bar{d} + x\bar{s}$.
+In this analysis, the parametrized PDFs are the valence distributions
+$xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the
+\textit{u}-type and \textit{d}-type sea-quark distributions,
+$x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and
+$x\bar{D} = x\bar{d} + x\bar{s}$.
 %
 In addition, we also parametrize the photon distribution $x\gamma$.
 %
-The following  functional form is used:
+The following functional form is used:
 \begin{equation}
   \label{eq:parametrization}
 xf(x) = Ax^{B}(1-x)^{C}(1+Dx+Ex^{2})
 \end{equation}
-where some of the normalization parameters, in particular
-$A_{u_{v}}$, $A_{d_{v}}$ and $A_{g}$, are constrained by the valence and momentum
+where some of the normalisation parameters, in particular $A_{u_{v}}$,
+$A_{d_{v}}$ and $A_{g}$, are constrained by the valence and momentum
 sum rules.
 %
-The  parameters $B_{\bar{U}}$ and $B_{\bar{D}}$ are set equal to each other, such
-the two quark sea distributions share a common small-$x$ behavior.
+The parameters $B_{\bar{U}}$ and $B_{\bar{D}}$ are set equal to each
+other, so that the two quark sea distributions share a common
+small-$x$ behaviour.
 %
-Since the measurements used here are not sensitive to the 
-strangeness content of the proton, we fix $x\bar{s} = r_sx\bar{d}$, where $r_s=1.0$ which is consistent with
-the ATLAS 
-analysis of inclusive $W$ and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}. 
+Since the measurements used here are not sensitive to the strangeness
+content of the proton, we fix $x\bar{s} = r_sx\bar{d}$, where
+$r_s=1.0$ which is consistent with the ATLAS analysis of inclusive $W$
+and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}.
 %
-A further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed such that $x\bar{u} \to x\bar{d}$ as $x \to 0$.
-The \textit{D} and \textit{E} parameters are added one by one
-to the parametrization Eq.~(\ref{eq:parametrization}) until no significant 
-improvement in $\chi^{2}$ is found. 
+The further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed,
+such that $x\bar{u} \to x\bar{d}$ as $x \to 0$.  The \textit{D} and
+\textit{E} parameters are added one by one to the parametrization in
+Eq.~(\ref{eq:parametrization}) until no significant improvement in
+$\chi^{2}$ is found.
 
-Following this method, the optimal parametrization found for this analysis turns
-out to be the following for the quark and gluon PDFs:
+Following this method, the optimal parametrization for the quark and
+gluon PDFs found for this analysis turns out to be the following:
 \begin{eqnarray}
   \nonumber
   xu_v(x) &&= A_{u_v}x^{B_{u_v}}(1-x)^{C_{u_v}}(1+E_{u_v}x^{2})\, , \\
@@ -69,43 +76,47 @@ x\bar{D}(x) &&= A_{\bar{D}}x^{B_{\bar{D}}}(1-x)^{C_{\bar{D}}}\, , \\
 \label{eq:param}
 xg(x) &&= A_{g}x^{B_{g}}(1-x)^{C_{g}}(1+E_{g}x^{2})\, ,
 \end{eqnarray}
-while for the photon PDF instead we use
+while for the photon PDF we use:
 \begin{equation}
 x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}x^{2}) \, .
 \end{equation}
-Note that now the photon PDF also enters the momentum sum rule.
+Note that the photon PDF also enters the momentum sum rule.
 
-The parametrization of the quark and gluon PDFs Eq.~(\ref{eq:param}) differs from the one used
-in the HERAPDF2.0 analysis in various aspects.
+The parametrization of the quark and gluon PDFs in
+Eq.~(\ref{eq:param}) differs from the one used in the HERAPDF2.0
+analysis in various aspects.
 %
-First of all, we use a higher value of the input evolution scale $Q^2_0$, which is helpful
-to stabilize the fit of the photon PDF.
+First of all, we use a higher value of the input evolution scale
+$Q_0$, which is helpful to stabilise the fit of the photon PDF.
 %
-Second, the additional negative term in the parametrization of the gluon
-is not required here, since we use a more stringent cut $Q_{\rm min}^2$ which removes
-some of the low-$x$ data (since they do not provide any information on the photon).
+Second, the additional negative term in the parametrization of the
+gluon is not required here, since we use a more stringent cut
+$Q_{\rm min}$ which removes some of the low-$x$ data points (which do
+not provide any information on the photon).
 %
-Third, the results of the parametrization scan are different due to the presence now
-of the ATLAS high-mass Drell-Yan cross-section.
+Third, the results of the parametrization scan are different due to
+the presence of the ATLAS high-mass Drell-Yan cross-section.
 
-PDF uncertainties are estimated using the Monte Carlo
-replica method~\cite{DelDebbio:2004xtd,DelDebbio:2007ee}, cross-checked
-with the Hessian method~\cite{Pumplin:2001ct} using $\Delta\chi^2=1$.
+PDF uncertainties are estimated using the Monte Carlo replica
+method~\cite{DelDebbio:2004xtd,DelDebbio:2007ee}, cross-checked with
+the Hessian method~\cite{Pumplin:2001ct} using $\Delta\chi^2=1$.
 %
-The former is expected to be more robust than the latter, due to the potential
-non-Gaussian nature of the photon PDF uncertainties~\cite{Ball:2013hta}.
+The former is expected to be more robust than the latter, due to the
+potential non-Gaussian nature of the photon PDF
+uncertainties~\cite{Ball:2013hta}.
 %
-In addition, we have performed a number of cross-checks to assess the impact
-of various model and parametrization uncertainties.
+In addition, we have performed a number of cross-checks to assess the
+impact of various model and parametrization uncertainties.
 %
 For the model uncertainties, we consider variations of the charm mass
-between $m_c=1.41$ GeV to 1.53 GeV; of the bottom mass between
-$m_c=4.25$ GeV to 4.75 GeV; of the strong
-coupling constant $\alpha_s(m_Z)$ between 0.116 to 0.120; as well
-as of decreasing the strangeness fraction down to  $r_s=0.75$.
+between $m_c=1.41$ GeV to 1.53 GeV, of the bottom mass between
+$m_c=4.25$ GeV to 4.75 GeV, of the strong coupling constant
+$\alpha_s(m_Z)$ between 0.116 to 0.120, as well as of decreasing the
+strangeness fraction down to $r_s=0.75$.
 
-
-Concerning the parametrization uncertainties, we  quantify the impact of
- increasing the input parametrization scale
- up to $Q_0^2=10$ GeV$^2$, as well as
- of additional parameters in Eq.~(\ref{eq:param}) that make little difference to the $\chi^2$ of the fit, but which can change the shape of the PDFs, in particular the extra negative term for the gluon; $D_{u_v}$, $D_{\bar{u}}$ and $E_{\bar{d}}$.
+Concerning the parametrization uncertainties, we quantify the impact
+of increasing the input parametrization scale up to $Q_0=\sqrt{10}$
+GeV and including additional parameters in Eq.~(\ref{eq:param}) that
+make little difference to the $\chi^2$ of the fit, but which can
+change the shape of the PDFs, in particular the extra negative term
+for the gluon, $D_{u_v}$, $D_{\bar{u}}$, and $E_{\bar{d}}$.
