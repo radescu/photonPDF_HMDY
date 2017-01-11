@@ -11,13 +11,13 @@ recent extractions.
 We also quantify the impact of the High-Mass Drell-Yan (HMDY) data on
 the quark and gluon PDFs.
 %
-Then we assess the model, parametrization, and procedural
-uncertainties that affect our fit of $\gamma(x,Q)$.
+Then we check for robustness of the results by varying the model, parametrization, and procedural
+inputs that affect our fit of $\gamma(x,Q)$.
 %
 Finally, we discuss the perturbative stability by comparing NLO and
 NNLO results.
 
-\subsection{The photon PDF from high-mass DY data}
+\subsection{Comparison between high-mass DY data and fit results}
 
 In the following, we present results obtained using the
 double-differential $\lp m_{ll},y_{ll}\rp$ distributions, though we
@@ -25,19 +25,72 @@ have verified that compatible results are obtained if the
 $\lp m_{ll},\Delta\eta_{ll}\rp$ ones are fitted instead.
 %
 Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings},
-we find a $\chi^{2}/N_{\rm dof} = 1.18$, with a partial
-$\chi^2/N_{\rm dof} = 1.00$ for the high-mass Drell-Yan data.
+we find a $\chi^{2}/N_{\rm dof} = 1235.85/1056$, with a partial
+$\chi^2/N_{\rm data} = 47.96/48$ for the high-mass Drell-Yan data,
+where $N_{\rm dof}$ is the number of degree of freedom in the fit and 
+$N_{\rm data}$  is the number of data points for high-mass DY data.
+
+Fig.~\ref{hmDY_2D} shows the comparison between the ATLAS
+high-mass Drell Yan data and the NNLO predictions for two
+representative bins of the $(y_{ll},m_{ll})$ distribution, in
+particular the first and fourth bins.
 %
-We start presenting our results for the photon PDF and then the impact
+We denote as {\tt xFitter\_epHMDY} the fit results.
+%
+In the lower panel we show the ratio of theory over data, where the
+yellow band corresponds to the correlated systematic uncertainties.
+%
+The band around the theory prediction corresponds to the total theory
+uncertainty from the PDF fit. 
+%
+The shifts due to systematic uncertainties are indicated by a dashed
+line.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+\centering
+\includegraphics[width=16cm]{figs/data_401-1.pdf}\\
+\includegraphics[width=16cm]{figs/data_405-1.pdf}\\
+\caption{The ratio between the central value of the NNLO fit results
+  and the ATLAS high-mass Drell Yan data
+  for two representative bins of the $(y_{ll},m_{ll})$ distribution,
+  in particular the first and last mass bins.
+  %
+  The error bars on the data points correspond to the statistical
+  uncertainties, while the yellow band
+  corresponds to the correlated systematic uncertainties.
+  %
+%  In the lower panels we show the pulls between fit and data for each $y_{ll}$
+%  bin.
+}
+\label{hmDY_2D}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As can be seen from Fig.~\ref{hmDY_2D}, once the shifts due to
+experimental systematic uncertainties have been accounted for, there
+is a reasonable agreement between ATLAS data and NNLO theory
+predictions.
+%
+This agreement is consistent the values of the $\chi^2$ reported in
+Table~\ref{tab:chi2fit} and extends to the other $m_{ll}$ bins.
+%
+We emphasise the high precision of this measurement with experimental
+errors at the few percent level in most of the kinematic range
+available.
+
+
+\subsection{The photon PDF from high-mass DY data}
+%
+We present our results for the photon PDF and then the impact
 of the DY measurements on the quark and gluon PDFs.
 %
-We denote as {\tt xFitter\_epHMDY} the results of this work.
 
-In Fig.~\ref{photon_zoom} we show our results for $x\gamma(x,Q)$ at
-$Q^2=10^4$ GeV$^2$, compared to LUXqed~\cite{Manohar:2016nzj},
-HKR~\cite{Harland-Lang:2016apc} and NNPDF3.0QED.
+In Fig.~\ref{photon_zoom} we show  the $x\gamma(x,Q)$ distribution at
+$Q^2=10^4$ GeV$^2$ with experimental uncertainty band using MC method and it is compared to LUXqed~\cite{Manohar:2016nzj},
+HKR~\cite{Harland-Lang:2016apc} and NNPDF3.0QED sets.
 %
-The comparison is restricted to the range $0.03 \le x \le 0.9$,
+The comparison is restricted to the range $0.02 \le x \le 0.8$,
 corresponding to the region where the fitted Drell-Yan measurements
 have direct kinematic sensitivity on the photon PDF.
 %
@@ -103,7 +156,7 @@ gluon PDFs.
 This comparison is shown in Fig.~\ref{fig:QCDfit} for the up and down
 antiquarks, for which the effect of the high-mass Drell-Yan data is
 expected to be more pronounced. PDFs are presented as ratios to the
-central value of the HERA+HMDY fit.
+central value of the HERA+HMDY fit with their experimental uncertainties.
 %
 As is apparent from this comparison, the modifications in the medium
 and large-$x$ antiquark distributions from the HMDY data are
@@ -182,64 +235,19 @@ different $m_{ll}$ bins have been taken into account.
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Next, in Fig.~\ref{hmDY_2D} we show the comparison between the ATLAS
-high-mass Drell Yan data and the NNLO predictions for two
-representative bins of the $(y_{ll},m_{ll})$ distribution, in
-particular the first and fourth bins.
-%
-In the lower panel we show the ratio of theory over data, where the
-yellow band corresponds to the correlated systematic uncertainties.
-%
-The band around the theory prediction corresponds to the total theory
-uncertainty from the PDF fit.
-%
-The shifts due to systematic uncertainties are indicated by a dashed
-line.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-\centering
-\includegraphics[width=16cm]{figs/data_401-1.pdf}\\
-\includegraphics[width=16cm]{figs/data_405-1.pdf}\\
-\caption{The ratio between the central value of the NNLO fit results
-  and the ATLAS high-mass Drell Yan data
-  for two representative bins of the $(y_{ll},m_{ll})$ distribution,
-  in particular the first and last mass bins.
-  %
-  The error bars on the data points correspond to the statistical
-  uncertainties, while the yellow band
-  corresponds to the correlated systematic uncertainties.
-  %
-%  In the lower panels we show the pulls between fit and data for each $y_{ll}$
-%  bin.
-}
-\label{hmDY_2D}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-As can be seen from Fig.~\ref{hmDY_2D}, once the shifts due to
-experimental systematic uncertainties have been accounted for, there
-is a reasonable agreement between ATLAS data and NNLO theory
-predictions.
-%
-This agreement is consistent the values of the $\chi^2$ reported in
-Table~\ref{tab:chi2fit} and extends to the other $m_{ll}$ bins.
-%
-We emphasise the high precision of this measurement with experimental
-errors at the few percent level in most of the kinematic range
-available.
 
 Following this presentation of the main features of the {\tt
   xFitter\_epHMDY} analysis, we now turn to discuss its stability and
 to assess the model, parametrization, and procedural uncertainties.
 
-\subsection{Model, parametrization, and procedural uncertainties}
+%\subsection{Model, parametrization, and procedural uncertainties}
+\subsection{Robustness and perturbative stability checks}
 
 In this section we explore the robustness of our determination of the
 photon PDF $x\gamma(x,Q)$ upon a number of variations of the values of
 physical parameters, like $\alpha_s$ or the charm mass, and the
 choices made for the PDF parametrization, and estimate the
-uncertainties associated to the fitting procedure adopted.
+variations associated to the different fitting procedure adopted.
 %
 We perform one variation at a time and compare the effect on the
 central value of the photon PDF with the size of its experimental
@@ -294,7 +302,7 @@ parametrization, in addition to those listed in Eq.~(\ref{eq:param}).
 In Fig.~\ref{fig:param} we show the impact of three representative
 variations (others have been explored, leading to smaller
 differences): more flexibility to the gluon distribution, allowing it
-to become negative (labeled by ${\rm neg}$), adding on top $D_{u_v}$,
+to become negative at the initial scale (labeled by ${\rm neg}$), adding on top $D_{u_v}$,
 and then $D_{\bar{u}}+D_{\bar{d}}$.
 %
 As above, all variations are contained within the MC PDF uncertainty
@@ -341,7 +349,7 @@ fitting techniques are quite similar to each other.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Perturbative stability of $x\gamma(x,Q^2)$}
+%\subsection{Perturbative stability of $x\gamma(x,Q^2)$}
 
 An interesting exercise is to quantify the perturbative stability of
 our fit of the photon PDF $x\gamma(x,Q)$ with respect to the inclusion
@@ -373,13 +381,12 @@ other.
 \includegraphics[width=8cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
 \caption{Left: comparison between our baseline
   fit of $x\gamma(x,Q^2)$ (NNLO QCD + NLO QED) with the central value
-  resulting from a NLO QCD+QED fit, at $Q^2=10^4$ GeV$^2$.
+  resulting from a NLO QCD+QED fit, at $Q^2=7.5$ GeV$^2$.
   %
   In the former case, only the experimental (Monte Carlo) PDF
   uncertainties are shown.
   %
-  Right: same comparison now normalized to the central value of the
-  NNLO baseline fit.  }
+  Right: same comparison but at evolved scale of $Q^2=10^4$ GeV$^2$.  }
 \label{fig:nlo_vs_nnlo}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
