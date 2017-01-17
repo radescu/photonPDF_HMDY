@@ -2,7 +2,7 @@
 \label{sec:fitsettings}
 
 In this section we discuss the settings of the PDF fits, including the
-parametrization of the photon PDF that is adopted in the following.
+parametrization of the photon PDF.
 %
 The analysis is carried out using the open-source {\tt xFitter}
 framework~\cite{Alekhin:2014irh}.
@@ -17,7 +17,7 @@ The charm PDF is generated perturbative from quarks and gluons by
 means of DGLAP evolution, exploiting recent developments in {\tt
   APFEL} which allow the use of setting heavy-quark thresholds $\mu_h$
 different from the heavy quark masses $m_h$, so that we can use
-$\mu_c=Q_0 > m_c$ without having to parametrize the charm PDFs.
+$\mu_c=Q_0 > m_c$ without having to parametrize the charm PDF.
 
 The expression for the $\chi^2$ used for the fit is the one defined in
 Ref.~\cite{Aaron:2009aa}.
@@ -53,7 +53,7 @@ small-$x$ behaviour.
 %
 Since the measurements used here are not sensitive to the strangeness
 content of the proton, we fix $x\bar{s} = r_sx\bar{d}$, where
-$r_s=1.0$ which is consistent with the ATLAS analysis of inclusive $W$
+$r_s=1.0$ consistent with the ATLAS analysis of inclusive $W$
 and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}.
 %
 The further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed,
@@ -63,7 +63,7 @@ Eq.~(\ref{eq:parametrization}) until no significant improvement in
 $\chi^{2}$ is found.
 
 Following this method, the optimal parametrization for the quark and
-gluon PDFs found for this analysis turns out to be the following:
+gluon PDFs found for this analysis is:
 \begin{eqnarray}
   \nonumber
   xu_v(x) &&= A_{u_v}x^{B_{u_v}}(1-x)^{C_{u_v}}(1+E_{u_v}x^{2})\, , \\
@@ -89,9 +89,9 @@ analysis in various aspects.
 First of all, we use a higher value of the input evolution scale
 $Q_0$, which is helpful to stabilise the fit of the photon PDF.
 %
-Second, the additional negative term in the parametrization of the
+Second, an additional negative term in the parametrization of the
 gluon is not required here, since we use a more stringent cut
-$Q_{\rm min}$ which removes some of the low-$x$ data points (which do
+$Q_{\rm min}$ which removes a substantial fraction of the low-$x$ data points (which do
 not provide any information on the photon).
 %
 Third, the results of the parametrization scan are different due to
@@ -105,18 +105,19 @@ The former is expected to be more robust than the latter, due to the
 potential non-Gaussian nature of the photon PDF
 uncertainties~\cite{Ball:2013hta}.
 %
-In addition, we have performed a number of cross-checks to assess the
+In addition, a number of cross-checks have been performed to assess the
 impact of various model and parametrization uncertainties.
 %
-For the model uncertainties, we consider variations of the charm mass
+For the model uncertainties, variations of the charm mass
 between $m_c=1.41$ GeV to 1.53 GeV, of the bottom mass between
 $m_c=4.25$ GeV to 4.75 GeV, of the strong coupling constant
-$\alpha_s(m_Z)$ between 0.116 to 0.120, as well as of decreasing the
-strangeness fraction down to $r_s=0.75$.
+$\alpha_s(m_Z)$ between 0.116 to 0.120 are considered and additionlly the
+strangeness fraction is decreased down to $r_s=0.75$.
 
-Concerning the parametrization uncertainties, we quantify the impact
-of increasing the input parametrization scale up to $Q_0=\sqrt{10}$
-GeV and including additional parameters in Eq.~(\ref{eq:param}) that
-make little difference to the $\chi^2$ of the fit, but which can
-change the shape of the PDFs, in particular the extra negative term
-for the gluon, $D_{u_v}$, $D_{\bar{u}}$, and $E_{\bar{d}}$.
+For the parametrization uncertainties, the impact
+of increasing the input parametrization scale up to $Q_0=\sqrt{10}$ 
+GeV is considered and the impact of including additional parameters in Eq.~(\ref{eq:param}) is
+also considered. These extra parameters
+make little difference to the $\chi^2$ of the fit, but they can
+change the shape of the PDFs. Such extra parameters are  $D_{u_v}$, $D_{\bar{u}}$, $E_{\bar{d}}$ and the extra negative term 
+in the gluon PDF as used in HERAPDF2.0.

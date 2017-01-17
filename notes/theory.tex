@@ -2,7 +2,7 @@
 \label{sec:theory}
 
 In this work, the photon content of the proton $x\gamma(x,Q)$ is
-extracted from a PDF analysis based on the combine inclusive DIS
+extracted from a PDF analysis based on the combined inclusive DIS
 cross-section data from HERA~\cite{Abramowicz:2015mha} and
 supplemented by the ATLAS measurements of the high-mass Drell-Yan
 differential cross sections at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}.
@@ -40,35 +40,35 @@ $\mathcal{O}\lp \alpha^2\rp$ corrections to the splitting functions.
 As far as the DIS structure functions are concerned, corrections of
 $\mathcal{O}\lp \alpha\rp$ are also included which in turn lead to an
 explicit dependence of the predictions on the photon PDF.  The details
-on the implementation as well as a discussion on the impact of these
+of the implementation as well as a discussion of the impact of these
 corrections are given in appendix~\ref{sec:appendixAPFEL}.
 
 Heavy-quark (charm and bottom) mass effects to DIS structure functions
 are taken into account using the FONLL-B(C) general-mass
 scheme~\cite{Forte:2010ta} for the NLO (NNLO) fits.
-%
-As for the numerical values of the heavy-quark masses in the pole-mass
-scheme, we take $m_c=1.47~$GeV and $m_b=4.5~$GeV as determined in \cite{Abramowicz:2015mha}, which is also 
+
+The numerical values of the heavy-quark masses in the pole-mass
+scheme, are taken to be $m_c=1.47~$GeV and $m_b=4.5~$GeV as determined in \cite{Abramowicz:2015mha},  
 consistent with the latest PDG averages~\cite{Agashe:2014kda}.
 %
 The reference values of the coupling constants are chosen to be
 $\alpha_s(m_Z)=0.118$ and $\alpha(m_\tau=1.777\mbox{ GeV})=1/133.4$.
 
-For the calculation of high-mass Drell-Yan cross sections, we use the
-{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program v2.4.3, which
+For the calculation of high-mass Drell-Yan cross sections, the
+{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program v2.4.3 is used, which
 includes the contribution from photon-initiated diagrams, interfaced
 to {\tt APPLgrid}~\cite{Carli:2010rw} v1.4.7 through {\tt
   aMCfast}~\cite{amcfast} v1.3).
 %
-A tailored version of {\tt APPLgrid} is used, allowing to account for
+A tailored version of {\tt APPLgrid} is used, accounting for
 the contribution of the photon-initiated processes \footnote{Modified version of APPLgrid available at: $https://github.com/scarrazza/applgridphoton$}.
 %
 The calculation is performed in the $n_f=5$ scheme neglecting mass
 effects of charm and bottom quarks in the matrix elements, as
 appropriate for a high-scale processes.
 
-The kinematic phase-space coverage of the data is presented in Fig.~\ref{fig:data}, using the Leading Order relation to determine the kinematic ranges and
-the invariant $m_{ll}$ bins for the scale of the high mass DY data.
+The kinematic phase-space coverage of the data is presented in Fig.~\ref{fig:data}, using the invariant $m_{ll}$ values 
+for the scale of the high mass DY data and the Leading Order relation to determine its kinematic range.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                  
 \begin{figure}[t]
   \begin{center}
@@ -142,13 +142,13 @@ The $K$-factors in Eq.~({\ref{eq:kfactor}) have been computed using
   the central region.
 %
   Even at forward rapidities, the $K$-factors modify the NLO result by
-  at most 3\%.
+  at most 4\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \includegraphics[width=9cm]{figs/kf_2D.pdf}
 \caption{The NNLO/NLO $K$-factors, defined in Eq.~(\ref{eq:kfactor}),
-  that allow accounting for higher order QCD and EW effects in the PDF
+  that account for higher order QCD and EW effects in the PDF
   fits, as a function of the dilepton rapidity $|y_{ll}|$.  Each curve
   correspond to one of the $m_{ll}$ invariant mass bins.}
 \label{fig:kf}
