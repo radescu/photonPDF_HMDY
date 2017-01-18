@@ -17,14 +17,48 @@ from either quark-antiquark $s$-channel scattering or from
 photon-photon $t$- and $u$-channel scattering mediated by a lepton, as
 shown in Fig.~\ref{fig:photoninduced}.
 
+The ATLAS high-mass Drell-Yan 8 TeV measurements include both the
+single-differential (1D) invariant-mass distribution,
+$d\sigma/dm_{ll}$, as well as the double-differential (2D)
+distributions in $m_{ll}$ and $y_{ll}$,
+$d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
+$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
+%
+For the invariant-mass distribution, there are 12 bins between 116 GeV
+and 1.5 TeV; and for both of the double-differential distributions,
+there are five different histograms, one for each of the different
+invariant mass ranges, from the lowest bin with 116 GeV < $m_{ll}$ <
+150 GeV to the highest bin with 500 GeV < $m_{ll}$ < 1500 GeV.
+ %
+The first three (last two) $m_{ll}$ bins are divided into 12 (6) bins
+with fixed width, extending up to 2.4 and 3.0 for the $|y_{ll}^{mim}|$
+and $|\Delta\eta_{ll}|$ distributions, respectively.
+%
+In Sect.~\ref{sec:results} we compare the impact on the photon PDF of
+fitting either the 1D distributions or one of the two 2D
+distributions.
+
 Experimentally, the photons which undergo scattering in the
-$\gamma\gamma \to ee$  process can be produced by emission form the
+$\gamma\gamma \to ee$  process can be produced by emission from the
 proton as the whole (``elastic'') or radiated by the constituent quarks.
 The case when both photons are elastic is suppressed in the data by a
 requirement on number of primary tracks (more than two, \cite{Aad:2016zzw}).  
 The inelastic-elastic photon scattering corresponds to about 10\% of the
 cross section which is a small correction compared to the experimental
 accuracy.
+
+For the calculation of high-mass Drell-Yan cross sections, the
+{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program v2.4.3 is used, which
+includes the contribution from photon-initiated diagrams, interfaced
+to {\tt APPLgrid}~\cite{Carli:2010rw} v1.4.7 through {\tt
+  aMCfast}~\cite{amcfast} v1.3).
+%
+A tailored version of {\tt APPLgrid} is used, accounting for
+the contribution of the photon-initiated processes \footnote{Modified version of APPLgrid available at: $https://github.com/scarrazza/applgridphoton$}.
+%
+The calculation is performed in the $n_f=5$ scheme neglecting mass
+effects of charm and bottom quarks in the matrix elements, as
+appropriate for a high-scale processes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -37,7 +71,7 @@ accuracy.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-DIS structure functions and PDF evolution are computed with the {\tt
+The DIS structure functions and PDF evolution are computed with the {\tt
   APFEL} program~\cite{Bertone:2013vaa}, which is currently accurate
 up to NNLO in pure QCD and NLO in QED, and includes the relevant mixed
 QCD+QED corrections. This means that, on top of the pure QCD
@@ -63,19 +97,6 @@ consistent with the latest PDG averages~\cite{Agashe:2014kda}.
 The reference values of the coupling constants are chosen to be
 $\alpha_s(m_Z)=0.118$ and $\alpha(m_\tau=1.777\mbox{ GeV})=1/133.4$.
 
-For the calculation of high-mass Drell-Yan cross sections, the
-{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program v2.4.3 is used, which
-includes the contribution from photon-initiated diagrams, interfaced
-to {\tt APPLgrid}~\cite{Carli:2010rw} v1.4.7 through {\tt
-  aMCfast}~\cite{amcfast} v1.3).
-%
-A tailored version of {\tt APPLgrid} is used, accounting for
-the contribution of the photon-initiated processes \footnote{Modified version of APPLgrid available at: $https://github.com/scarrazza/applgridphoton$}.
-%
-The calculation is performed in the $n_f=5$ scheme neglecting mass
-effects of charm and bottom quarks in the matrix elements, as
-appropriate for a high-scale processes.
-
 %The kinematic phase-space coverage of the data is presented in Fig.~\ref{fig:data}, using the invariant $m_{ll}$ values 
 %for the scale of the high mass DY data and the Leading Order relation to determine its kinematic range.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                  
@@ -87,26 +108,6 @@ appropriate for a high-scale processes.
 %\label{fig:data}
 %\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
-The ATLAS high-mass Drell-Yan 8 TeV measurements include both the
-single-differential (1D) invariant-mass distribution,
-$d\sigma/dm_{ll}$, as well as the double-differential (2D)
-distributions in $m_{ll}$ and $y_{ll}$,
-$d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
-$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
-%
-For the invariant-mass distribution, there are 12 bins between 116 GeV
-and 1.5 TeV; and for both of the double-differential distributions,
-there are five different histograms, one for each of the different
-invariant mass ranges, from the lowest bin with 116 GeV < $m_{ll}$ <
-150 GeV to the highest bin with 500 GeV < $m_{ll}$ < 1500 GeV.
- %
-The first three (last two) $m_{ll}$ bins are divided into 12 (6) bins
-with fixed width, extending up to 2.4 and 3.0 for the $|y_{ll}^{mim}|$
-and $|\Delta\eta_{ll}|$ distributions, respectively.
-%
-In Sect.~\ref{sec:results} we compare the impact on the photon PDF of
-fitting either the 1D distributions or one of the two 2D
-distributions.
 
 In the theoretical calculations of the Drell-Yan cross section we use
 dynamical renormalisation $\mu_{R}$ and factorisation $\mu_{R}$
