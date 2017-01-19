@@ -3,62 +3,78 @@
 
 In this work, the photon content of the proton $x\gamma(x,Q)$ is
 extracted from a PDF analysis based on the combined inclusive DIS
-cross-section data from HERA~\cite{Abramowicz:2015mha} and
-supplemented by the ATLAS measurements of the high-mass Drell-Yan
+cross-section data from HERA~\cite{Abramowicz:2015mha}
+supplemented by the ATLAS measurements of high-mass Drell-Yan
 differential cross sections at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}.
 %
-While the HERA data is the backbone of all recent PDF fits, providing
-information on the quark/anti-quark and gluon content of the proton,
-the high-mass Drell-Yan data provides a direct sensitivity to the
+The HERA inclusive data is the backbone of modern PDF fits, providing
+information on the quark and gluon content of the proton, while
+the high-mass Drell-Yan data provides instead a direct sensitivity to the
 photon PDF.
 %
-As matter of fact, dilepton production at the Born level can arise
-from either quark-antiquark $s$-channel scattering or from
-photon-photon $t$- and $u$-channel scattering mediated by a lepton, as
-shown in Fig.~\ref{fig:photoninduced}.
+As illustrated in Fig.~\ref{fig:photoninduced}, 
+ dilepton production at hadron colliders can arise
+from either quark-antiquark $s$-channel scattering, or from
+photon-photon $t$- and $u$-channel scattering mediated by a lepton.
 
-The ATLAS high-mass Drell-Yan 8 TeV measurements include both the
+The ATLAS high-mass Drell-Yan 8 TeV measurements are presented in terms
+of both the
 single-differential (1D) invariant-mass distribution,
-$d\sigma/dm_{ll}$, as well as the double-differential (2D)
-distributions in $m_{ll}$ and $y_{ll}$,
+$d\sigma/dm_{ll}$, as well as of double-differential (2D)
+distributions in $m_{ll}$ and $y_{ll}$, namely
 $d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
-$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
+$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$, where $m_{ll}$, $y_{ll}$ and $\Delta\eta_{ll}$
+denote the invariant mass, rapidity, and separation in pseudorapidity
+of the lepton pair, respectively.
 %
-For the invariant-mass distribution, there are 12 bins between 116 GeV
-and 1.5 TeV; and for both of the double-differential distributions,
-there are five different histograms, one for each of the different
-invariant mass ranges, from the lowest bin with 116 GeV < $m_{ll}$ <
+For the invariant-mass 1D distribution, there are 12 bins between $m_{ll}=116$ GeV
+and 1.5 TeV; and for both double-differential distributions,
+there are five different bins in invariant mass,
+from the lowest bin with 116 GeV < $m_{ll}$ <
 150 GeV to the highest bin with 500 GeV < $m_{ll}$ < 1500 GeV.
  %
-The first three (last two) $m_{ll}$ bins are divided into 12 (6) bins
-with fixed width, extending up to 2.4 and 3.0 for the $|y_{ll}^{mim}|$
+The first three (last two) $m_{ll}$ bins of the 2D distributions are divided into 12 (6) bins
+with fixed width, extending up to 2.4 and 3.0 for the $|y_{ll}|$
 and $|\Delta\eta_{ll}|$ distributions, respectively.
 %
-In Sect.~\ref{sec:results} we compare the impact on the photon PDF of
-fitting either the 1D distributions or one of the two 2D
-distributions.
 
-Experimentally, the photons which undergo scattering in the
-$\gamma\gamma \to ee$  process can be produced by emission from the
-proton as the whole (``elastic'') or radiated by the constituent quarks.
-The case when both photons are elastic is suppressed in the data by a
-requirement on number of primary tracks (more than two, \cite{Aad:2016zzw}).  
-The inelastic-elastic photon scattering corresponds to about 10\% of the
-cross section which is a small correction compared to the experimental
-accuracy.
+The photons which undergo hard scattering in the
+$\gamma\gamma \to ee$  process from Fig.~\ref{fig:photoninduced}
+can be produced by either  emission from the
+proton as the whole (the ``elastic'' component) or radiated by the constituent quarks
+(the ``inelastic'' component).
+%
+In the ATLAS high-mass DY measurement, the double elastic component is suppressed
+ by the
+ requirement of having more than two primary tracks~\cite{Aad:2016zzw}.
+ %
+ Moreover, the inelastic-elastic photon scattering corresponds to only about
+ 10\% of the total measured cross sections.
+ %
+ From the theory point of view, the photon PDF $x\gamma$ extracted from the
+ fit is by construction the sum of the elastic and inelastic contributions,
+ though in this analysis we are mostly sensitive to the latter.
 
-For the calculation of high-mass Drell-Yan cross sections, the
-{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program v2.4.3 is used, which
+For the calculation of NLO high-mass Drell-Yan cross sections, the
+{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program is used, which
 includes the contribution from photon-initiated diagrams, interfaced
-to {\tt APPLgrid}~\cite{Carli:2010rw} v1.4.7 through {\tt
-  aMCfast}~\cite{amcfast} v1.3).
+to {\tt APPLgrid}~\cite{Carli:2010rw} through {\tt
+  aMCfast}~\cite{amcfast}.
 %
 A tailored version of {\tt APPLgrid} is used, accounting for
 the contribution of the photon-initiated processes \footnote{Modified version of APPLgrid available at: $https://github.com/scarrazza/applgridphoton$}.
 %
 The calculation is performed in the $n_f=5$ scheme neglecting mass
 effects of charm and bottom quarks in the matrix elements, as
-appropriate for a high-scale processes.
+appropriate for a high-scale process.
+%
+These NLO theoretical predictions match the same 
+analysis cuts of the data, with $m_{ll}\ge 116$ GeV, $\eta_l\le 2.5$, and
+$p_T^l \ge 40$ GeV$~(30)$ GeV for the leading (sub-leading) lepton being
+the most important ones.
+%
+As discussed below, the NLO calculations are then supplemented by
+NNLO/NLO $K$-factors obtained from {\tt FEWZ}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -73,93 +89,115 @@ appropriate for a high-scale processes.
 
 The DIS structure functions and PDF evolution are computed with the {\tt
   APFEL} program~\cite{Bertone:2013vaa}, which is currently accurate
-up to NNLO in pure QCD and NLO in QED, and includes the relevant mixed
-QCD+QED corrections. This means that, on top of the pure QCD
+up to NNLO in QCD and NLO in QED, including the relevant mixed
+QCD+QED corrections.
+%
+This means that, on top of the pure QCD
 contributions, the DGLAP evolution
 equations~\cite{Gribov:1972ri,Dokshitzer:1977,Altarelli:1977zs} are
 solved including the $\mathcal{O}\lp \alpha_s\alpha\rp$ and
 $\mathcal{O}\lp \alpha^2\rp$ corrections to the splitting functions.
 %
-As far as the DIS structure functions are concerned, corrections of
-$\mathcal{O}\lp \alpha\rp$ are also included which in turn lead to an
-explicit dependence of the predictions on the photon PDF.  The details
-of the implementation as well as a discussion of the impact of these
-corrections are given in appendix~\ref{sec:appendixAPFEL}.
+Concerning the DIS structure functions, corrections of
+$\mathcal{O}\lp \alpha\rp$ are also included which in turn lead to a (weak)
+explicit dependence of the predictions on the photon PDF.
+%
+Details
+of the implementation of these corrections and of their numerical
+impact are given in Appendix~\ref{sec:appendixAPFEL}.
 %
 Heavy-quark (charm and bottom) mass effects to DIS structure functions
-are taken into account using the FONLL-B(C) general-mass
-scheme~\cite{Forte:2010ta} for the NLO (NNLO) fits.
+are taken into account using the FONLL-B~(C) general-mass
+scheme~\cite{Forte:2010ta} for the NLO~(NNLO) fits.
 %
 The numerical values of the heavy-quark masses in the pole-mass
-scheme, are taken to be $m_c=1.47~$GeV and $m_b=4.5~$GeV as determined in \cite{Abramowicz:2015mha},  
+scheme
+are taken to be $m_c=1.47~$GeV and $m_b=4.5~$GeV as determined in~\cite{Abramowicz:2015mha},  
 consistent with the latest PDG averages~\cite{Agashe:2014kda}.
 %
-The reference values of the coupling constants are chosen to be
-$\alpha_s(m_Z)=0.118$ and $\alpha(m_\tau=1.777\mbox{ GeV})=1/133.4$.
+The reference values of the QCD and QED coupling constants are chosen to be
+$\alpha_s(m_Z)=0.118$ and $\alpha(m_\tau=1.777\mbox{ GeV})=1/133.4$, again consistent
+with the PDG recommended values.
 
-In the theoretical calculations of the Drell-Yan cross section we use
+In the  calculation of the Drell-Yan cross section, we use
 dynamical renormalisation $\mu_{R}$ and factorisation $\mu_{R}$
-scales, both set equal to the scale of invariant mass $m_{ll}$ 
-of the respective bin, for both photons, neglecting the elastic component.
+scales, which are set equal to the scale of invariant mass $m_{ll}$ 
+in each bin, both for the quark- and gluon-induced and for the photon-induced
+contributions.
 %
-The choice of the scale for the photon component is discussed in 
-\cite{Dittmaier:2009cr}.
+The choice of other values for these scales in the QED diagrams,
+such as a fixed scale $\mu_R=\mu_F=M_Z$, leads
+to  small variations of the photon-initiated cross-sections of at most a few percent.
 %
-The theoretical predictions for these measurements implement the
-analysis cuts, including $m_{ll}\ge 116$ GeV, $\eta_l\le 2.5$,
-$p_T^l \ge 40$ GeV$~(30)$ GeV for the leading (sub-leading) lepton.
+The choice of the scale for the photon PDF  is further discussed
+in~\cite{Dittmaier:2009cr}.
 %
-The {\tt MadGraph5{\_}aMC@NLO} calculations used in this work were
-benchmarked against the corresponding predictions (NLO QCD and LO QED,
-including photon-induced processes) obtained with the {\tt FEWZ}
-code~\cite{Gavin:2012sy} v3.1, finding agreement at the 1\% level or
+For the kinematics of the ATLAS DY data, the ratio between the photon-initiated
+contributions and  quark- and gluon-induced dilepton production is largest
+for central rapidities and large invariant masses. 
+%
+Indeed, for the most central (forward) rapidity
+bin, $0 < |y_{ll}| < 0.2$ ($2.0 < |yll| < 2.4$), the ratio
+between the QED and QCD contributions varies between 2.5\%~(2\%) at low
+invariant masses and 12\%~(2.5\%) for the highest $m_{ll}$ bin.
+%
+Therefore, data from the central region will exhibit the highest
+sensitivity to $x\gamma$.
+
+The {\tt MadGraph5{\_}aMC@NLO} NLO QCD and LO QED calculations used in this work have been
+benchmarked against the corresponding predictions  obtained with the {\tt FEWZ}
+code~\cite{Gavin:2012sy}, finding agreement at the 1\% level or
 better for both the 1D and the 2D distributions.
 %
 In order to achieve NNLO QCD and NLO EW accuracy in our theoretical
-calculations, the NLO QCD + LO QED {\tt APPLgrid} tables generated
-with {\tt aMCfast} have been supplemented by bin-by-bin $K$-factors,
+calculations, the NLO QCD and LO QED cross-sections computed with
+{\tt MadGraph5{\_}aMC@NLO}
+have been supplemented by bin-by-bin $K$-factors
 defined as:
 \begin{equation}
   \label{eq:kfactor}
-  K \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW} \, ,
+  K(m_{ll},|y_{ll}|) \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW} \, ,
 \end{equation}
 using the MMHT2014 NNLO~\cite{Harland-Lang:2014zoa} PDF set both in
-the numerator and in the denominator (NNLO $K$-factors depend very
-mildly on the PDF set).
+the numerator and in the denominator.
+%
+This approximation is justified since NNLO $K$-factors depend very
+mildly on the input PDF set, see for example~\cite{Czakon:2016olj}.
  %
-The $K$-factors in Eq.~({\ref{eq:kfactor}) have been computed using
-  the {\tt FEWZ} program, with the same settings as the corresponding
-  NLO computations.
+The $K$-factors have been computed using
+   {\tt FEWZ}  with the same settings and analysis cuts as the corresponding
+   NLO calculations of {\tt MadGraph5{\_}aMC@NLO}.
+   %
+   In Fig.~\ref{fig:kf} we show the $K$-factors  Eq.~({\ref{eq:kfactor})
+  corresponding to the double differential $(m_{ll},|y_{ll}|)$
+  cross-sections 
+  as a function of the dilepton
+  rapidity $|y_{ll}|$, where each set of points corresponds to a different
+  dilepton invariant mass $m_{ll}$ bin.
 %
-
-  In Fig.~\ref{fig:kf} we show the $K$-factors corresponding to the
-  measurements included in our fits as a function of the dilepton
-  rapidity $|y_{ll}|$, where each curve corresponds to a different
-  dilepton invariant-mass $m_{ll}$ bin.
-%
-  We observe that the $K$-factors vary between 0.98 and 1.04,
+  We find that the $K$-factors vary between 0.98 and 1.04,
   highlighting the fact that higher-order corrections to the Drell-Yan
   process are moderate, in particular at low values of $m_{ll}$ and in
   the central region.
 %
   Even at forward rapidities, the $K$-factors modify the NLO result by
   at most 4\%.
-%
-In this theoretical formalism, the contribution from the photon induced diagrams 
-as compared to the quark- and gluon-induced dilepton production is most relevant at the 
-central rapidities and large invariant masses. 
-%
-For the most central (forward) rapidity bin, $0 < |yll| < 0.2$ ($2.0 < |yll| < 2.4$), the photon 
-induced contributions range between 2.5\% (2\%) at low invariant masses and 12\% (2.5\%) for the highest $m_{ll}$ bin
-%.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
-\includegraphics[width=9cm]{figs/kf_2D.pdf}
+\includegraphics[width=10cm]{figs/kf_2D.pdf}
 \caption{The NNLO/NLO $K$-factors, defined in Eq.~(\ref{eq:kfactor}),
-  that account for higher order QCD and EW effects in the PDF
-  fits, as a function of the dilepton rapidity $|y_{ll}|$.  Each curve
-  correspond to one of the $m_{ll}$ invariant mass bins.}
+  that account for higher order QCD and EW effects to the high-mass
+  Drell-Yan cross-sections,
+  as a function of the dilepton rapidity $|y_{ll}|$.
+  %
+  Each set of points corresponds to a different bin in the dilepton
+  invariant mass $m_{ll}$.
+}
 \label{fig:kf}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
