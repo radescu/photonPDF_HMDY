@@ -6,7 +6,7 @@ In this appendix, we present the details of the implementation of the
 combined NLO QCD+QED corrections in the {\tt APFEL} program.
 %
 As discussed in Ref.~\cite{Bertone:2013vaa}, the implementation of the
-LO QED corrections to the DGLAP evolution equations presents many
+LO QED corrections to the DGLAP evolution equations includes many
 simplifications, in particular the fact that QED and QCD corrections
 do not mix and therefore the DGLAP equations, as well as the evolution
 equations for the running of the $\alpha_s$ and $\alpha$ couplings,
@@ -17,7 +17,7 @@ this property does not hold anymore, and QED and QCD
 contributions mix both in the DGLAP and in the coupling evolution
 equations.
 %
-On top of this complication, QED corrections induce the presence of
+On top of this complication, QED corrections introduce the presence of
 diagrams in which a real photon is present either in the initial or in
 the final state, and that have to be included in the computation of the
 DIS structure functions.
@@ -29,9 +29,9 @@ QCD+QED terms have a negligible impact.
 Then we explain how the DGLAP evolution equations can be extended
 to account for the complete NLO QCD+QED effects.
 %
-Finally, we discuss the modifications induced by the NLO QED
+Finally, we discuss the modifications introduced by the NLO QED
 corrections in both the neutral-current and the charged-current DIS
-structure functions and that lead the appearance of photon-initiated
+structure functions and that lead to the appearance of photon-initiated
 contributions.
 
 \subsection{Evolution of the couplings}
@@ -139,7 +139,7 @@ the DGLAP equations in the presence of QED corrections is the adoption
 of a suitable PDF basis that diagonalises the splitting function
 matrix, decoupling as many equations as possible.
 %
-Such basis was introduced in the Appendix A of
+Such a basis was introduced in the Appendix A of
 Ref.~\cite{Bertone:2015lqa} and will be used also here.
 %
 Excluding the lepton PDFs, this basis contains 14 independent PDF
@@ -170,7 +170,7 @@ $q = u,d,s,c,b,t$. In addition, we have defined:
 \end{array}
 \end{equation}
 
-The second step is the construction the splitting function matrix that
+The second step is the construction of the splitting function matrix that
 determines the evolution of each of the combinations listed in
 Eq.~(\ref{eq:EvolBasis}).
 %
@@ -566,7 +566,7 @@ F_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
 \end{array}
 \end{equation}
 In order to simplify the implementation, it is advantageous to assume
-that, in these particular corrections, the CKM matrix is a 3 times 3
+that, in these particular corrections, the CKM matrix is a $3 \times 3$
 unitary matrix. Note however that the exact CKM matrix is still used
 in the QCD part of the structure functions.
 %
