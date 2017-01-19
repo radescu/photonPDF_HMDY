@@ -33,7 +33,6 @@ double-differential $\lp m_{ll},y_{ll}\rp$ distributions.
 We have verified that comparable results are obtained if the
 $\lp m_{ll},\Delta\eta_{ll}\rp$ distributions are fitted instead.
 
-
 Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings},
 a $\chi^{2}/N_{\rm dof} = 1236/1056$ is obtained
 for the HERA inclusive data, and a partial
@@ -176,12 +175,10 @@ other recent determinations. We will also assess the impact
 of the ATLAS high-mass DY data on the quark and gluon PDFs as compared
 to a fit with only HERA structure functions as input.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
-  \includegraphics[width=8cm]{figs/photon_comp_10000.pdf}
-  \includegraphics[width=8cm]{figs/photon_comp_10000_ratio.pdf} 
+  \includegraphics[width=7cm]{figs/photon_comp_10000.pdf}
+  \includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
   \caption{Left plot: comparison between the photon $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
     from the present NNLO analysis ({\tt xFitter\_epHMDY}) with the
     corresponding results from NNPDF3.0QED, LUXqed and HKR16.
@@ -218,7 +215,8 @@ the associated PDF uncertainty band computed according to the
 prescription of Ref.~\cite{Manohar:2016nzj}.
 %
 The $x$-range in Fig.~\ref{photon_zoom} has been restricted to the region
-where the ATLAS high-mass DY data has direct sensitivity to the photon PDF.
+$0.02 \le x \le 0.9$, since beyond that region the ATLAS
+data has very limited sensitivity to $x\gamma$.
 
 From Fig.~\ref{photon_zoom} we find that for $x\ge 0.1$ the four determinations of
 the photon PDF which are being compared here are consistent within PDF uncertainties.
@@ -254,10 +252,12 @@ competitive with those of LUXqed.
 It is interesting to also assess the impact of the high-mass Drell-Yan 8 TeV measurements on
 the light quark and gluon PDFs.
 %
-For this purpose, and since HERA data alone (which should be used as
-benchmark for this comparison) does not have sensitivity on the photon
+For this purpose, and since HERA inclusive data alone (which should be used as
+benchmark for this comparison) does not have sensitivity to the photon
 PDF, the fits have been repeated freezing the photon PDF to the
-shape given by HMDY data, such that
+{\tt xFitter\_epHMDY} shape.
+%
+This way, a 
 a meaningful comparison between the HERA-only
 baseline and the HERA+HMDY fit can be performed, to gauge the modifications of quark and
 gluon PDFs.
@@ -282,13 +282,14 @@ the same outcome.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=8cm]{figs/q2_7_5_pdf_ubar_ratio.pdf}
-\includegraphics[width=8cm]{figs/q2_7_5_pdf_dbar_ratio.pdf} 
+\includegraphics[width=7cm]{figs/q2_7_5_pdf_ubar_ratio.pdf}
+\includegraphics[width=7cm]{figs/q2_7_5_pdf_dbar_ratio.pdf} 
 \caption{The impact of the ATLAS high-mass 8 TeV Drell-Yan measurements
-  on the $x\bar{u}$ and $x\bar{d}$ sea quark PDFs at the starting scale $Q^2=7.5$ GeV$^2$.
+  on the $x\bar{u}$ and $x\bar{d}$ sea quark PDFs at the input
+  parametrization scale $Q^2=7.5$ GeV$^2$.
   %
-  Results are shown normalized to the central value of the HERA+HMDY
-  fit.  }
+  The results are shown normalized to the central value of {\tt xFitter\_epHMDY}. 
+  }
 \label{fig:QCDfit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -336,18 +337,21 @@ The results of Fig.~\ref{fig:model} show that in all cases the effect
 of all the variations is contained within (and typically much smaller than) 
 the experimental PDF uncertainty bands of the reference fit.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                           
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                          
 \begin{figure}[t]
 \centering
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_1}
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_model_2}
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_1}
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_model_2}
 \caption{Comparison between the baseline determination of
   $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
-  analysis with the central value of those  fits for which one input parameter has been varied.
+  analysis, {\tt xFitter\_epHMDY},
+  with the central value of a number of fits for which one input parameter has been varied.
   %
- The following variations have been considered: $r_s$, $Q^2_{\rm cut}$, $\alpha_s$ (left plot) and
-$m_c$, $m_b$, $Q_0^2$ (right plot), see text for more details.
-  %                   
+  The following variations have been considered: $r_s=0.75$, $Q^2_{\rm cut}=5$ GeV$^2$, $\alpha_s=0.116$ and
+  0.118 (left plot); and
+  $m_c=1.41$ and 1.53 GeV, $m_b=4.25$ and 4.75 GeV, and $Q_0^2=10$ GeV$^2$ (right plot).
+  %
+  See text for more details about these variations.
 }
 \label{fig:model}
 \end{figure}
@@ -387,30 +391,28 @@ fitting techniques are quite similar to each other.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_param_var.pdf}
-\includegraphics[width=8cm]{figs/photon_mc_vs_hessian} 
-\caption{Left: the impact on $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_param_var.pdf}
+\includegraphics[width=7cm]{figs/photon_mc_vs_hessian} 
+\caption{Left: the impact on the photon PDF $x\gamma(x,Q^2)$
+  from {\tt xFitter\_epHMDY}
   in fits where a number of additional free parameters are allowed
-  in the PDF parametrization as compared to Eq.~(\ref{eq:param}).
+  in the PDF parametrization Eq.~(\ref{eq:param}).
   %
-  In particular, the parametrization variations that have been explored
+  The parametrization variations that have been explored
   are: more flexibility to the gluon distribution, allowing
   it to become negative
- (labeled by ${\rm neg}$), adding on top $D_{u_v}$, and then $D_{\bar{u}}+D_{\bar{d}}$.
+  (labeled by ``${\rm neg}$''), adding on top $D_{u_v}$, and then
+  adding $D_{\bar{u}}+D_{\bar{d}}$.
  %
- Right: comparison between the fits of $x\gamma(x,Q^2)$ obtained with the
-  Monte Carlo and the Hessian methods at $Q^2=10^4$ GeV$^2$.
-  %
-  In both cases, the PDF error band corresponds to the 68\% confidence
-  level uncertainties.  }
+ Right: comparison between the {\tt xFitter\_epHMDY} determinations obtained with the
+ Monte Carlo (default) and with the Hessian methods, where in
+  both cases the PDF error band  shown corresponds to the 68\% CL uncertainties.  }
 \label{fig:param}
 \label{fig:photon_mc_vs_hessian}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\subsection{Perturbative stability of $x\gamma(x,Q^2)$}
-
-An interesting exercise is to quantify the perturbative stability of
+To complete this section, an interesting exercise is to quantify the perturbative stability of
 the present fit of the photon PDF $x\gamma(x,Q)$ with respect to the inclusion
 of NNLO QCD corrections in the analysis.
 %
@@ -433,19 +435,22 @@ The agreement between the two fits is particularly good for
 $x\gsim 0.1$, where the two central values are very close to each
 other.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=8cm]{figs/q2_7_5_pdf_ph_NLOvsNNLO.pdf}
-\includegraphics[width=8cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
-\caption{Left: comparison between the baseline
-  fit of $x\gamma(x,Q^2)$ (NNLO QCD + NLO QED) with the central value
-  resulting from a NLO QCD+QED fit, at $Q^2=7.5$ GeV$^2$.
+\includegraphics[width=7cm]{figs/q2_7_5_pdf_ph_NLOvsNNLO.pdf}
+\includegraphics[width=7cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
+\caption{Left plot: comparison between the reference {\tt xFitter\_epHMDY}
+  fit of $x\gamma(x,Q^2)$, based on  NNLO QCD and NLO QED theoretical
+  calculations, with the central value of the corresponding fit based
+  on NLO QCD and QED theory, at $Q^2=7.5$ GeV$^2$.
   %
-  In the former case, only the experimental (Monte Carlo) PDF
+  In the former case, only the experimental Monte Carlo PDF
   uncertainties are shown.
   %
-  Right: same comparison but at evolved scale of $Q^2=10^4$ GeV$^2$.  }
+  Right plot: same comparison, now presented at the higher scale of $Q^2=10^4$ GeV$^2$.  }
 \label{fig:nlo_vs_nnlo}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
