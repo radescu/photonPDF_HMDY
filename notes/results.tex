@@ -2,8 +2,8 @@
 \label{sec:results}
 
 In this section the main results of this work are presented, namely the
-determination of the photon PDF $x\gamma(x,Q)$ from a fit to the
-HERA structure functions and ATLAS high-mass Drell-Yan cross sections.
+determination of the photon PDF $x\gamma(x,Q)$ from a fit to 
+HERA inclusive structure functions and ATLAS high-mass Drell-Yan cross sections.
 %
 First of all, the resulting photon PDF is shown and compared with other
 recent extractions.
@@ -17,10 +17,13 @@ inputs that affect our fit of $\gamma(x,Q)$ is assessed.
 Finally, perturbative stability is addressed by comparing NLO and
 NNLO results.
 
-\subsection{Comparison between data and fit results}
+\subsection{Comparison between experimental data and fit results}
 
-In the following, the results are obtained using the
-double-differential $\lp m_{ll},y_{ll}\rp$ distributions, compatible results are obtained if the
+In the following, the results that will be shown
+correspond to those obtained from fitting the
+double-differential $\lp m_{ll},y_{ll}\rp$ distributions.
+%
+We have verified that comparable results are obtained if the
 $\lp m_{ll},\Delta\eta_{ll}\rp$ distributions are fitted instead.
 %
 Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings},
@@ -29,7 +32,7 @@ $\chi^2/N_{\rm data} = 47.96/48$ for the high-mass Drell-Yan data,
 where $N_{\rm dof}$ is the number of degree of freedom in the fit and 
 $N_{\rm data}$  is the number of data points for high-mass DY data.
 
-Fig.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3} show the comparison between the ATLAS
+Figs.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3} show the comparison between the ATLAS
 high-mass Drell Yan data and the NNLO predictions for all the mass
 bins of the $(y_{ll},m_{ll})$ distribution.
 %
@@ -48,18 +51,24 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=16cm]{figs/data_401-1.pdf}\\
-\includegraphics[width=16cm]{figs/data_402-1.pdf}
-\caption{The ratio between the central value of the NNLO fit results
-  and the ATLAS high-mass Drell Yan data
-  for the first two mass bins of the $(y_{ll}$ distributions.
-  % in particular the first and last mass bins.
+\includegraphics[width=14cm]{figs/data_401-1.pdf}\\
+\includegraphics[width=14cm]{figs/data_402-1.pdf}
+\caption{Comparison between the results of the fit and the ATLAS data
+  for the $(m_{ll},|y_{ll}|)$ double-differential Drell-Yan cross-sections
+  as function of $|y_{ll}|$, for the first two $m_{ll}$ bins.
+  %
+  The comparisons are shown both
+  in an absolute scale (left plots) and as ratios to the central value
+  of the experimental data (right plots).
   %
   The error bars on the data points correspond to the statistical
-  uncertainties, while the yellow band
-  corresponds to the correlated systematic uncertainties.
+  uncertainties, while the yellow bands
+  indicate instead to size of the correlated systematic uncertainties.
   %
-  In the lower panels we show the $\chi^2$ pulls between fit and data for each $y_{ll}$
+  The solid lines indicate the theory calculations obtained using the results
+  of the fit {\tt xFitter\_epHMDY}, with the dashed lines including as well the systematic shifts.
+  %
+  In the lower panels of ratio plots, we show the $\chi^2$ pulls between fit and data for each $y_{ll}$
   bin.
 }
 \label{hmDY_2D_1}
@@ -68,19 +77,9 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=16cm]{figs/data_403-1.pdf}\\
-\includegraphics[width=16cm]{figs/data_404-1.pdf}
-\caption{The ratio between the central value of the NNLO fit results
-  and the ATLAS high-mass Drell Yan data
-  for the next two mass bins of the $(y_{ll}$ distributions.
-  % in particular the first and last mass bins.
-  %
-  The error bars on the data points correspond to the statistical
-  uncertainties, while the yellow band
-  corresponds to the correlated systematic uncertainties.
-  %
-  In the lower panels we show the $\chi^2$ pulls between fit and data for each $y_{ll}$
-  bin.
+\includegraphics[width=14cm]{figs/data_403-1.pdf}\\
+\includegraphics[width=14cm]{figs/data_404-1.pdf}
+\caption{Same as Fig.~\ref{hmDY_2D_1} for the third and fourth $m_{ll}$ bins.
 }
 \label{hmDY_2D_2}
 \end{figure}
@@ -88,18 +87,8 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
 \centering
-\includegraphics[width=16cm]{figs/data_405-1.pdf}
-\caption{The ratio between the central value of the NNLO fit results
-  and the ATLAS high-mass Drell Yan data
-  for the highest mass bin of the $(y_{ll}$ distributions.
-  % in particular the first and last mass bins.
-  %
-  The error bars on the data points correspond to the statistical
-  uncertainties, while the yellow band
-  corresponds to the correlated systematic uncertainties.
-  %
-  In the lower panels we show the pulls between fit and data for each $y_{ll}$
-  bin.
+\includegraphics[width=14cm]{figs/data_405-1.pdf}
+\caption{Same as Fig.~\ref{hmDY_2D_1} for the highest $m_{ll}$ bins.
 }
 \label{hmDY_2D_3}
 \end{figure}
@@ -126,10 +115,6 @@ of the DY measurements on the quark and gluon PDFs are presented.
 In Fig.~\ref{photon_zoom} the $x\gamma(x,Q)$ distribution at
 $Q^2=10^4$ GeV$^2$ with experimental uncertainty band using MC method is presented and compared to LUXqed~\cite{Manohar:2016nzj},
 HKR~\cite{Harland-Lang:2016apc} and NNPDF3.0QED sets.
-%
-%The comparison is restricted to the range $0.02 \le x \le 0.8$,
-%corresponding to the region where the fitted Drell-Yan measurements
-%have direct kinematic sensitivity on the photon PDF.
 %
 For NNPDF3.0QED, we show the 68\% CL uncertainty, while for LUXqed the
 uncertainty band is obtained by adding in quadrature all the model
@@ -163,7 +148,7 @@ of LUXqed.
 There is excellent agreement between the LUXqed and the HKR
 calculations, illustrating the commonalities between the two
 approaches.
-
+%
 Fig.~\ref{photon_zoom_ratio} shows the same comparison of
 different results for the photon PDF $x\gamma(x,Q)$ now normalized to
 the central value of {\tt xFitter\_epHMDY}.
@@ -171,7 +156,7 @@ the central value of {\tt xFitter\_epHMDY}.
 This format allows the relative compatibility
 between the various results to be assessed, as well as the relative size of the PDF
 uncertainties.
-
+%
 The experimental uncertainty on {\tt xFitter\_epHMDY}
 is at the $\sim 30\%$ level, depending on the specific value of $x$,
 improving over NNPDF3.0QED but still far from the percent accuracy of
