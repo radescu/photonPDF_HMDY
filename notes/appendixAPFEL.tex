@@ -2,30 +2,32 @@
 \section{Implementation of NLO QED corrections in APFEL}
 \label{sec:appendixAPFEL}
 
-In this appendix we present the details of the implementation of the
+In this appendix, we present the details of the implementation of the
 combined NLO QCD+QED corrections in the {\tt APFEL} program.
 %
 As discussed in Ref.~\cite{Bertone:2013vaa}, the implementation of the
 LO QED corrections to the DGLAP evolution equations presents many
 simplifications, in particular the fact that QED and QCD corrections
-do not mix and therefore the DGLAP equations as well as the evolution
-equations for $\alpha_s$ and $\alpha$ are decoupled.
+do not mix and therefore the DGLAP equations, as well as the evolution
+equations for the running of the $\alpha_s$ and $\alpha$ couplings,
+are decoupled.
 %
-When going to NLO this property does not hold anymore and QED and QCD
+When increasing the perturbative accuracy to NLO,
+this property does not hold anymore, and QED and QCD
 contributions mix both in the DGLAP and in the coupling evolution
 equations.
 %
 On top of this complication, QED corrections induce the presence of
 diagrams in which a real photon is present either in the initial or in
-the final state and that have to be included in the computation of the
+the final state, and that have to be included in the computation of the
 DIS structure functions.
 
 In the following, we first discuss how to generalize the equations for
-the running of the QCD and QED couplings, finding that the mixing
+the running of the QCD and QED couplings, finding that the mixed
 QCD+QED terms have a negligible impact.
 %
-Then we explain how the DGLAP evolution equations can be generalised
-to account for the full NLO QCD+QED effects.
+Then we explain how the DGLAP evolution equations can be extended
+to account for the complete NLO QCD+QED effects.
 %
 Finally, we discuss the modifications induced by the NLO QED
 corrections in both the neutral-current and the charged-current DIS
@@ -35,7 +37,7 @@ contributions.
 \subsection{Evolution of the couplings}
 
 As mentioned above, the NLO QCD+QED corrections induce the presence of
-mixing terms in the evolution equations of $\alpha_s$ and $\alpha$.
+mixed terms in the evolution equations of $\alpha_s$ and $\alpha$.
 %
 In practice, the QCD $\beta$-function receives corrections
 proportional to $\alpha$ and, vice-versa, the QED $\beta$-function
@@ -59,7 +61,7 @@ and:
 \begin{equation}
 \beta^{\rm QED}(\alpha_s,\alpha) = -\alpha\left[\beta_0^{(\alpha)}\left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha\alpha_s)}\left(\frac{\alpha}{4\pi}\right) \left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha^2)}\left(\frac{\alpha}{4\pi}\right)^2+\dots\right]\,.
 \end{equation}
-where the mixing terms, $\beta_1^{(\alpha_s\alpha)}$ and
+where the mixed terms, $\beta_1^{(\alpha_s\alpha)}$ and
 $\beta_1^{(\alpha\alpha_s)}$, and the pure NLO QED term,
 $\beta_1^{(\alpha^2)}$, can be found in
 Ref.~\cite{Surguladze:1996hx}. Taking into account a factor four due
@@ -86,20 +88,28 @@ can be numerically solved using, for example, Runge-Kutta methods.
 The first two terms in eq.~(\ref{eq:NewBetaTerms}) are responsible for
 the coupling of the evolution of $\alpha_s$ and $\alpha$ and thus they
 introduce a complication that affects both the implementation and the
-performance of the code. One can then ask what is the effect of their
+performance of the code.
+%
+One can then ask what is the effect of their
 presence and whether their removal makes a substantial difference. In
 Fig.~\ref{fig:CouplingEvol} we show the comparison between the
 evolution at NLO of both couplings $\alpha_s$ and $\alpha$ including
-and excluding the mixing terms in the respective
-$\beta$-functions. The evolution is performed between the $Z$ mass
+and excluding the mixed terms in the respective
+$\beta$-functions.
+%
+The evolution is performed between the $Z$ mass
 scale $M_Z$ and 10 TeV with 5 active quark flavours and 3 active
 lepton flavours and uses as boundary conditions
-$\alpha_s(M_Z) = 0.118$ and $\alpha(M_Z) = 1/128$. The two curves in
+$\alpha_s(M_Z) = 0.118$ and $\alpha(M_Z) = 1/128$.
+%
+The two curves in
 Fig.~\ref{fig:CouplingEvol} are normalised to the respective curve
-without mixing terms. It is clear that the mixing terms lead to tiny
+without mixed terms. It is clear that the mixed terms lead to tiny
 relative differences that are at most of $\mathcal{O}(10^{-4})$ at 10
 TeV for $\alpha_s$ and $\mathcal{O}(10^{-3})$ at the same scale for
-$\alpha$. We conclude that the mixing terms in the $\beta$-functions
+$\alpha$.
+%
+We thus conclude that the mixed terms in the $\beta$-functions
 have a negligible effect on the evolution of the couplings and thus we
 exclude them to make the code simpler and improve the performance
 without introducing any significant inaccuracy.
@@ -109,11 +119,11 @@ without introducing any significant inaccuracy.
 \includegraphics[width=6cm,angle=270]{figs/couplings.eps} 
 \caption{Comparison between the running with the scale
 $Q$ of the QCD and QED couplings,
-  $\alpha_s$ and $\alpha$, including or not the mixing terms in
+  $\alpha_s$ and $\alpha$, including or not the mixed terms in
   the corresponding $\beta$-functions.
 %
   The curves are normalised to the result of the respective coupling
-  running without mixing terms.}
+  running without the mixed terms included in the $\beta$ functions.}
 \label{fig:CouplingEvol}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,7 +420,7 @@ including, on top of the pure QCD NLO evolution, the following
 corrections:
 \begin{itemize}
 \item the $\mathcal{O}(\alpha)$ corrections only,
-\item same as above, adding also the mixing
+\item same as above, adding also the mixed
   $\mathcal{O}(\alpha_s\alpha)$ corrections, and
 \item the complete NLO QCD+QED corrections accounting for the
   $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects.
@@ -439,9 +449,10 @@ impact of the $\mathcal{O}(\alpha^2)$ ones is substantially smaller.
   $\mathcal{O}(\alpha+\alpha_s\alpha)$ corrections
   and the complete
   $\mathcal{O}(\alpha+\alpha_s\alpha+\alpha^2)$ effects,
-  normalised to the $\mathcal{O}(\alpha)$ result.
+  normalised in all three cases to the $\mathcal{O}(\alpha)$ result.
   %
-  The calculation has been performed using NNPDF3.0QED NLO.  }
+  The calculation has been performed using the central value of the NNPDF3.0QED NLO
+  fit.  }
 \label{fig:GammaGammaLumi}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -566,7 +577,9 @@ CKM matrix and therefore it is numerically negligible.
 As an illustration of the impact of the $\mathcal{O}(\alpha)$
 correction on the DIS structure functions, Fig.~\ref{fig:StructFuncs}
 shows the effect of introducing these contributions on top of the pure
-QCD computation at NLO. The plots are produced by evolving the
+QCD computation at NLO.
+%
+The plots are produced by evolving the
 NNPDF3.0QED NLO set from $Q_0=1$ GeV to $Q=100$ GeV including the full
 NLO QCD+QED corrections discussed in the previous section and using
 the resulting evolved PDFs to compute the NC (left panel) and the CC
@@ -586,36 +599,33 @@ computation of the structure functions.
 (left) and charged-current (right) DIS structure functions
 $F_2, F_3$ and $F_L$, normalised to the pure QCD results.
 %
-The calculation has been performed in the FONLL-B general-mass scheme using the NNPDF3.0QED NLO
-set.
+The calculation has been performed in the FONLL-B general-mass scheme using the
+central NNPDF3.0QED NLO
+set as input.
 %
 Note that QED effects enter both via DGLAP evolution and the
-$\mathcal{O}(\alpha)$ DIS coefficient functions.}
+$\mathcal{O}(\alpha)$ DIS coefficient functions.
+%
+The behaviour of $xF_3$ in the right plot for $x\sim 0.007$ is explained
+because this stricture function exhibits a node in that region.
+}
 \label{fig:StructFuncs}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 It is clear that the impact of the full NLO QCD+QED corrections is
 pretty small especially in the low-$x$ region where it is well below
-1\%. In the large-$x$ region, instead, the presence of a
+1\%.
+%
+In the large-$x$ region, instead, the presence of a
 photon-initiated contribution has a more significant effect because of
 the suppression of the QCD distributions (quarks and gluon) relative
 to the photon PDF and the impact of the QED corrections reaches the
-2\% level.  It should be stressed that the behaviour around
+2\% level.
+%
+It should be stressed that the behaviour around
 $x=10^{-2}$ of the CC $F_3$ (green curve in the right panel) is driven
-by a change of sign of the predictions so that the ratio diverges.
+by a change of sign of the predictions (in other words,
+$xF_3$ exhibits a node in this region) so that the ratio diverges.
 
-
-\section{Kinematic coverage of data points}
-
-The kinematic phase-space coverage of the data is presented in Fig.~\ref{fig:data}, using the invariant $m_{ll}$ values                            
-for the scale of the high mass DY data and the Leading Order relation to determine its kinematic range.                                              
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                     
-\begin{figure}[t]                                                                                                                                   
-  \begin{center}                                                                                                                                     
-    \includegraphics[width=10cm]{figs/kin2.pdf}                                                                                                      
-    \end{center}                                                                                                                                     
-    \caption{Kinematic coverage in $x$ and $Q^2$ plane of data used in this analysis: in red the HERA data, in green the high-mass DY data.}         
-\label{fig:data}                                                                                                                                     
-\end{figure}                                                                                                                                         
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
+%%%%%%%%%%%%%%%%%%%%%
