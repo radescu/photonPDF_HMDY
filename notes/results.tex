@@ -1,23 +1,30 @@
 \section{Results}
 \label{sec:results}
 
-In this section the main results of this work are presented, namely the
+In this section we present the main results of this work,
+namely the
 determination of the photon PDF $x\gamma(x,Q)$ from a fit to 
 HERA inclusive structure functions and ATLAS high-mass Drell-Yan cross sections.
 %
-First of all, the resulting photon PDF is shown and compared with other
-recent extractions.
+First of all,
+we assess the fit quality and compare the fit results
+with the experimental data.
 %
-The impact of the high mass DY data on
+Then, the resulting photon PDF is shown and compared with other
+recent determinations.
+%
+Here the impact of the high mass DY data on
 the quark and gluon PDFs is also quantified.
 %
-Then the robustness of the results to varying the model, parametrization, and procedural
-inputs that affect our fit of $\gamma(x,Q)$ is assessed.
+Following this,
+the robustness of the fits of $x\gamma(x,Q)$
+with respect to varying the model, parametrization, and procedural
+inputs is assessed.
 %
 Finally, perturbative stability is addressed by comparing NLO and
 NNLO results.
 
-\subsection{Comparison between experimental data and fit results}
+\subsection{Fit quality and comparison between data and fit results}
 
 In the following, the results that will be shown
 correspond to those obtained from fitting the
@@ -25,27 +32,84 @@ double-differential $\lp m_{ll},y_{ll}\rp$ distributions.
 %
 We have verified that comparable results are obtained if the
 $\lp m_{ll},\Delta\eta_{ll}\rp$ distributions are fitted instead.
-%
-Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings},
-a $\chi^{2}/N_{\rm dof} = 1235.85/1056$ is obtained, with a partial
-$\chi^2/N_{\rm data} = 47.96/48$ for the high-mass Drell-Yan data,
-where $N_{\rm dof}$ is the number of degree of freedom in the fit and 
-$N_{\rm data}$  is the number of data points for high-mass DY data.
 
-Figs.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3} show the comparison between the ATLAS
-high-mass Drell Yan data and the NNLO predictions for all the mass
-bins of the $(y_{ll},m_{ll})$ distribution.
+
+Using the NNLO fit settings discussed in Sect.~\ref{sec:fitsettings},
+a $\chi^{2}/N_{\rm dof} = 1236/1056$ is obtained
+for the HERA inclusive data, and a partial
+$\chi^2/N_{\rm data} = 48/48$ for the high-mass Drell-Yan data,
+where $N_{\rm dof}$ is the number of degree of freedom in the fit and 
+$N_{\rm data}$  is the number of data points for the ATLAS data.
 %
-The fit results are denoted as {\tt xFitter\_epHMDY}.
+These values for  $\chi^{2}/N_{\rm dat}$, together
+with the corresponding values for the various
+invariant mass $m_{ll}$ bins of the ATLAS  data,
+are summarised in
+Table~\ref{tab:chi2fit}.
 %
-In the lower panel the ratio of theory over data is shown, where the
-yellow band corresponds to the correlated systematic uncertainties.
+The quality of the agreement with the HERA inclusive structure
+functions is of comparable quality to that found in the HERAPDF2.0 analysis.
 %
-The band around the theory prediction corresponds to the total theory
-uncertainty from the PDF fit. 
-%
-The shifts due to systematic uncertainties are indicated by a dashed
-line.
+Note that in the calculation of the total $\chi^2$ for the
+ATLAS data, the correlations between the
+different $m_{ll}$ bins have been taken into account.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[t]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    Dataset  &   $\chi^2$ \\
+    \hline
+    \hline
+    HERA I+II & 1236/1056\\
+    \hline
+    HMDY  116 GeV $\ge m_{ll} \ge $ 150 GeV  &  9/12 \\
+    HMDY  150 GeV $\ge m_{ll} \ge $ 200 GeV  &  15/12 \\
+    HMDY  200 GeV $\ge m_{ll} \ge $ 300 GeV  &  14/12 \\
+    HMDY  300 GeV $\ge m_{ll} \ge $ 500 GeV  &  5/6 \\
+    HMDY  500 GeV $\ge m_{ll} \ge $ 1500 GeV &  4/6 \\
+    \hline
+    Correlated (HMDY) $\chi^2$ & 1.17 \\
+    Log penalty (HMDY) $\chi^2$  & -0.12 \\
+    \hline
+    \hline
+    Total  (HMDY) & 48/48 \\
+    \hline
+    \end{tabular}
+  \caption{The $\chi^{2}/N_{\rm dat}$ in the NNLO fits for the
+    HERA inclusive structure functions and for the various
+    invariant mass $m_{ll}$ bins of the ATLAS high-mass DY data.
+        %
+    In the latter case, we also indicate the contribution to the
+    $\chi^2$ which arises from the correlated and log-penalty terms.
+\label{tab:chi2fit}
+  }
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figs.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3} then show the
+comparison between the results of the NNLO fit, in the following
+denoted by {\tt xFitter\_epHMDY},
+and the ATLAS data
+  for the $(m_{ll},|y_{ll}|)$ double-differential Drell-Yan cross-sections
+  as function of $|y_{ll}|$, for the five bins in $m_{ll}$ separately.
+  %
+  The comparisons are shown both
+  in an absolute scale  and as ratios to the central value
+  of the experimental data.
+  %
+  The error bars on the data points correspond to the statistical
+  uncertainties, while the yellow bands
+  indicate instead to size of the correlated systematic uncertainties.
+  %
+  The solid lines indicate the theory calculations obtained using the results
+  of the fit, with the dashed lines including as well the systematic shifts.
+  %
+  In the lower panels of ratio plots,
+  we show the $\chi^2$ pulls between fit and data for each $y_{ll}$ bin,
+  defined as the different between data and theory in units
+  of the total experimental uncertainty.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,76 +158,101 @@ line.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As can be seen from Fig.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3}, once the shifts due to
-experimental systematic uncertainties have been accounted for, there
-is a reasonable agreement between ATLAS data and NNLO theory
-predictions.
+As can be seen from Fig.~\ref{hmDY_2D_1}--\ref{hmDY_2D_3}, there
+is good agreement between ATLAS data and the NNLO theory
+predictions obtained from the {\tt xFitter\_epHMDY} fit.
 %
 This agreement is consistent with the values of the $\chi^2$ reported in
-Table~\ref{tab:chi2fit}. The agreement is particularly impressive even 
-the high precision of this measurement with experimental
-errors at the few percent level in most of the kinematic range
-available.
+Table~\ref{tab:chi2fit}, where for the ATLAS data we found
+that $\chi^2/N_{\rm dat}=1$, and is particularly remarkable
+given the high precision of the data, with total experimental
+uncertainties at the few percent level in most of the kinematic range.
+
+\subsection{The photon PDF from LHC high-mass DY data}
+
+We now present the results of the {\tt xFitter\_epHMDY}
+fit of the photon PDF $x\gamma$ and compare with
+other recent determinations. We will also assess the impact
+of the ATLAS high-mass DY data on the quark and gluon PDFs as compared
+to a fit with only HERA structure functions as input.
 
 
-\subsection{The photon PDF from high-mass DY data}
-%
-The results for the photon PDF and the impact
-of the DY measurements on the quark and gluon PDFs are presented.
-%
-
-In Fig.~\ref{photon_zoom} the $x\gamma(x,Q)$ distribution at
-$Q^2=10^4$ GeV$^2$ with experimental uncertainty band using MC method is presented and compared to LUXqed~\cite{Manohar:2016nzj},
-HKR~\cite{Harland-Lang:2016apc} and NNPDF3.0QED sets.
-%
-For NNPDF3.0QED, we show the 68\% CL uncertainty, while for LUXqed the
-uncertainty band is obtained by adding in quadrature all the model
-variations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \includegraphics[width=8cm]{figs/photon_comp_10000.pdf}
   \includegraphics[width=8cm]{figs/photon_comp_10000_ratio.pdf} 
-\caption{Left: comparison between $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$ in the present
-  NNLO analysis with the corresponding results from NNPDF3.0QED, LUXqed and HKR16.
+  \caption{Left plot: comparison between the photon $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
+    from the present NNLO analysis ({\tt xFitter\_epHMDY}) with the
+    corresponding results from NNPDF3.0QED, LUXqed and HKR16.
   %
-  Right: the same comparison now with the results normalized to the central value
+  Right plot: the same comparison, now with the results normalized to the central value
   of {\tt xFitter\_epHMDY}.
   %
-  For HKR16, only the central value is shown, while LUXqed includes
-  the associated uncertainty band obtained following the prescription
-  of~\cite{Manohar:2016nzj} }
+  For the present fit, we show the PDF uncertainties at the 68\% CL obtained from the MC method,
+  while model and parametrization uncertainties are discussed below.
+  %
+  For HKR16 only the central value is shown, while for LUXqed we include
+  the associated PDF uncertainty band~\cite{Manohar:2016nzj}. }
 \label{photon_zoom} \label{photon_zoom_ratio}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Fig.~\ref{photon_zoom} shows that in the region
-where the HMDY predictions are sensitive to the photon PDF, there is
-good agreement between the four determinations.
+In Fig.~\ref{photon_zoom}, the photon PDF $x\gamma(x,Q)$ is shown at
+$Q^2=10^4$ GeV$^2$,  and compared to the corresponding LUXqed,
+HKR16 and NNPDF3.0QED results.
 %
-The PDF uncertainties in the current
-analysis are reduced compared to those of NNPDF3.0QED, though they are still not competitive with those
-of LUXqed.
+In the left plot we comparison is presented in an absolute scale, while
+in the right plot we show the ratio of
+different results normalized to
+the central value of our fit.
 %
-There is excellent agreement between the LUXqed and the HKR
-calculations, illustrating the commonalities between the two
-approaches.
+For the present fit, {\tt xFitter\_epHMDY}, we show here
+the experimental PDF uncertainties at the 68\% confidence level (CL) obtained from the Monte Carlo method,
+ while model and parametrization uncertainties are discussed below.
+ %
+Likewise, for NNPDF3.0QED we show the 68\% CL uncertainty band.
+ %
+For HKR16, only the central value is available, while for LUXqed we include
+the associated PDF uncertainty band computed according to the
+prescription of Ref.~\cite{Manohar:2016nzj}.
 %
-Fig.~\ref{photon_zoom_ratio} shows the same comparison of
-different results for the photon PDF $x\gamma(x,Q)$ now normalized to
-the central value of {\tt xFitter\_epHMDY}.
+The $x$-range in Fig.~\ref{photon_zoom} has been restricted to the region
+where the ATLAS high-mass DY data has direct sensitivity to the photon PDF.
+
+From Fig.~\ref{photon_zoom} we find that for $x\ge 0.1$ the four determinations of
+the photon PDF which are being compared here are consistent within PDF uncertainties.
 %
-This format allows the relative compatibility
-between the various results to be assessed, as well as the relative size of the PDF
+For smaller values of $x$, the photon PDF from LUXqed and HKR16 is somewhat smaller than {\tt xFitter\_epHMDY},
+but still in agreement at the 2-$\sigma$ level.
+%
+As we will show below, this agreement is further improved if the PDF uncertainties in
+{\tt xFitter\_epHMDY}
+arising from variations of the input parametrization are added to the experimental
 uncertainties.
 %
-The experimental uncertainty on {\tt xFitter\_epHMDY}
-is at the $\sim 30\%$ level, depending on the specific value of $x$,
-improving over NNPDF3.0QED but still far from the percent accuracy of
-the LUXqed calculation.
+Moreover, the results of this work and NNPDF3.0QED agree at the 68\% CL for $x\ge 0.03$,
+and agreement which extends to smaller values of $x$ once the parametrization
+uncertainties in {\tt xFitter\_epHMDY} are accounted for.
+%
+Across the entire range of $x$, the LUXqed and the HKR16 calculations of $x\gamma$ are very close
+to each other.
 
-The impact of the high-mass Drell-Yan 8 TeV measurements on
-the light quark PDFs can also be assessed.
+Concerning the size of the uncertainties, from Fig.~\ref{photon_zoom} we see that,
+for $0.04 \le x \le 0.2$, the present analysis  exhibits smaller PDF
+uncertainties as compared to those from  NNPDF3.0QED.
+%
+Indeed, the experimental uncertainty on the present fit
+turns out to be at the  $\sim 30\%$ level for $x\le 0.1$, from where it increases
+rapidly specially in the positive direction, since variations of $x\gamma$ in the negative
+direction are constrained by positivity.
+%
+On the other hand, we also find that the limited sensitivity of the ATLAS data to the photon
+PDF does not allow to obtain a determination with uncertainties
+competitive with those of LUXqed.
+
+It is interesting to also assess the impact of the high-mass Drell-Yan 8 TeV measurements on
+the light quark and gluon PDFs.
 %
 For this purpose, and since HERA data alone (which should be used as
 benchmark for this comparison) does not have sensitivity on the photon
@@ -203,57 +292,6 @@ the same outcome.
 \label{fig:QCDfit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-After this comparison at the level of PDFs, a quantitative comparison
-between theoretical predictions and high-mass Drell-Yan measurements is presented.
-%
-The values of the $\chi^2$ for the HERA structure functions and for
-the high-mass DY data for the NNLO fit are summarised in
-Table~\ref{tab:chi2fit}.
-%
-As can be seen, the agreement between data and NNLO predictions is
-very good for all the bins in $m_{ll}$ of the $8$ TeV Drell-Yan data.
-%
-For the sum of all the five rapidity bins, we find a $\chi^2=48$ for
-$48$ data points.
-%
-The quality of the agreement with the HERA inclusive structure
-functions is of comparable quality to that found in the HERAPDF2.0 analysis~\cite{}.
-%
-In the calculation of the total $\chi^2$, the correlations between the
-different $m_{ll}$ bins have been taken into account.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[t]
-  \centering
-  \begin{tabular}{|c|c|}
-    \hline
-    Dataset  &   $\chi^2$ \\
-    \hline
-    \hline
-    HERA I+II & 1235.85/1056\\
-    \hline
-    HMDY  116 GeV $\ge m_{ll} \ge $ 150 GeV  &  8.96/12 \\
-    HMDY  150 GeV $\ge m_{ll} \ge $ 200 GeV  &  15.36/12 \\
-    HMDY  200 GeV $\ge m_{ll} \ge $ 300 GeV  &  13.81/12 \\
-    HMDY  300 GeV $\ge m_{ll} \ge $ 500 GeV  &  4.82/6 \\
-    HMDY  500 GeV $\ge m_{ll} \ge $ 1500 GeV &  3.96/6 \\
-    \hline
-    Correlated (HMDY) $\chi^2$ & 1.17 \\
-    Log penalty (HMDY) $\chi^2$  & -0.12 \\
-    \hline
-    \hline
-    Total  (HMDY) & 47.96/48 \\
-    \hline
-    \end{tabular}
-  \caption{$\chi^{2}$ for high-mass Drell Yan data for the NNLO fit.
-    %
-    The results for the individual $m_{ll}$ bins are shown
-    as well as for the total dataset.
-\label{tab:chi2fit}
-  }
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 Following this presentation of the main features of the {\tt
