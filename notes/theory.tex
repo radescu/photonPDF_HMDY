@@ -1,15 +1,15 @@
 \section{Data and theory}
 \label{sec:theory}
 
-In this work, the photon content of the proton $x\gamma(x,Q)$ is
+In this work, the photon content of the proton $x\gamma(x,Q^2)$ is
 extracted from a PDF analysis based on the combined inclusive DIS
 cross-section data from HERA~\cite{Abramowicz:2015mha}
 supplemented by the ATLAS measurements of high-mass Drell-Yan
 differential cross sections at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}.
 %
-The HERA inclusive data is the backbone of modern PDF fits, providing
+The HERA inclusive data are the backbone of modern PDF fits, providing
 information on the quark and gluon content of the proton, while
-the high-mass Drell-Yan data provides instead a direct sensitivity to the
+the high-mass Drell-Yan data provide instead a direct sensitivity to the
 photon PDF.
 %
 As illustrated in Fig.~\ref{fig:photoninduced}, 
@@ -23,9 +23,10 @@ single-differential (1D) invariant-mass distribution,
 $d\sigma/dm_{ll}$, as well as of double-differential (2D)
 distributions in $m_{ll}$ and $y_{ll}$, namely
 $d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
-$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$, where $m_{ll}$, $y_{ll}$ and $\Delta\eta_{ll}$
-denote the invariant mass, rapidity, and separation in pseudorapidity
-of the lepton pair, respectively.
+$d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
+%, where $m_{ll}$, $y_{ll}$ and $\Delta\eta_{ll}$
+%denote the invariant mass, rapidity, and separation in pseudorapidity
+%of the lepton pair, respectively.
 %
 For the invariant-mass 1D distribution, there are 12 bins between $m_{ll}=116$ GeV
 and 1.5 TeV; and for both double-differential distributions,
@@ -51,7 +52,7 @@ In the ATLAS high-mass DY measurement, the double elastic component is suppresse
  Moreover, the inelastic-elastic photon scattering corresponds to only about
  10\% of the total measured cross sections.
  %
- From the theory point of view, the photon PDF $x\gamma$ extracted from the
+ From the theory point of view, the photon PDF extracted from the
  fit is by construction the sum of the elastic and inelastic contributions,
  though in this analysis we are mostly sensitive to the latter.
 
@@ -75,6 +76,14 @@ the most important ones.
 %
 As discussed below, the NLO calculations are then supplemented by
 NNLO/NLO $K$-factors obtained from {\tt FEWZ}.
+%
+The NLO EW corrections to the DY processes are also estimated
+using FEWZ. 
+%
+The photon-initiated process is taken at LO since it is
+the only available APPLGRID implementation and NLO corrections are
+very small compared to the data accuracy.
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -121,8 +130,8 @@ with the PDG recommended values.
 
 In the  calculation of the Drell-Yan cross section, we use
 dynamical renormalisation $\mu_{R}$ and factorisation $\mu_{R}$
-scales, which are set equal to the scale of invariant mass $m_{ll}$ 
-in each bin, both for the quark- and gluon-induced and for the photon-induced
+scales, which are set equal to the scale of invariant mass $m_{ll}$,
+both for the quark- and gluon-induced and for the photon-induced
 contributions.
 %
 The choice of other values for these scales in the QED diagrams,
@@ -159,7 +168,8 @@ defined as:
   K(m_{ll},|y_{ll}|) \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW} \, ,
 \end{equation}
 using the MMHT2014 NNLO~\cite{Harland-Lang:2014zoa} PDF set both in
-the numerator and in the denominator.
+the numerator and in the denominator. The photon induced contribution has been explicitely 
+subtracted from the FEWZ predictions, as prvided in \cite{Aad:2016zzw}.
 %
 This approximation is justified since NNLO $K$-factors depend very
 mildly on the input PDF set, see for example~\cite{Czakon:2016olj}.
@@ -188,7 +198,7 @@ The $K$-factors have been computed using
 \includegraphics[width=10cm]{figs/kf_2D.pdf}
 \caption{The NNLO/NLO $K$-factors, defined in Eq.~(\ref{eq:kfactor}),
   that account for higher order QCD and EW effects to the high-mass
-  Drell-Yan cross-sections,
+  Drell-Yan cross-sections with the photon induced contribution subtracted,
   as a function of the dilepton rapidity $|y_{ll}|$.
   %
   Each set of points corresponds to a different bin in the dilepton
