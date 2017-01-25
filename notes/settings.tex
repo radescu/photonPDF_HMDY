@@ -6,42 +6,42 @@ parametrization of the photon PDF $x\gamma(x,Q^2)$, which has been
 carried out using the open-source {\tt xFitter}
 framework~\cite{Alekhin:2014irh}.
 %
-First of all, the scale $Q_0$ at which PDFs are parametrized is taken to be
-$Q_0 = \sqrt{7.5}~$GeV, which coincides with the value $Q_{\rm min}$ that defines
-the kinematic cut $Q \ge Q_{\rm min}$ for the
+First of all, the scale $Q_0^2$ at which PDFs are parametrized is taken to be
+$Q_0^2 = 7.5~$GeV$^2$, which coincides with the value $Q_{\rm min}^2$ that defines
+the kinematic cut $Q^2 \ge Q_{\rm min}^2$ for the
 data points that are used as input to the fits.
 %
 The charm PDF is then generated perturbatively from quarks and gluons by
 means of DGLAP evolution, exploiting recent developments in {\tt
   APFEL} which allow the use of setting heavy-quark thresholds $\mu_h$
-different from the heavy quark masses $m_h$, so that we can use
-$\mu_c=Q_0 > m_c$ without having to parametrize the charm PDF \cite{current:work}.
+different from the heavy quark masses $m_h$, so that
+$\mu_c=Q_0 > m_c$, and hence, it can be used without having to parametrize the charm PDF \cite{current:work}.
 % as done in~\cite{Ball:2016neh}.
 
-The expression for the $\chi^2$ used for the fits is that
+The expression for the $\chi^2$  function used for the fits is that
 of Ref.~\cite{Aaron:2012qi}, which
 includes corrections for possible 
 biases from statistical fluctuations and treats the systematic uncertainties
 multiplicatively.
 %
-Alternative forms that don't include these corrections, such as those
+Alternative forms that do not include these corrections, such as those
 defined in~\cite{Aaron:2009aa,Abramowicz:2015mha},
 have also been studied but no significant differences
 in the results have been observed.
 %
 
 In this analysis, the parametrized PDFs are the valence distributions
-$xu_{v}$ and $xd_{v}$, the gluon distribution $xg$, and the
+$xu_{v}(x,Q_0^2)$ and $xd_{v}(x,Q_0^2)$, the gluon distribution $xg(x,Q_0^2)$, and the
 \textit{u}-type and \textit{d}-type sea-quark distributions,
-$x\bar{U}$, $x\bar{D}$, where $x\bar{U} = x\bar{u}$ and
-$x\bar{D} = x\bar{d} + x\bar{s}$.
+$x\bar{U}(x,Q_0^2)$, $x\bar{D}(x,Q_0^2)$, where $x\bar{U}(x,Q_0^2) = x\bar{u}(x,Q_0^2)$ and
+$x\bar{D}(x,Q_0^2) = x\bar{d}(x,Q_0^2) + x\bar{s}(x,Q_0^2)$.
 %
 In addition, we also parametrize the photon distribution $x\gamma$.
 %
 The following general functional form is adopted:
 \begin{equation}
   \label{eq:parametrization}
-xf(x) = Ax^{B}(1-x)^{C}(1+Dx+Ex^{2}) \, ,
+xf(x, Q_0^2) = Ax^{B}(1-x)^{C}(1+Dx+Ex^{2}) \, ,
 \end{equation}
 where some of the normalisation parameters, in particular $A_{u_{v}}$,
 $A_{d_{v}}$ and $A_{g}$, are constrained by the valence and momentum
@@ -52,15 +52,15 @@ other, so that the two quark sea distributions share a common
 small-$x$ behaviour.
 %
 Since the measurements used here are not sensitive to the strangeness
-content of the proton, we fix $x\bar{s} = r_sx\bar{d}$, where
+content of the proton, we fix $x\bar{s} (x, Q_0^2) = r_sx\bar{d}(x,Q_0^2)$, where
 $r_s=1.0$ consistent with the ATLAS analysis of inclusive $W$
 and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}.
 %
 The further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed,
-such that $x\bar{u} \to x\bar{d}$ as $x \to 0$.  
+such that $x\bar{u}(x,Q_0^2) \to x\bar{d}(x,Q_0^2)$ as $x \to 0$.  
 
 The explicit form of PDF parametrization Eq.~(\ref{eq:parametrization})
-at the scale $Q_0$ is determined by the
+at the scale $Q_0^2$ is determined by the
 technique of saturation of the $\chi^{2}$, namely one keeps increasing
 the number of parameters until the $\chi^{2}$ does not improve
 further, employing Wilks' theorem~\cite{Wilks:1938dza}.
@@ -90,12 +90,11 @@ Eq.~(\ref{eq:param}) differs from the one used in the HERAPDF2.0
 analysis in various aspects.
 %
 First of all, we use a higher value of the input evolution scale
-$Q_0$, which is helpful to stabilize the fit of the photon PDF.
+$Q_0^2$, which is helpful to stabilize the fit of the photon PDF.
 %
 Second, an additional negative term in the parametrization of the
-gluon is not required here, since we use a more stringent cut
-$Q_{\rm min}$ which removes a substantial fraction of the low-$x$ data points (which do
-not provide any information on the photon anyway).
+gluon is not required here, since we use an increased value of $Q_0^2$
+which assures the positiveness of the gluon distribution.
 %
 Third, the results of the parametrization scan are different because of the
 inclusion of the ATLAS high-mass Drell-Yan cross-section data.
@@ -109,7 +108,7 @@ The former is expected to be more robust than the latter, due to the
 potential non-Gaussian nature of the photon PDF
 uncertainties~\cite{Ball:2013hta}.
 %
-We will show that these two methods to estimate the PDF uncertainties
+In Section \ref{sec:results} it is shown that these two methods to estimate the PDF uncertainties
 on the photon PDF lead to similar results.
 
 In addition, a number of cross-checks have been performed to assess the
@@ -122,8 +121,7 @@ $\alpha_s(m_Z)$ between 0.116 to 0.120 are considered, and additionally the
 strangeness fraction is decreased down to $r_s=0.75$.
 %
 For the parametrization uncertainties, the impact
-of increasing the input parametrization scale up to $Q_0=\sqrt{10}$ 
-GeV is considered as well as the impact of including additional parameters in Eq.~(\ref{eq:param}).
+of increasing the input parametrization scale up to $Q_0^2=10$~GeV$^2$ is considered as well as the impact of including additional parameters in Eq.~(\ref{eq:param}).
 %
 These extra parameters
 make little difference to the $\chi^2$ of the fit, but they can
@@ -132,5 +130,5 @@ change the shape of the PDFs in a non-negligible way.
 Such additional parameters are  $D_{u_v}$, $D_{\bar{u}}$, $E_{\bar{d}}$, as well
 and the extra negative term  in the gluon PDF used in HERAPDF2.0.
 %
-The impact of these model and parametrization uncertainties on our baseline results
+The impact of these model and parametrization uncertainties on the baseline results
 is quantified in Sect.~\ref{sec:crosschecks}.
