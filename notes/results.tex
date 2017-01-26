@@ -203,40 +203,40 @@ In Fig.~\ref{photon_zoom}, the photon PDF, $x\gamma(x,Q)$, is shown at
 $Q^2=10^4$ GeV$^2$,  and compared to the corresponding LUXqed,
 HKR16 and NNPDF3.0QED results.
 %
-In the left plot we comparison is presented in an absolute scale, while
-in the right plot we show the ratio of
+In the left plot the comparison is presented in an absolute scale, while
+in the right plot the ratio of
 different results normalized to
-the central value of our fit.
+the central value of the fit is shown.
 %
-For the present fit, {\tt xFitter\_epHMDY}, we show here
-the experimental PDF uncertainties at the 68\% confidence level (CL) obtained from the Monte Carlo method,
+For the present fit, {\tt xFitter\_epHMDY}, 
+the experimental PDF uncertainties at the 68\% confidence level (CL) are obtained from the Monte Carlo method,
  while model and parametrization uncertainties are discussed below.
  %
-Likewise, for NNPDF3.0QED we show the 68\% CL uncertainty band.
- %
-For HKR16, only the central value is available, while for LUXqed we include
-the associated PDF uncertainty band computed according to the
+Likewise, the  NNPDF3.0QED PDF set is shown the 68\% CL uncertainty band,
+while for LUXqed the associated PDF uncertainty band is computed according to the
 prescription of Ref.~\cite{Manohar:2016nzj}.
+ %
+For HKR16, only the central value is available.
 %
 The $x$-range in Fig.~\ref{photon_zoom} has been restricted to the region
-$0.02 \le x \le 0.9$, since beyond that region there is very limited sensitivity to $x\gamma$.
+$0.02 \le x \le 0.9$, since beyond that region there is only limited sensitivity to $x\gamma(x,Q^2)$.
 
-From Fig.~\ref{photon_zoom} we find that for $x\ge 0.1$ the four determinations of
-the photon PDF which are being compared here are consistent within PDF uncertainties.
+Fig.~\ref{photon_zoom} shwows that for $x\ge 0.1$ the four determinations of
+the photon PDF are consistent within PDF uncertainties.
 %
 For smaller values of $x$, the photon PDF from LUXqed and HKR16 is somewhat smaller than {\tt xFitter\_epHMDY},
 but still in agreement at the 2-$\sigma$ level.
 %
-As we will show below, this agreement is further improved if the PDF uncertainties in
+As it is shown below, this agreement is further improved if the PDF uncertainties in
 {\tt xFitter\_epHMDY}
 arising from variations of the input parametrization are added to the experimental
 uncertainties.
 %
 Moreover, the results of this work and NNPDF3.0QED agree at the 68\% CL for $x\ge 0.03$,
-and agreement which extends to smaller values of $x$ once the parametrization
+and the agreement extends to smaller values of $x$ once the parametrization
 uncertainties in {\tt xFitter\_epHMDY} are accounted for.
 %
-Across the entire range of $x$, the LUXqed and the HKR16 calculations of $x\gamma$ are very close
+Across the entire range of $x$, the LUXqed and the HKR16 calculations of $x\gamma(x,Q^2)$ are very close
 to each other.
 
 Concerning the size of the uncertainties, from Fig.~\ref{photon_zoom} we see that
@@ -248,11 +248,11 @@ turns out to be at the  $\sim 30\%$ level for $x\le 0.1$, from where it increase
 rapidly specially in the positive direction.
 %
 The reason for this behaviour at large $x$ can be understood by recalling that
-variations of $x\gamma$ in the negative
+variations of $x\gamma(x,Q^2)$ in the negative
 direction are constrained by positivity.
 %
-On the other hand, we also find that the limited sensitivity of the ATLAS data to the photon
-PDF does not allow obtaining a determination of $x\gamma$ with uncertainties
+On the other hand, the limited sensitivity of the ATLAS data to the photon
+PDF does not allow obtaining a determination of $x\gamma(x,Q^2)$ with uncertainties
 competitive with those of LUXqed, which are at the few percent level.
 
 It is interesting to also assess the impact of the high-mass Drell-Yan 8 TeV measurements on
@@ -270,17 +270,17 @@ baseline and the HERA+HMDY fit can be performed, with the effects of
 the photon PDF being factored out.
 
 This comparison is shown in Fig.~\ref{fig:QCDfit} for the up and down
-antiquarks $x\bar{u}$ and $x\bar{d}$, for which the effect of the high-mass Drell-Yan data is
-expected to be most pronounced, since HERA inclusive structure functions
+antiquarks $x\bar{u}(x,Q^2)$ and $x\bar{d}(x,Q^2)$, for which the effect of the high-mass Drell-Yan data is
+expected to be most pronounced, since HERA inclusive cross sections
 provide little information on quark flavour separation.
 %
-In Fig.~\ref{fig:QCDfit}, the $x\bar{u}$ and $x\bar{d}$ together
+In Fig.~\ref{fig:QCDfit}, the $x\bar{u}(x,Q^2)$ and $x\bar{d}(x,Q^2)$ together
 with the associated MC uncertainties have been computed
 at the initial parametrization scale of $Q^2=7.5$ GeV$^2$ and
 are shown as ratios to the central value of the {\tt xFitter\_epHMDY}
 fit.
 %
-As is apparent from this comparison, the modifications in the medium
+The modifications in the medium
 and large-$x$ antiquark distributions from the high mass DY data are
 rather moderate.
 %
@@ -293,7 +293,7 @@ from fits obtained by switching
 off the QED effects for both the HERA only fits and the HERA+HMDY fits.
 %
 Therefore, while the ATLAS high-mass Drell-Yan measurements have a significant constrain
-on the photon PDF, its impact on the quark and gluon PDFs is very moderate.
+on the photon PDF, thei impact on the quark and gluon PDFs is moderate.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -315,7 +315,7 @@ on the photon PDF, its impact on the quark and gluon PDFs is very moderate.
 
 Following the presentation of the main result of this work, the {\tt
   xFitter\_epHMDY} determination of the
-photon PDF $x\gamma(x,Q)$, we now turn to assess the robustness of this determination
+photon PDF $x\gamma(x,Q^2)$, we now turn to assess the robustness of this determination
 with respect to a number of variations.
 %
 First, variations in the values of the input
@@ -330,7 +330,7 @@ the fitting procedure are quantified.
 %
 In each case, we will perform one variation at a time
 and compare its effect on the resulting central value
-for $x\gamma(x,Q)$ with the size of the experimental PDF
+for $x\gamma(x,Q^2)$ with the size of the experimental PDF
 uncertainties in {\tt
   xFitter\_epHMDY} computed using the Monte Carlo method.
 
@@ -344,7 +344,7 @@ uncertainties in {\tt
   analysis, {\tt xFitter\_epHMDY},
   with the central value of a number of fits for which one input parameter has been varied.
   %
-  The following variations have been considered: $r_s=0.75$, $Q^2_{\rm cut}=5$ GeV$^2$, $\alpha_s=0.116$ and
+  The following variations have been considered: $r_s=0.75$, $Q^2_{\rm min}=5$ GeV$^2$, $\alpha_s=0.116$ and
   0.118 (left plot); and
   $m_c=1.41$ and 1.53 GeV, $m_b=4.25$ and 4.75 GeV, and $Q_0^2=10$ GeV$^2$ (right plot).
   %
@@ -360,7 +360,7 @@ adopted in the fit.
 %
 Fig.~\ref{fig:model} shows the comparison between the
 {\tt xFitter\_epHMDY} 
-determination of $x\gamma(x,Q)$ at $Q^2=10^4$ GeV$^2$, including the experimental MC
+determination of $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$, including the experimental MC
 uncertainties, with the central
 value of those fits for which a number of variations have been
 performed.
@@ -371,19 +371,19 @@ In particular, we have considered the following variations:
 \item The ratio of strangeness to non-strange PDFs is decreased to $r_s=0.75$ instead of $r_s=1$.
 \item The value of the charm mass is varied between $m_c=1.41$ GeV and $m_c=1.53$ GeV,
   and that of the bottom mass between $m_b=4.25$ GeV and $m_b=4.75$ GeV.
-\item The minimum value $Q_{\rm cut}$ of the fitted data is decreased down to $\sqrt{5}$ GeV.
-\item The input parametrization scale $Q_0$ is raised to $\sqrt{10}$ GeV as compared
-  to the baseline value of $Q_0=\sqrt{7.5}~$GeV.
+\item The minimum value $Q_{\rm min}^2$ of the fitted data is decreased down to $5$ GeV$^2$.
+\item The input parametrization scale $Q_0^2$ is raised to $10$ GeV$^2$ as compared
+  to the baseline value of $Q_0^2=7.5~$GeV$^2$.
 \end{itemize}
 The results of Fig.~\ref{fig:model} highlight that in all cases the effect
 of all the variations considered here is contained within (and typically much smaller than) 
 the experimental PDF uncertainty bands of the reference fit.
 %
 The largest variation comes from the strangeness ratio $r_s$, where the resulting
-central value turns out to be at the bottom end of the PDF uncertainty bad for $x\ge 0.1$.
+central value turns out to be at the bottom end of the PDF uncertainty band for $x\ge 0.1$.
 
 Another important check of the robustness of the present determination of
-$x\gamma$ can be obtained by comparing the baseline fit with further
+$x\gamma(x, Q^2)$ can be obtained by comparing the baseline fit with further
 fits where a number of new free parameters are allowed in the PDF
 parametrization, in addition to those listed in Eq.~(\ref{eq:param}).
 %
@@ -400,18 +400,18 @@ ${\rm neg}+D_{\bar{u}}+D_{\bar{d}}$ variations, the central value is
 at the lower edge of the PDF uncertainty band in the entire range
 of $x$ shown.
 %
-Importantly, once this additional source of PDF uncertainty arising from the
-parametrization variations is accounted for, the agreement of the {\tt xFitter\_epHMDY}
-fit 
-with the LUXqed and HKR16  determinations
-shown in Fig.~\ref{photon_zoom} improves in the
-region around $x\simeq 0.02$.
+%Importantly, once this additional source of PDF uncertainty arising from the
+%parametrization variations is accounted for, the agreement of the {\tt xFitter\_epHMDY}
+%fit 
+%with the LUXqed and HKR16  determinations
+%shown in Fig.~\ref{photon_zoom} improves in the
+%region around $x\simeq 0.02$.
 
 Another important cross-check of the robustness of the estimated
 experimental uncertainty of the photon PDF in this analysis is provided by the
 comparison of the Monte Carlo and Hessian methods.
 %
-In Fig.~\ref{fig:photon_mc_vs_hessian} we show this comparison, which
+Fig.~\ref{fig:photon_mc_vs_hessian} shows this comparison, which
 indicates a reasonable agreement between the two methods.
 %
 In particular, the central values of the photon obtained with the two
@@ -447,11 +447,11 @@ to the Gaussian behaviour of the photon PDF.
 
 To complete these studies, an interesting exercise is to quantify the perturbative stability of
 the {\tt xFitter\_epHMDY}
-determination of the photon PDF $x\gamma(x,Q)$ with respect to the inclusion
+determination of the photon PDF $x\gamma(x,Q^2)$ with respect to the inclusion
 of NNLO QCD corrections in the analysis.
 %
 To study this, Fig.~\ref{fig:nlo_vs_nnlo} shows a
-comparison between the baseline fit of $x\gamma(x,Q)$, based on NNLO
+comparison between the baseline fit of $x\gamma(x,Q^2)$, based on NNLO
 QCD and NLO QED theoretical calculations, with the central value resulting from the
 corresponding fit
 based instead on NLO QCD and QED theory.
@@ -462,9 +462,9 @@ For the NNLO fit, only the experimental PDF uncertainties, estimated
 using the Monte Carlo method, are shown.
 %
 From the comparison of Fig.~\ref{fig:nlo_vs_nnlo}, it is clear that the
-fit of $x\gamma(x,Q)$ exhibits a reasonable perturbative stability,
+fit of $x\gamma(x,Q^2)$ exhibits a reasonable perturbative stability,
 since the central value of the NLO fit is always contained in the
-one-sigma PDF uncertainty band of the baseline {\tt xFitter\_epHMDY} fit
+one-sigma PDF uncertainty band of the baseline {\tt xFitter\_epHMDY} fit.
 %
 The agreement between the two fits is particularly good for
 $x\gsim 0.1$, where the two central values are very close to each
