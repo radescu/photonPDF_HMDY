@@ -408,8 +408,8 @@ $\mathcal{O}(\alpha_s\alpha)$ and $\mathcal{O}(\alpha^2)$ corrections
 to the DGLAP evolution equations on the $\gamma\gamma$ luminosity at
 $\sqrt{s} = 13$ TeV, defined as:
 \begin{equation}\label{eq:GammaGammaLumi}
-\mathcal{L}_{\gamma\gamma}(M_X) = \frac1{s}\int_{M_X^2/s}^1
-\frac{dx}{x} \gamma(x,M_X) \gamma\left(\frac{M_X^2}{xs},M_X\right)\,,
+  \mathcal{L}_{\gamma\gamma}(M_X) = \frac1{s}\int_{M_X^2/s}^1
+  \frac{dx}{x} \gamma(x,M_X^2) \gamma\left(\frac{M_X^2}{xs},M_X^2\right)\,,
 \end{equation}
 as a function of the final state invariant mass $M_X$.
 %
@@ -527,7 +527,7 @@ F_{2,L}^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{B}_q\left[C_
 (q+\overline{q}) + C_{2,L;\gamma}^{(\alpha)} \otimes \gamma
                          \right]\,,\\
 \\
-F_3^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{D}_q\left[C_{3;q}^{(\alpha)}\otimes
+xF_3^{{\rm NC},(\alpha)} &=& \displaystyle x \sum_{q} \widetilde{D}_q\left[C_{3;q}^{(\alpha)}\otimes
 (q-\overline{q}) + C_{3;\gamma}^{(\alpha)} \otimes \gamma
                          \right]\,.
 \end{array}
@@ -550,10 +550,10 @@ productions of a neutrino or an anti-neutrino take the form:
 \begin{equation}\label{compactNu}
 \begin{array}{rcl}
 F_{2,L}^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
-                              \sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2D +e_U^2\overline{U}\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
+                              x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2D +e_U^2\overline{U}\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
 \\
 F_{2,L}^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
-\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2\overline{D}
+x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2\overline{D}
     +e_U^2U\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
 \end{array}
 \end{equation}
@@ -562,11 +562,11 @@ where $V_{UD}$ are the elements of the CKM matrix.
 The flavour structure of $F_3$ is instead slightly different:
 \begin{equation}\label{compactNuF3}
 \begin{array}{rcl}
-F_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
-                              \sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(e_D^2D -e_U^2\overline{U}\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
+xF_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
+                              x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(e_D^2D -e_U^2\overline{U}\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
 \\
-F_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
-\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(-e_D^2\overline{D}
+xF_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
+x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(-e_D^2\overline{D}
     +e_U^2U\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,.
 \end{array}
 \end{equation}
@@ -602,7 +602,7 @@ computation of the structure functions.
 \includegraphics[width=6cm,angle=270]{figs/NLOQEDCorrections_CC.eps}
 \caption{The effects of the NLO QED corrections on the neutral-current
 (left) and charged-current (right) DIS structure functions
-$F_2, F_3$ and $F_L$, normalised to the pure QCD results.
+$F_2, F_L$ and $xF_3$, normalised to the pure QCD results.
 %
 The calculation has been performed in the FONLL-B general-mass scheme using the
 central NNPDF3.0QED NLO
