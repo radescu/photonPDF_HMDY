@@ -9,7 +9,7 @@ differential cross sections at $\sqrt{s}=8$ TeV~\cite{Aad:2016zzw}.
 %
 The HERA inclusive data are the backbone of modern PDF fits, providing
 information on the quark and gluon content of the proton, while
-the high-mass Drell-Yan data provide instead a direct sensitivity to the
+the high-mass Drell-Yan data provide a direct sensitivity to the
 photon PDF.
 %
 As illustrated in Fig.~\ref{fig:photoninduced}, 
@@ -20,7 +20,7 @@ photon-photon $t$- and $u$-channel scattering mediated by a lepton.
 The ATLAS high-mass Drell-Yan 8 TeV measurements are presented in terms
 of both the
 single-differential (1D) invariant-mass distribution,
-$d\sigma/dm_{ll}$, as well as of double-differential (2D)
+$d\sigma/dm_{ll}$, as well as double-differential (2D)
 distributions in $m_{ll}$ and $y_{ll}$, namely
 $d^{2}\sigma/dm_{ll}d|y_{ll}|$, and in $m_{ll}$ and $\Delta\eta_{ll}$,
 $d^{2}\sigma/dm_{ll}\Delta\eta_{ll}$.
@@ -42,7 +42,7 @@ and $|\Delta\eta_{ll}|$ distributions, respectively.
 The photons which undergo hard scattering in the
 $\gamma\gamma \to ee$  process from Fig.~\ref{fig:photoninduced}
 can be produced by either  emission from the
-proton as the whole (the ``elastic'' component) or radiated by the constituent quarks
+proton as a whole (the ``elastic'' component) or radiated by the constituent quarks
 (the ``inelastic'' component).
 %
 In the ATLAS high-mass DY measurement, the double elastic component is suppressed
@@ -54,7 +54,7 @@ In the ATLAS high-mass DY measurement, the double elastic component is suppresse
  %
  From the theory point of view, the photon PDF extracted from the
  fit is by construction the sum of the elastic and inelastic contributions,
- though in this analysis we are mostly sensitive to the latter.
+ though this analysis is mostly sensitive to the latter.
 
 For the calculation of NLO high-mass Drell-Yan cross sections, the
 {\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program is used, which
@@ -69,7 +69,7 @@ The calculation is performed in the $n_f=5$ scheme neglecting mass
 effects of charm and bottom quarks in the matrix elements, as
 appropriate for a high-scale process.
 %
-These NLO theoretical predictions match the same 
+These NLO theoretical predictions match the  
 analysis cuts of the data, with $m_{ll}\ge 116$ GeV, $\eta_l\le 2.5$, and
 $p_T^l \ge 40$ GeV$~(30)$ GeV for the leading (sub-leading) lepton being
 the most important ones.
@@ -80,8 +80,8 @@ NNLO/NLO $K$-factors obtained from {\tt FEWZ}~\cite{Gavin:2012sy}.
 The NLO EW corrections to the DY processes are also estimated
 using {\tt FEWZ}. 
 %
-The photon-initiated process is taken at LO since it is
-the only available {\tt APPLgrid} implementation and NLO corrections are
+The photon-initiated process is taken at LO since this corresponds to
+the {\tt APPLgrid} implementation and the NLO corrections are
 very small compared to the data accuracy.
 %
 
@@ -107,8 +107,8 @@ equations~\cite{Gribov:1972ri,Dokshitzer:1977,Altarelli:1977zs} are
 solved including the $\mathcal{O}\lp \alpha_s\alpha\rp$ and
 $\mathcal{O}\lp \alpha^2\rp$ corrections to the splitting functions.
 %
-Concerning the DIS structure functions, corrections of
-$\mathcal{O}\lp \alpha\rp$ are also included which in turn lead to a (weak)
+%Concerning the DIS structure functions, 
+Corrections of $\mathcal{O}\lp \alpha\rp$ are also included leading to a (weak)
 explicit dependence of the predictions on the photon PDF.
 %
 Details
@@ -128,15 +128,15 @@ The reference values of the QCD and QED coupling constants are chosen to be
 $\alpha_s(m_Z)=0.118$ and $\alpha(m_\tau=1.777\mbox{ GeV})=1/133.4$, again consistent
 with the PDG recommended values.
 
-In the  calculation of the Drell-Yan cross section, we use
+In the  calculation of the Drell-Yan cross section, the
 dynamical renormalisation $\mu_{R}$ and factorisation $\mu_{F}$
-scales, which are set equal to the scale of invariant mass $m_{ll}$,
+scales are used, which are set equal to the scale of invariant mass $m_{ll}$,
 both for the quark- and gluon-induced and for the photon-induced
 contributions.
 %
 The choice of other values for these scales in the QED diagrams,
-such as a fixed scale $\mu_R=\mu_F=M_Z$, leads
-to  small variations of the photon-initiated cross-sections of at most a few percent.
+such as a fixed scale $\mu_R=\mu_F=M_Z$, leads 
+to  variations of the photon-initiated cross-sections of at most a few percent.
 %
 The choice of the scale for the photon PDF  is further discussed
 in~\cite{Dittmaier:2009cr}.
@@ -145,7 +145,7 @@ For the kinematics of the ATLAS DY data, the ratio between the photon-initiated
 contributions and  quark- and gluon-induced dilepton production is largest
 for central rapidities and large invariant masses. 
 %
-Indeed, for the most central (forward) rapidity
+For the most central (forward) rapidity
 bin, $0 < |y_{ll}| < 0.2$ ($2.0 < |yll| < 2.4$), the ratio
 between the QED and QCD contributions varies between 2.5\%~(2\%) at low
 invariant masses and 12\%~(2.5\%) for the highest $m_{ll}$ bin.
@@ -169,17 +169,19 @@ defined as:
   K(m_{ll},|y_{ll}|) \equiv\frac{\rm NNLO\  QCD  + NLO\  EW}{\rm NLO\  QCD + LO\  EW} \, ,
 \end{equation}
 using the MMHT2014 NNLO~\cite{Harland-Lang:2014zoa} PDF set both in
-the numerator and in the denominator. The photon induced contribution, as provided in \cite{Aad:2016zzw},  has been explicitly 
+the numerator and in the denominator. 
+%
+The $K$-factors have been computed using
+   {\tt FEWZ}  with the same settings and analysis cuts as the corresponding
+   NLO calculations of {\tt MadGraph5{\_}aMC@NLO}.
+%
+The photon induced contribution, as provided in \cite{Aad:2016zzw},  has been explicitly 
 subtracted from the {\tt FEWZ} predictions.
 %
 This approximation is justified since NNLO $K$-factors depend very
 mildly on the input PDF set, see for example~\cite{Czakon:2016olj}.
  %
-The $K$-factors have been computed using
-   {\tt FEWZ}  with the same settings and analysis cuts as the corresponding
-   NLO calculations of {\tt MadGraph5{\_}aMC@NLO}.
-   %
-   Fig.~\ref{fig:kf} shows the $K$-factors  Eq.~({\ref{eq:kfactor})
+   Fig.~\ref{fig:kf} shows the $K$-factors of  Eq.~({\ref{eq:kfactor})
   corresponding to the double differential $(m_{ll},|y_{ll}|)$
   cross sections 
   as a function of the dilepton

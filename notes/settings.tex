@@ -1,8 +1,8 @@
 \section{Settings}
 \label{sec:fitsettings}
 
-In this section we present the settings of the PDF fits, including the details about the
-parametrisation of the photon PDF $x\gamma(x,Q^2)$, which has been
+This section presents the settings of the PDF fits, including the details about the
+parametrisation of the photon PDF $x\gamma(x,Q^2)$, which have been
 carried out using the open-source {\tt xFitter}
 framework~\cite{Alekhin:2014irh}.
 %
@@ -13,9 +13,9 @@ data points that are used as input to the fits.
 %
 The charm PDF is then generated perturbatively from quarks and gluons by
 means of DGLAP evolution, exploiting recent developments in {\tt
-  APFEL} which allow the use of setting heavy-quark thresholds $\mu_h$
-different from the heavy quark masses $m_h$, so that
-$\mu_c=Q_0 > m_c$, and hence, it can be used without having to parametrise the charm PDF \cite{current:work}.
+  APFEL} which allow the setting of heavy-quark thresholds $\mu_h$
+differently from the heavy quark masses $m_h$, such that
+$\mu_c=Q_0 > m_c$. Hence a high threshold can be used without having to parametrise the charm PDF \cite{current:work}.
 % as done in~\cite{Ball:2016neh}.
 
 The expression for the $\chi^2$  function used for the fits is that
@@ -36,7 +36,7 @@ $xu_{v}(x,Q_0^2)$ and $xd_{v}(x,Q_0^2)$, the gluon distribution $xg(x,Q_0^2)$, a
 $x\bar{U}(x,Q_0^2)$, $x\bar{D}(x,Q_0^2)$, where $x\bar{U}(x,Q_0^2) = x\bar{u}(x,Q_0^2)$ and
 $x\bar{D}(x,Q_0^2) = x\bar{d}(x,Q_0^2) + x\bar{s}(x,Q_0^2)$.
 %
-In addition, we also parametrise the photon distribution $x\gamma$.
+In addition, the photon distribution $x\gamma(x,Q_0^2)$ is also parametrised at the starting scale.
 %
 The following general functional form is adopted:
 \begin{equation}
@@ -52,8 +52,8 @@ other, so that the two quark sea distributions share a common
 small-$x$ behaviour.
 %
 Since the measurements used here are not sensitive to the strangeness
-content of the proton, we fix $x\bar{s} (x, Q_0^2) = r_sx\bar{d}(x,Q_0^2)$, where
-$r_s=1.0$ consistent with the ATLAS analysis of inclusive $W$
+content of the proton, strageness is fixed such that $x\bar{s} (x, Q_0^2) = r_sx\bar{d}(x,Q_0^2)$, where
+$r_s=1.0$ is consistent with the ATLAS analysis of inclusive $W$
 and $Z$ production~\cite{Aad:2012sb,Aaboud:2016btc}.
 %
 The further constraint $A_{\bar{U}} = 0.5 A_{\bar{D}}$ is imposed,
@@ -61,8 +61,8 @@ such that $x\bar{u}(x,Q_0^2) \to x\bar{d}(x,Q_0^2)$ as $x \to 0$.
 
 The explicit form of PDF parametrisation Eq.~(\ref{eq:parametrization})
 at the scale $Q_0^2$ is determined by the
-technique of saturation of the $\chi^{2}$, namely one keeps increasing
-the number of parameters until the $\chi^{2}$ does not improve
+technique of saturation of the $\chi^{2}$, namely the number of parameters is increased 
+one by one  until the $\chi^{2}$ does not improve
 further, employing Wilks' theorem~\cite{Wilks:1938dza}.
 %
 Following this method, the optimal parametrisation for the quark and
@@ -79,7 +79,7 @@ x\bar{D}(x) &&= A_{\bar{D}}x^{B_{\bar{D}}}(1-x)^{C_{\bar{D}}}\, , \\
 \label{eq:param}
 xg(x) &&= A_{g}x^{B_{g}}(1-x)^{C_{g}}(1+E_{g}x^{2})\, ,
 \end{eqnarray}
-while for the photon PDF we use:
+while for the photon PDF it is used:
 \begin{equation}
 x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}x^{2}) \, .
 \end{equation}
@@ -87,13 +87,13 @@ x\gamma(x) = A_{\gamma}x^{B_{\gamma}}(1-x)^{C_{\gamma}}(1+D_{\gamma}x+E_{\gamma}
 
 The parametrisation of the quark and gluon PDFs in
 Eq.~(\ref{eq:param}) differs from the one used in the HERAPDF2.0
-analysis in various aspects.
+analysis in various ways.
 %
-First of all, we use a higher value of the input evolution scale
-$Q_0^2$, which is helpful to stabilise the fit of the photon PDF.
+First of all, a higher value of the input evolution scale
+$Q_0^2$ is used, which is helpful to stabilise the fit of the photon PDF.
 %
 Second, an additional negative term in the parametrisation of the
-gluon is not required here, since we use an increased value of $Q_0^2$
+gluon is not required here, because of the increased value of $Q_0^2$
 which assures the positiveness of the gluon distribution.
 %
 Third, the results of the parametrisation scan are different because of the
