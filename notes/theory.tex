@@ -45,25 +45,25 @@ can be produced by either  emission from the
 proton as a whole (the ``elastic'' component) or radiated by the constituent quarks
 (the ``inelastic'' component).
 %
-In the ATLAS high-mass DY measurement, the double elastic component is suppressed
- by the
- requirement of having more than two primary tracks~\cite{Aad:2016zzw}.
- %
- Moreover, the inelastic-elastic photon scattering corresponds to only about
- 10\% of the total measured cross sections.
- %
+%In the ATLAS high-mass DY measurement, the double elastic component is suppressed
+% by the
+% requirement of having more than two primary tracks~\cite{Aad:2016zzw}.
+% %
+% Moreover, the inelastic-elastic photon scattering corresponds to only about
+% 10\% of the total measured cross sections.
+% %
  From the theory point of view, the photon PDF extracted from the
  fit is by construction the sum of the elastic and inelastic contributions,
  though this analysis is mostly sensitive to the latter.
 
 For the calculation of NLO high-mass Drell-Yan cross sections, the
-{\tt MadGraph5{\_}aMC@NLO}~\cite{Alwall:2014hca} program is used, which
+{\tt MadGraph5{\_}aMC@\-NLO}~\cite{Alwall:2014hca} program is used, which
 includes the contribution from photon-initiated diagrams, interfaced
 to {\tt APPLgrid}~\cite{Carli:2010rw} through {\tt
   aMCfast}~\cite{amcfast}.
 %
 A tailored version of {\tt APPLgrid} is used, accounting for
-the contribution of the photon-initiated processes \footnote{Modified version of {\tt APPLgrid} available at: $https://github.com/scarrazza/applgridphoton$}.
+the contribution of the photon-initiated processes \footnote{Modified version of {\tt APPLgrid} available at: {\tt https://github.com/scarrazza/applgridphoton}}.
 %
 The calculation is performed in the $n_f=5$ scheme neglecting mass
 effects of charm and bottom quarks in the matrix elements, as
@@ -88,7 +88,7 @@ very small compared to the data accuracy.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=17cm]{figs/DYdiagrams.pdf}
+    \includegraphics[width=14cm]{figs/DYdiagrams.pdf}
     \end{center}
     \caption{Diagrams that contribute to lepton-pair production at
       hadron colliders at the Born level.}
@@ -139,7 +139,7 @@ such as a fixed scale $\mu_R=\mu_F=M_Z$, leads
 to  variations of the photon-initiated cross-sections of at most a few percent.
 %
 The choice of the scale for the photon PDF  is further discussed
-in~\cite{Dittmaier:2009cr}.
+in~\cite{Harland-Lang:2016lhw,Dittmaier:2009cr}.
 %
 For the kinematics of the ATLAS DY data, the ratio between the photon-initiated
 contributions and  quark- and gluon-induced dilepton production is largest
@@ -198,6 +198,7 @@ subtracted from the {\tt FEWZ} predictions.
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
+\centering
 \includegraphics[width=10cm]{figs/kF_2D.pdf}
 \caption{The NNLO/NLO $K$-factors, defined in Eq.~(\ref{eq:kfactor}),
   that account for higher order QCD and EW effects to the high-mass

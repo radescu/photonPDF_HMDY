@@ -1,41 +1,49 @@
-\documentclass[english,aps,superscriptaddress]{revtex4-1}
-\usepackage[T1]{fontenc}
+\documentclass[english,a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have                                                                                                                                       
+             % images in pdf, png or jpg format)                                                                                                                                                         
+
+\usepackage{jheppub} % for details on the use of the package, please                                                                                                                                     
+                     % see the JHEP-author-manual                                                                                                                                                        
+
+\usepackage{seqsplit}
+\usepackage[T1]{fontenc} % if needed                                                                                                                                                                     
+
+%\documentclass[english,aps]{revtex4-1}                                                                                                                                                                  
 \usepackage[latin9]{inputenc}
-\usepackage{color}
+%\usepackage{color}
 \usepackage{graphicx}
 \usepackage{babel}
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{lineno}
-\usepackage{hyperref}
 
-\makeatletter
+%\makeatletter
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-%% Because html converters don't know tabularnewline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.                                                                                                                                              
+%% Because html converters don't know tabularnewline                                                                                                                                                     
 \providecommand{\tabularnewline}{\\}
 
 \def\gsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
-    \raise1pt\hbox{$>$}}}         %greater than or approx. symbol
+    \raise1pt\hbox{$>$}}}         %greater than or approx. symbol                                                                                                                                        
 \def\lsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
-    \raise1pt\hbox{$<$}}}         %less than or approx. symbol
+    \raise1pt\hbox{$<$}}}         %less than or approx. symbol                                                                                                                                           
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
- % Fix a bug in REVTeX 4.1
- \def\lovname{List of Videos}
- \@ifundefined{textcolor}{}
- {%
-   \definecolor{BLACK}{gray}{0}
-   \definecolor{WHITE}{gray}{1}
-   \definecolor{RED}{rgb}{1,0,0}
-   \definecolor{GREEN}{rgb}{0,1,0}
-   \definecolor{BLUE}{rgb}{0,0,1}
-   \definecolor{CYAN}{cmyk}{1,0,0,0}
-   \definecolor{MAGENTA}{cmyk}{0,1,0,0}
-   \definecolor{YELLOW}{cmyk}{0,0,1,0}
- }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.                                                                                                                                        
+ % Fix a bug in REVTeX 4.1                                                                                                                                                                               
+% \def\lovname{List of Videos}
+% \@ifundefined{textcolor}{}
+% {%                                                                                                                                                                                                      
+%   \definecolor{BLACK}{gray}{0}
+%   \definecolor{WHITE}{gray}{1}
+%   \definecolor{RED}{rgb}{1,0,0}
+%   \definecolor{GREEN}{rgb}{0,1,0}
+%   \definecolor{BLUE}{rgb}{0,0,1}
+%   \definecolor{CYAN}{cmyk}{1,0,0,0}
+%   \definecolor{MAGENTA}{cmyk}{0,1,0,0}
+%   \definecolor{YELLOW}{cmyk}{0,0,1,0}
+%}
 \makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                       
 
 
 \newcommand{\la}{\left\langle}
@@ -46,54 +54,65 @@
 \newcommand{\rp}{\right)}
 \newcommand{\as}{\alpha_s}
 
-\begin{document}
-\vspace{2cm} DESY-17-015
-%\linenumbers
-
-\title{The photon PDF from high-mass Drell Yan data at the LHC}
-
-%\author{F.~Giuli, xFitter Developers' team: V.~Bertone, D.~Britzger, S.~Carrazza, A.~Cooper-Sarkar, A.~Glazov, K.~Lohwasser, A.~Luszczak,  F.~Olness,
-% R.~Placakyte, V.~Radescu,  J.~Rojo, R.~Sadykov, P.~Shvydkin,  O.~Zenaiev;  and M.~Lisovyi}
-
-\author{F.~Giuli}
-\affiliation{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom}
-%\author{and the xFitter Developers team:}
-%\noaffiliation
-\author{and the xFitter Developers' team: V.~Bertone}
-\affiliation{Department of Physics and Astronomy,  VU University, NL-1081 HV Amsterdam, \\ and Nikhef Theory Group Science Park 105, 1098 XG Amsterdam, The Netherlands}
-\author{D.~Britzger}
-\affiliation{DESY Hamburg, Notkestrasse 85 D--22609, Hamburg, Germany}
-\author{S.~Carrazza}
-\affiliation{CERN, CH--1211 Geneva 23, Switzerland}
-\author{A.~Cooper-Sarkar}
-\affiliation{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom}
-\author{A.~Glazov}
-\affiliation{DESY Hamburg, Notkestrasse 85 D--22609, Hamburg, Germany}
-\author{K.~Lohwasser}
-\affiliation{DESY Zeuthen, Platanenallee 6 D--15738, Zeuthen, Germany}
-\author{A.~Luszczak}
-\affiliation{T.Kosciuszko Cracow University of Technology, 30-084 Cracow, Poland}
-\author{F.~Olness}
-\affiliation{SMU Physics, Box 0175 Dallas, TX  75275-0175, United States of America}
-\author{R.~Pla\v cakyt\.e}
-\affiliation{Institut f\"ur Theoretische Physik, Universit\"at Hamburg \\ Luruper Chaussee 149, D--22761 Hamburg, Germany}
-\author{V.~Radescu}
-\affiliation{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom}
-\affiliation{CERN, CH--1211 Geneva 23, Switzerland}
-\author{J.~Rojo}
-\affiliation{Department of Physics and Astronomy,  VU University, NL-1081 HV Amsterdam, \\ and Nikhef Theory Group Science Park 105, 1098 XG Amsterdam, The Netherlands}
-\author{R.~Sadykov}
-\author{P.~Shvydkin}
-\affiliation{Joint Institute for Nuclear Research (JINR), Joliot-Curie 6, 141980, Dubna, Moscow Region, Russia}
-\author{O.~Zenaiev}
-\affiliation{DESY Hamburg, Notkestrasse 85 D--22609, Hamburg, Germany}
-\author{M.~Lisovyi}
-\affiliation{Physikalisches Institut, Ruprecht-Karls-Universit\"at Heidelberg, Heidelberg, Germany}
 
 
-\date{\today}
-\begin{abstract}
-  Achieving the highest precision for theoretical predictions
+\title{\boldmath The photon PDF from high-mass Drell Yan data at the LHC}
+
+
+\author[a,1]{F.~Giuli}
+\author[b,1]{and the xFitter Developers' team: V.~Bertone,}
+\author[c]{D.~Britzger,}
+\author[d]{S.~Carrazza,}
+\author[a]{A.~Cooper-Sarkar,}
+\author[c]{A.~Glazov,}
+\author[e]{K.~Lohwasser,}
+\author[f]{A.~Luszczak,}
+\author[g]{F.~Olness,}
+\author[h]{R.~Pla\v cakyt\.e,}
+\author[a,d,1]{V.~Radescu, \note{Corresponding Authors}}
+\author[b]{J.~Rojo,}
+\author[i]{R.~Sadykov,}
+\author[i]{P.~Shvydkin,}
+\author[c]{O.~Zenaiev;}
+\author[i]{ and M.~Lisovyi}
+
+
+% The ``\note'' macro will give a warning: ``Ignoring empty anchor...''
+% you can safely ignore it.
+
+\affiliation[a]{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom}
+\affiliation[b]{Department of Physics and Astronomy,  VU University, NL-1081 HV Amsterdam and Nikhef Theory Group Science Park 105, 1098 XG Amsterdam, The Netherlands}
+\affiliation[c]{DESY Hamburg, Notkestrasse 85 D-22609, Hamburg, Germany}
+\affiliation[d]{CERN, CH-1211 Geneva 23, Switzerland}
+\affiliation[e]{DESY Zeuthen, Platanenallee 6 D-15738, Zeuthen, Germany}
+\affiliation[f]{T.Kosciuszko Cracow University of Technology, 30-067 Cracow, Poland}
+\affiliation[g]{SMU Physics, Box 0175 Dallas, TX  75275-0175, United States of America}
+\affiliation[h]{Institut f\"ur Theoretische Physik, Universit\"at Hamburg, Luruper Chaussee 149, D--22761 Hamburg, Germany}
+\affiliation[i]{Joint Institute for Nuclear Research (JINR), Joliot-Curie 6, 141980, Dubna, Moscow Region, Russia}
+\affiliation[j]{Physikalisches Institut, Ruprecht-Karls-Universit\"at Heidelberg, Heidelberg, Germany}
+
+%\emailAdd{francesco.giuli@physics.ox.ac.uk}
+%\emailAdd{valerio.bertone@cern.ch}
+%\emailAdd{daniel.britzger@desy.de}
+%\emailAdd{stefano.carrazza@cern.ch}
+%\emailAdd{Amanda.Cooper-Sarkar@physics.ox.ac.uk}
+%\emailAdd{alexandre.glazov@desy.de}
+%\emailAdd{kristin.lohwasser@cern.ch}
+%\emailAdd{agnieszka.luszczak@desy.de}
+%\emailAdd{olness@mail.physics.smu.edu}
+%\emailAdd{ringaile@mail.desy.de}
+%\emailAdd{radescu@mail.cern.ch}
+\emailAdd{xfitter-help@mail.desy.de}
+%\emailAdd{j.rojo@vu.nl}
+%\emailAdd{Renat.Sadykov@cern.ch}
+%\emailAdd{shvydkin@phystech.edu}
+%\emailAdd{oleksandr.zenaiev@desy.de}
+%\emailAdd{Mikhaylo.Lisovyi@desy.de}
+
+
+
+\abstract{
+ Achieving the highest precision for theoretical predictions
   at the LHC requires the 
   calculation of hard-scattering cross-sections that include
   perturbative QCD corrections up to (N)NNLO and electroweak (EW)
@@ -116,14 +135,16 @@
   %
   The results are compared with other recent QED fits and
   determinations of the photon PDF, consistent results are found.
-%  finding in particular agreement with the LUXqed
-%  and the HKR calculations within uncertainties.
-% for the
-%  kinematical range where the ATLAS data has sensitivity to
-%  $x\gamma(x,Q)$.
-\end{abstract}
-\maketitle
 
+}
+
+
+
+\begin{document}
+%\linenumbers
+\maketitle
+%\date{\today}
+\flushbottom
 \tableofcontents{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +156,6 @@
 \input{appendixAPFEL}
 
 \bibliographystyle{JHEP}
-
 \bibliography{main}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
