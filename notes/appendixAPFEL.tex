@@ -56,11 +56,19 @@ As a consequence, these evolution equations form a set of coupled
 differential equations. Up to three loops ($i.e.$ NLO), the
 $\beta$-functions can be expanded as:
 \begin{equation}
-\beta^{\rm QCD}(\alpha_s,\alpha) = -\alpha_s\left[\beta_0^{(\alpha_s)}\left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha_s\alpha)}\left(\frac{\alpha_s}{4\pi}\right) \left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha_s^2)}\left(\frac{\alpha_s}{4\pi}\right)^2+\dots\right]\,,
+\begin{small}
+\begin{array}{rcl}
+\beta^{\rm QCD}(\alpha_s,\alpha) &=& -\alpha_s\left[\beta_0^{(\alpha_s)}\left(\frac{\alpha_s}{4\pi}\right)\beta_1^{(\alpha_s\alpha)}\left(\frac{\alpha_s}{4\pi}\right) \left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha_s^2)}\left(\frac{\alpha_s}{4\pi}\right)^2+\dots\right]\,,
+\end{array}
+\end{small}
 \end{equation}
 and:
 \begin{equation}
-\beta^{\rm QED}(\alpha_s,\alpha) = -\alpha\left[\beta_0^{(\alpha)}\left(\frac{\alpha}{4\pi}\right)+\beta_1^{(\alpha\alpha_s)}\left(\frac{\alpha}{4\pi}\right) \left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha^2)}\left(\frac{\alpha}{4\pi}\right)^2+\dots\right]\,.
+\begin{small}
+\begin{array}{rcl}
+\beta^{\rm QED}(\alpha_s,\alpha) &=& -\alpha\left[\beta_0^{(\alpha)}\left(\frac{\alpha}{4\pi}\right)\beta_1^{(\alpha\alpha_s)}\left(\frac{\alpha}{4\pi}\right) \left(\frac{\alpha_s}{4\pi}\right)+\beta_1^{(\alpha^2)}\left(\frac{\alpha}{4\pi}\right)^2+\dots\right]\,.
+\end{array}
+\end{small}
 \end{equation}
 where the mixed terms, $\beta_1^{(\alpha_s\alpha)}$ and
 $\beta_1^{(\alpha\alpha_s)}$, and the pure NLO QED term,
@@ -68,8 +76,11 @@ $\beta_1^{(\alpha^2)}$, can be found in
 Ref.~\cite{Surguladze:1996hx}. Taking into account a factor four due
 to the different definitions of the expansion parameters, one finds:
 \begin{equation}\label{eq:NewBetaTerms}
-\beta_1^{(\alpha_s\alpha)} = -2\sum_{i=1}^{n_f}
-e_q^2\,\qquad\beta_1^{(\alpha\alpha_s)} = -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2\,,\qquad \beta_1^{(\alpha^2)} = -4\left(n_l+N_c\sum_{i=1}^{n_f} e_q^2\right)\,,
+\begin{array}{rcl}
+\beta_1^{(\alpha_s\alpha)} &=& -2\sum_{i=1}^{n_f}e_q^2\,, \\
+\qquad\beta_1^{(\alpha\alpha_s)} &=& -\frac{16}{3}N_c\sum_{i=1}^{n_f} e_q^2\,,\\
+\qquad\beta_1^{(\alpha^2)} &=& -4\left(n_l+N_c\sum_{i=1}^{n_f} e_q^2\right)\,,
+\end{array}
 \end{equation}
 where $N_c=3$ is the number of colours, $e_q$ is the electric charge
 of the quark flavour $q$, and $n_f$ and $n_l$ are the number of active
@@ -119,7 +130,7 @@ without introducing any significant inaccuracy.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
-\includegraphics[width=6cm,angle=270]{figs/couplings.pdf} 
+\includegraphics[width=0.5\columnwidth,angle=270]{figs/couplings.pdf} 
 \caption{Comparison between the running with the scale
 $Q$ of the QCD and QED couplings,
   $\alpha_s$ and $\alpha$, including or not the mixed terms in
@@ -214,6 +225,7 @@ Starting with the $\mathcal{O}(\alpha_s\alpha)$ term,
 %
 at this perturbative order, the resulting evolution equations read:
 \begin{equation}
+\begin{small}
 \begin{array}{rcl}
 \displaystyle\left.\mu^2\frac{\partial}{\partial \mu^2}
 \begin{pmatrix}
@@ -235,6 +247,7 @@ g\\
 \Delta_\Sigma
 \end{pmatrix}
 \end{array}\,,
+\end{small}
 \end{equation}
 
 
@@ -327,7 +340,7 @@ Taking into account these features, it is possible to show that the
 $\mathcal{O}(\alpha^2)$ contributions to the DGLAP equations take the
 following form:
 \begin{equation}
-{\footnotesize
+{\tiny
 %\begin{array}{rcl}
 \begin{array}{c}
 \displaystyle\left.\mu^2\frac{\partial}{\partial \mu^2}
@@ -450,9 +463,9 @@ in the {\tt QEDEVOL} package~\cite{Sadykov:2014aua} based on the
   QEDEVOL} have been found to be in excellent agreement.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
+\begin{figure}[ht]
 \centering
-\includegraphics[width=10cm]{figs/lumi_13tev.pdf} 
+\includegraphics[width=0.95\columnwidth]{figs/lumi_13tev.pdf} 
 \caption{The photon-photon PDF luminosity $\mathcal{L}_{\gamma\gamma}$ at $\sqrt{s} = 13$ TeV as a
   function of the final state invariant mass $M_X$.
   %
@@ -559,6 +572,7 @@ quark of flavour $q$ couples to a photon, the $\mathcal{O}(\alpha)$
 corrections to the CC structure functions $F_2$ and $F_L$ for the
 production of a neutrino or an anti-neutrino take the form:
 \begin{equation}\label{compactNu}
+\begin{small}
 \begin{array}{rcl}
 F_{2,L}^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
                               x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2D +e_U^2\overline{U}\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
@@ -567,11 +581,13 @@ F_{2,L}^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
 x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{2,L;q}^{(\alpha)}\otimes\left(e_D^2\overline{D}
     +e_U^2U\right) +2 C_{2,L;\gamma}^{(\alpha)}\otimes\gamma\right]\,,
 \end{array}
+\end{small}
 \end{equation}
 where $V_{UD}$ are the elements of the CKM matrix.
 %
 The flavour structure of $F_3$ is instead slightly different:
 \begin{equation}\label{compactNuF3}
+\begin{small}
 \begin{array}{rcl}
 xF_3^{{\rm CC},\nu,(\alpha)} &=& \displaystyle
                               x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(e_D^2D -e_U^2\overline{U}\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,,\\
@@ -580,6 +596,7 @@ xF_3^{{\rm CC},\overline{\nu},(\alpha)} &=& \displaystyle
 x\sum_{U=u,c,t}\sum_{D=d,s,b}|V_{UD}|^2\left[C_{3;q}^{(\alpha)}\otimes\left(-e_D^2\overline{D}
     +e_U^2U\right) +2 C_{3;\gamma}^{(\alpha)}\otimes\gamma\right]\,.
 \end{array}
+\end{small}
 \end{equation}
 In order to simplify the implementation, it is advantageous to assume
 that, in these particular corrections, the CKM matrix is a $3 \times 3$
@@ -610,8 +627,8 @@ computation of the structure functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=5cm,angle=270]{figs/NLOQEDCorrections_NC.pdf}
-\includegraphics[width=5cm,angle=270]{figs/NLOQEDCorrections_CC.pdf}
+\includegraphics[width=0.5\columnwidth,angle=270]{figs/NLOQEDCorrections_NC.pdf}
+\includegraphics[width=0.5\columnwidth,angle=270]{figs/NLOQEDCorrections_CC.pdf}
 \caption{The effects of the NLO QED corrections on the neutral-current
 (left) and charged-current (right) DIS structure functions
 $F_2, F_L$ and $xF_3$, normalised to the pure QCD results.

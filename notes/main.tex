@@ -1,21 +1,111 @@
-\documentclass[english,a4paper,11pt]{article}
-\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have                                                                                                                                       
-             % images in pdf, png or jpg format)                                                                                                                                                         
+\documentclass[pdftex,twocolumn,epjc3]{svjour3}          % twocolumn
 
-\usepackage{jheppub} % for details on the use of the package, please                                                                                                                                     
-                     % see the JHEP-author-manual                                                                                                                                                        
+\RequirePackage[T1]{fontenc}
 
-\usepackage{seqsplit}
-\usepackage[T1]{fontenc} % if needed                                                                                                                                                                     
+\smartqed  % flush right qed marks, e.g. at end of proof
 
-%\documentclass[english,aps]{revtex4-1}                                                                                                                                                                  
-\usepackage[latin9]{inputenc}
-%\usepackage{color}
-\usepackage{graphicx}
-\usepackage{babel}
-\usepackage{bm}
-\usepackage{amsmath}
-\usepackage{lineno}
+\RequirePackage{graphicx}
+\RequirePackage{mathptmx}      % use Times fonts if available on your TeX system
+\RequirePackage{flushend}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\RequirePackage{amsmath}
+\RequirePackage[english]{babel} 
+\RequirePackage{bm}              
+\RequirePackage{lineno}    
+\RequirePackage[latin9]{inputenc}  
+  
+\journalname{Eur. Phys. J. C}
+
+\begin{document}
+
+
+\title{\boldmath The photon PDF from high-mass Drell Yan data at the LHC}
+
+
+%\thankstext[$\star$]{t1}{Thanks to the title}
+%\thankstext{e1}{e-mail: magic1@xxx.xx}
+%\thankstext{e2}{e-mail: magic2@xxx.xx}
+
+\author{F.~Giuli\thanksref{a}
+\and and the xFitter Developers' team: V.~Bertone\thanksref{b,k}
+\and D.~Britzger\thanksref{c}
+\and S.~Carrazza\thanksref{d}
+\and A.~Cooper-Sarkar\thanksref{a}
+\and A.~Glazov\thanksref{c}
+\and K.~Lohwasser\thanksref{e}
+\and A.~Luszczak\thanksref{f}
+\and F.~Olness\thanksref{g}
+\and R.~Pla\v cakyt\.e\thanksref{h}
+\and V.~Radescu\thanksref{a,d}
+\and J.~Rojo\thanksref{b,k}
+\and R.~Sadykov\thanksref{i}
+\and P.~Shvydkin\thanksref{i}
+\and O.~Zenaiev\thanksref{c}
+\and and M.~Lisovyi\thanksref{j}
+}
+
+
+\institute{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom \label{a}
+\and Department of Physics and Astronomy,  VU University, NL-1081 HV Amsterdam, The Netherlands \label{b}
+\and Nikhef Theory Group Science Park 105, 1098 XG Amsterdam, The Netherlands \label{k}
+\and DESY Hamburg, Notkestrasse 85 D-22609, Hamburg, Germany \label{c}
+\and CERN, CH-1211 Geneva 23, Switzerland \label{d}
+\and DESY Zeuthen, Platanenallee 6 D-15738, Zeuthen, Germany \label{e}
+\and T.Kosciuszko Cracow University of Technology, 30-084 Cracow, Poland \label{f}
+\and SMU Physics, Box 0175 Dallas, TX  75275-0175, United States of America \label{g}
+\and Institut f\"ur Theoretische Physik, Universit\"at Hamburg, Luruper Chaussee 149, D--22761 Hamburg, Germany \label{h}
+\and Joint Institute for Nuclear Research (JINR), Joliot-Curie 6, 141980, Dubna, Moscow Region, Russia \label{i}
+\and Physikalisches Institut, Ruprecht-Karls-Universit\"at Heidelberg, Heidelberg, Germany \label{j}
+}
+
+
+
+
+
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+ Achieving the highest precision for theoretical predictions
+  at the LHC requires the 
+  calculation of hard-scattering cross-sections that include
+  perturbative QCD corrections up to (N)NNLO and electroweak (EW)
+  corrections up to NLO.
+   %
+  Parton distribution functions (PDFs) need to be
+  provided with matching accuracy, which in the case of QED effects
+  involves introducing the photon parton distribution of the proton,
+  $x\gamma(x,Q^2)$.
+   %
+  In this work a determination of the photon PDF from
+  fits to recent ATLAS measurements of high-mass Drell-Yan dilepton
+  production at $\sqrt{s}=8$ TeV is presented.
+  %
+  This analysis is based on the {\tt xFitter} framework,
+  and has required improvements both in the {\tt APFEL} program, to account
+  for NLO QED effects, and in the {\tt aMCfast} interface to account
+  for the photon-initiated contributions in the EW calculations within
+  {\tt MadGraph5\_aMC@NLO}.
+  %
+  The results are compared with other recent QED fits and
+  determinations of the photon PDF, consistent results are found.
+
+
+\end{abstract}
+
+
+%\usepackage[latin9]{inputenc}
+%%\usepackage{color}
+%\usepackage{graphicx}
+%\usepackage{babel}
+%\usepackage{bm}
+%\usepackage{amsmath}
+%\usepackage{lineno}
 
 %\makeatletter
 
@@ -55,96 +145,6 @@
 \newcommand{\as}{\alpha_s}
 
 
-
-\title{\boldmath The photon PDF from high-mass Drell Yan data at the LHC}
-
-
-\author[a,1]{F.~Giuli}
-\author[b,1]{and the xFitter Developers' team: V.~Bertone,}
-\author[c]{D.~Britzger,}
-\author[d]{S.~Carrazza,}
-\author[a]{A.~Cooper-Sarkar,}
-\author[c]{A.~Glazov,}
-\author[e]{K.~Lohwasser,}
-\author[f]{A.~Luszczak,}
-\author[g]{F.~Olness,}
-\author[h]{R.~Pla\v cakyt\.e,}
-\author[a,d,1]{V.~Radescu, \note{Corresponding Authors}}
-\author[b]{J.~Rojo,}
-\author[i]{R.~Sadykov,}
-\author[i]{P.~Shvydkin,}
-\author[c]{O.~Zenaiev;}
-\author[i]{ and M.~Lisovyi}
-
-
-% The ``\note'' macro will give a warning: ``Ignoring empty anchor...''
-% you can safely ignore it.
-
-\affiliation[a]{University of Oxford,1 Keble Road, Oxford OX1 3NP, United Kingdom}
-\affiliation[b]{Department of Physics and Astronomy,  VU University, NL-1081 HV Amsterdam and Nikhef Theory Group Science Park 105, 1098 XG Amsterdam, The Netherlands}
-\affiliation[c]{DESY Hamburg, Notkestrasse 85 D-22609, Hamburg, Germany}
-\affiliation[d]{CERN, CH-1211 Geneva 23, Switzerland}
-\affiliation[e]{DESY Zeuthen, Platanenallee 6 D-15738, Zeuthen, Germany}
-\affiliation[f]{T.Kosciuszko Cracow University of Technology, 30-084 Cracow, Poland}
-\affiliation[g]{SMU Physics, Box 0175 Dallas, TX  75275-0175, United States of America}
-\affiliation[h]{Institut f\"ur Theoretische Physik, Universit\"at Hamburg, Luruper Chaussee 149, D--22761 Hamburg, Germany}
-\affiliation[i]{Joint Institute for Nuclear Research (JINR), Joliot-Curie 6, 141980, Dubna, Moscow Region, Russia}
-\affiliation[j]{Physikalisches Institut, Ruprecht-Karls-Universit\"at Heidelberg, Heidelberg, Germany}
-
-%\emailAdd{francesco.giuli@physics.ox.ac.uk}
-%\emailAdd{valerio.bertone@cern.ch}
-%\emailAdd{daniel.britzger@desy.de}
-%\emailAdd{stefano.carrazza@cern.ch}
-%\emailAdd{Amanda.Cooper-Sarkar@physics.ox.ac.uk}
-%\emailAdd{alexandre.glazov@desy.de}
-%\emailAdd{kristin.lohwasser@cern.ch}
-%\emailAdd{agnieszka.luszczak@desy.de}
-%\emailAdd{olness@mail.physics.smu.edu}
-%\emailAdd{ringaile@mail.desy.de}
-%\emailAdd{radescu@mail.cern.ch}
-\emailAdd{xfitter-help@mail.desy.de}
-%\emailAdd{j.rojo@vu.nl}
-%\emailAdd{Renat.Sadykov@cern.ch}
-%\emailAdd{shvydkin@phystech.edu}
-%\emailAdd{oleksandr.zenaiev@desy.de}
-%\emailAdd{Mikhaylo.Lisovyi@desy.de}
-
-
-
-\abstract{
- Achieving the highest precision for theoretical predictions
-  at the LHC requires the 
-  calculation of hard-scattering cross-sections that include
-  perturbative QCD corrections up to (N)NNLO and electroweak (EW)
-  corrections up to NLO.
-   %
-  Parton distribution functions (PDFs) need to be
-  provided with matching accuracy, which in the case of QED effects
-  involves introducing the photon parton distribution of the proton,
-  $x\gamma(x,Q^2)$.
-   %
-  In this work a determination of the photon PDF from
-  fits to recent ATLAS measurements of high-mass Drell-Yan dilepton
-  production at $\sqrt{s}=8$ TeV is presented.
-  %
-  This analysis is based on the {\tt xFitter} framework,
-  and has required improvements both in the {\tt APFEL} program, to account
-  for NLO QED effects, and in the {\tt aMCfast} interface to account
-  for the photon-initiated contributions in the EW calculations within
-  {\tt MadGraph5\_aMC@NLO}.
-  %
-  The results are compared with other recent QED fits and
-  determinations of the photon PDF, consistent results are found.
-
-}
-
-
-
-\begin{document}
-%\linenumbers
-\maketitle
-%\date{\today}
-\flushbottom
 %\tableofcontents{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,10 +155,12 @@
 \input{conclusions.tex}
 \input{appendixAPFEL}
 
-\bibliographystyle{JHEP}
-\bibliography{main}
+\bibliographystyle{spphys}       % APS-like style for physics
+\bibliography{main}   % name your BibTeX data base
+
+%\bibliographystyle{JHEP}
+%\bibliography{main}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \end{document}
