@@ -178,11 +178,11 @@ uncertainties at the few percent level in most of the kinematic range.
 \begin{figure}[t]
   \includegraphics[width=7cm]{figs/photon_comp_10000.pdf}
   \includegraphics[width=7cm]{figs/photon_comp_10000_ratio.pdf} 
-  \caption{Left plot: comparison between the photon $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
+  \caption{Upper plot: comparison between the photon $x\gamma(x,Q^2)$ at $Q^2=10^4$ GeV$^2$
     from the present NNLO analysis ({\tt xFitter\_epHMDY}) with the
     corresponding results from NNPDF3.0QED, LUXqed and HKR16.
   %
-  Right plot: the same comparison, now with the results normalized to the central value
+  Lower plot: the same comparison, now with the results normalized to the central value
   of {\tt xFitter\_epHMDY}.
   %
   For the present fit, the PDF uncertainties are shown at the 68\% CL obtained from the MC method,
@@ -198,8 +198,8 @@ In Fig.~\ref{photon_zoom}, the photon PDF, $x\gamma(x,Q^2)$, is shown at
 $Q^2=10^4$ GeV$^2$,  and it is compared to the corresponding LUXqed,
 HKR16 and NNPDF3.0QED results.
 %
-In the left plot the comparison is presented in an absolute scale, while
-in the right plot the ratio of
+In the upper plot the comparison is presented in an absolute scale, while
+in the lower plot the ratio of
 different results normalized to
 the central value of the fit is shown.
 %
@@ -343,8 +343,12 @@ uncertainties computed using the Monte Carlo method.
   with the central value of a number of fits for which one input parameter has been varied.
   %
   The following variations have been considered: $r_s=0.75$, $Q^2_{\rm min}=5$ GeV$^2$, $\alpha_s=0.116$ and
-  0.118 (left plot); and
-  $m_c=1.41$ and 1.53 GeV, $m_b=4.25$ and 4.75 GeV, and $Q_0^2=10$ GeV$^2$ (right plot).
+  0.118 (upper plot);  and
+  $m_c=1.41$ and 1.53 GeV, $m_b=4.25$ and 4.75 GeV, and $Q_0^2=10$ GeV$^2$ (lower plot).
+  %
+  The curves are indistinguishable because they overlap due to their negligible impact on photon PDF fit. 
+  %
+  Only the impact of the variation of the strange fraction assumption  is visible by eye.
   %
   See text for more details about these variations.
 }
@@ -424,7 +428,7 @@ to the Gaussian behaviour of the photon PDF.
 \centering
 \includegraphics[width=7cm]{figs/q2_10000_pdf_ph_param_var.pdf}
 \includegraphics[width=7cm]{figs/photon_mc_vs_hessian.pdf} 
-\caption{Left: the impact on the photon PDF $x\gamma(x,Q^2)$
+\caption{Upper plot: the impact on the photon PDF $x\gamma(x,Q^2)$
   from {\tt xFitter\_epHMDY}
   in fits where a number of additional free parameters are allowed
   in the PDF parametrisation Eq.~(\ref{eq:param}).
@@ -435,7 +439,7 @@ to the Gaussian behaviour of the photon PDF.
   (labeled by ``${\rm neg}$''), adding on top $D_{u_v}$, and then
   adding $D_{\bar{u}}+D_{\bar{d}}$.
  %
- Right: comparison between the {\tt xFitter\_epHMDY} determinations obtained with the
+ Lower plot: comparison between the {\tt xFitter\_epHMDY} determinations obtained with the
  Monte Carlo (baseline) and with the Hessian methods, where in
   both cases the PDF error band  shown corresponds to the 68\% CL uncertainties.  }
 \label{fig:param}
@@ -477,7 +481,7 @@ indicating that perturbative stability is not scale dependent.
 \centering
 \includegraphics[width=7cm]{figs/q2_7_5_pdf_ph_NLOvsNNLO.pdf}
 \includegraphics[width=7cm]{figs/q2_10000_pdf_ph_NLOvsNNLO.pdf}
-\caption{Left plot: comparison between the reference {\tt xFitter\_epHMDY}
+\caption{Upper plot: comparison between the reference {\tt xFitter\_epHMDY}
   fit of $x\gamma(x,Q^2)$, based on  NNLO QCD and NLO QED theoretical
   calculations, with the central value of the corresponding fit based
   on NLO QCD and QED theory, at $Q^2=7.5$ GeV$^2$.
@@ -485,7 +489,7 @@ indicating that perturbative stability is not scale dependent.
   In the former case, only the experimental Monte Carlo PDF
   uncertainties are shown.
   %
-  Right plot: same comparison, now presented at the higher scale of $Q^2=10^4$ GeV$^2$.  }
+  Lower plot: same comparison, now presented at the higher scale of $Q^2=10^4$ GeV$^2$.  }
 \label{fig:nlo_vs_nnlo}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
